@@ -83,7 +83,7 @@
                   </v-flex>
 
                   <v-flex xs12 lg6>
-                    <v-select :items="doc.body.items" label="Employment Type:" outlined></v-select>
+                    <v-select :items="doc.body.items" label="Employment Type:" v-model="value" outlined></v-select>
                   </v-flex>
                  
                   
@@ -102,10 +102,10 @@
                         min-width="290px"
                       >
                         <template v-slot:activator="{ on }">
-                            <v-text-field v-model="doc.body.date1" label="Start: " readonly v-on="on">
+                            <v-text-field v-model="doc.body.date" label="Start: " readonly v-on="on">
                             </v-text-field>
                         </template>
-                        <v-date-picker v-model="doc.body.date1" @input="menu1b = false"></v-date-picker>
+                        <v-date-picker v-model="doc.body.date" @input="menu1b = false"></v-date-picker>
                       </v-menu>
                     </v-flex>
 
@@ -119,10 +119,10 @@
                         min-width="290px"
                       >
                         <template v-slot:activator="{ on }">
-                            <v-text-field v-model="doc.body.date2" label="Finish: " readonly v-on="on">
+                            <v-text-field v-model="doc.body.date1" label="Finish: " readonly v-on="on">
                             </v-text-field>
                         </template>
-                        <v-date-picker v-model="doc.body.date2" @input="menu2b = false"></v-date-picker>
+                        <v-date-picker v-model="doc.body.date1" @input="menu2b = false"></v-date-picker>
                       </v-menu>
                     </v-flex>
                     </v-layout>
@@ -138,40 +138,27 @@
                     </p>
                   </v-flex>
 
-                  <v-flex xs12>
-                    <v-text-field v-model="doc.body.printName2" label="Print Name: "></v-text-field>
+                  <v-flex xs12 lg6>
+                   <SelectUsers v-on:getUsers="setSigners($event)" label="Select Name: " />
                   </v-flex>
 
-                  <v-flex xs12 lg6>
-                    <p class="text-xs-left">Sign Here :</p>
-                    <VueSignaturePad
-                      class="signature-pad"
-                      max-width="480px"
-                      height="200px"
-                      ref="signaturePad"
-                      :options="{ onEnd }"
-                    />
-                    <v-btn flat color="warning" @click="clearAuthorSignature">
-                      <v-icon left>undo</v-icon>
-                      <span>Clear</span>
-                    </v-btn>
-                  </v-flex>
+                  
 
                   <v-flex xs12 lg3>
-                    <v-menu
-                      v-model="menu6"
-                      :close-on-content-click="false"
-                      :nudge-right="40"
-                      transition="scale-transition"
-                      offset-y
-                      min-width="290px"
-                    >
-                    <template v-slot:activator="{ on }">
-                        <v-text-field v-model="doc.body.authorSignatureDate1" label="Date" readonly v-on="on">
-                        </v-text-field>
-                    </template>
-                      <v-date-picker v-model="doc.body.authorSignatureDate1" @input="menu3 = false"></v-date-picker>
-                    </v-menu>
+                   <v-menu
+                        v-model="menu3a"
+                        :close-on-content-click="false"
+                        :nudge-right="40"
+                        transition="scale-transition"
+                        offset-y
+                        min-width="290px"
+                      >
+                        <template v-slot:activator="{ on }">
+                            <v-text-field v-model="doc.body.date2" label="Start: " readonly v-on="on">
+                            </v-text-field>
+                        </template>
+                        <v-date-picker v-model="doc.body.date2" @input="menu3b = false"></v-date-picker>
+                      </v-menu>
                   </v-flex>
                 </v-layout>
 
@@ -408,49 +395,36 @@
                   <p>I am aware that I will be held liable if the above information is found to be false, untrue, misleading.</p>
                 </v-flex>
 
-                <v-flex xs12>
-                  <v-text-field v-model="doc.body.printName" label="Print Name: "></v-text-field>
-                </v-flex>
+               
                  
                 <v-layout wrap>
                     <v-flex xs12 lg6>
-                    <p class="text-xs-left">Sign Here :</p>
-                    <VueSignaturePad
-                        class="signature-pad"
-                        max-width="480px"
-                        height="200px"
-                        ref="signaturePad"
-                        :options="{ onEnd }"
-                    />
-                    <v-btn flat color="warning" @click="clearAuthorSignature">
-                        <v-icon left>undo</v-icon>
-                        <span>Clear</span>
-                    </v-btn>
+                   <SelectUsers v-on:getUsers="setSigners1($event)" label="Select Name: " />
                     </v-flex>
 
                     <v-flex xs12 lg3>
                     <v-menu
-                        v-model="menu7"
+                        v-model="menu4a"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"
                         offset-y
                         min-width="290px"
-                    >
+                      >
                         <template v-slot:activator="{ on }">
-                            <v-text-field v-model="doc.body.authorSignatureDate2" label="Date" readonly v-on="on">
+                            <v-text-field v-model="doc.body.date3" label="Start: " readonly v-on="on">
                             </v-text-field>
                         </template>
-                        <v-date-picker v-model="doc.body.authorSignatureDate2" @input="menu4 = false"></v-date-picker>
-                    </v-menu>
+                        <v-date-picker v-model="doc.body.date3" @input="menu4b = false"></v-date-picker>
+                      </v-menu>
                     </v-flex>
                 </v-layout>
 
                 <v-flex xs12>
-                  <v-text-field v-model="doc.body.cardNumber" label="Card number issued: "></v-text-field>
+                  <strong>Card number issued :</strong> {{doc.body.cardNumber}}
                 </v-flex>
                 <v-flex xs12>
-                  <v-text-field v-model="doc.body.cardIssued" label="Card issued by: "></v-text-field>
+                  <strong>Card issued by :</strong> {{doc.body.cardIssued}}
                 </v-flex>
 
                 <v-flex xs12 lg6>
@@ -465,41 +439,27 @@
                   </p>
                 </v-flex>
 
-                <v-flex xs12>
-                  <v-text-field v-model="doc.body.printName1" label="Print Name: "></v-text-field>
-                  
-                </v-flex>
+                
                 <v-layout wrap>
                     <v-flex xs12 lg6>
-                    <p class="text-xs-left">Sign Here :</p>
-                    <VueSignaturePad
-                        class="signature-pad"
-                        max-width="480px"
-                        height="200px"
-                        ref="signaturePad"
-                        :options="{ onEnd }"
-                    />
-                    <v-btn flat color="warning" @click="clearAuthorSignature">
-                        <v-icon left>undo</v-icon>
-                        <span>Clear</span>
-                    </v-btn>
+                    <SelectUsers v-on:getUsers="setSigners2($event)" label="Select Name: " />
                     </v-flex>
                     
                     <v-flex xs12 lg3>
                     <v-menu
-                        v-model="menu8"
+                        v-model="menu5a"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"
                         offset-y
                         min-width="290px"
-                    >
+                      >
                         <template v-slot:activator="{ on }">
-                            <v-text-field v-model="doc.body.authorSignatureDate3" label="Date" readonly v-on="on">
+                            <v-text-field v-model="doc.body.date4" label="Start: " readonly v-on="on">
                             </v-text-field>
                         </template>
-                        <v-date-picker v-model="doc.body.authorSignatureDate3" @input="menu5 = false"></v-date-picker>
-                    </v-menu>
+                        <v-date-picker v-model="doc.body.date4" @input="menu5b = false"></v-date-picker>
+                      </v-menu>
                     </v-flex>
                 </v-layout>
               </v-card-text>
@@ -543,6 +503,8 @@ export default {
       menu3b: false,
       menu4a: false,
       menu4b: false,
+      menu5a: false,
+      menu5b: false,
 
       headers2: [
         {
@@ -715,6 +677,7 @@ export default {
 
         body: {
           address: "",
+          date: new Date().toISOString().substr(0, 10),
           date1: new Date().toISOString().substr(0, 10),
           date2: new Date().toISOString().substr(0, 10),
           date3: new Date().toISOString().substr(0, 10),
@@ -771,11 +734,6 @@ export default {
           docRef: Math.round(+new Date() / 1000),
           attachments: [],
           authorSignature: "",
-          authorSignature1: "",
-          authorSignature2: "",
-          authorSignatureDate: "",
-          authorSignatureDate1: "",
-          authorSignatureDate2: "",
           signatures: [],
           signatures2: []
         }
@@ -807,6 +765,12 @@ export default {
       this.doc.recipients = users;
     },
     setSigners(users) {
+      this.doc.body.signatures.push(users);
+    },
+     setSigners1(users) {
+      this.doc.body.signatures.push(users);
+    },
+     setSigners2(users) {
       this.doc.body.signatures.push(users);
     },
     onEnd() {
