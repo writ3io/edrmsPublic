@@ -77,13 +77,13 @@
                 <v-flex xs12>
                   <v-layout wrap>
                     <v-flex sm12 md12 lg6>
-                      <p><strong>END User:</strong><span v-if="doc.body.signatures != ''"> {{doc.body.signatures1[0].SurName}}</span></p>
+                      <p><strong>END User:</strong>{{doc.body.signatures[0].SurName}}</p> 
                     </v-flex>
                     <v-flex sm12 md12 lg4>
                       <p><strong>Date:</strong>{{doc.body.date2}}</p>
                     </v-flex>
                     <v-flex sm12 md12 lg6>
-                      <p><strong>Receiving Officer:</strong> <span v-if="doc.body.signatures != ''"> {{doc.body.signatures2[0].SurName}}</span></p>
+                     <p><strong>Receiving Officer:</strong> <span v-if="doc.body.signatures != []"> {{doc.body.signatures[1].SurName}}</span></p> 
                     </v-flex>
                     <v-flex sm12 md12 lg4>
                       <p><strong>Date:</strong>{{doc.body.date3}}</p>
@@ -156,7 +156,7 @@
 
               <v-card-title>
                 <v-flex xs12 sm6>
-                  <p><strong>END User:</strong><span v-if="doc.body.signatures != ''"> {{doc.body.signatures3[0].SurName}}</span></p>
+                  <p><strong>END User:</strong>{{doc.body.signatures[2].SurName}}</p>
                 </v-flex>
 
                 <v-flex xs12 sm6>
@@ -164,7 +164,7 @@
                 </v-flex>
 
                 <v-flex xs12 sm6>
-                  <p><strong>Receiving Officer:</strong> <span v-if="doc.body.signatures != ''"> {{doc.body.signatures4[0].SurName}}</span></p>
+                  <p><strong>Receiving Officer:</strong>{{doc.body.signatures[3].SurName}}</p>
                 </v-flex>
 
                 <v-flex xs12 sm6>
