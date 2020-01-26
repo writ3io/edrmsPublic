@@ -13,21 +13,9 @@
             <h3 class="text-xs-center">DISPOSAL REGISTER FOR THE HEAD OFFICE</h3>
 
             <v-layout wrap justify-right>
-              <!-- <v-flex xs12>
-                <v-menu transition="scale-transition" offset-y min-width="290px">
-                  <template v-slot:activator="{ on }">
-                    <v-text-field
-                      v-model="doc.body.date"
-                      label="OPERATIONAL PLAN FOR YEAR ENDING: "
-                      readonly
-                      v-on="on"
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker v-model="doc.body.date" @input="menu2 = false"></v-date-picker>
-                </v-menu>
-              </v-flex> -->
+              
               <v-flex xs12>
-                <v-text-field v-model="doc.body.branch" label=" DISPOSAL REGISTER FOR THE FINANCIAL YEAR: "></v-text-field>
+                <v-text-field v-model="doc.body.financialYear" label=" DISPOSAL REGISTER FOR THE FINANCIAL YEAR: "></v-text-field>
               </v-flex>
             </v-layout>
           </v-flex>
@@ -43,7 +31,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="text-xs-center">
                   <v-text-field
                     v-model="props.item.assetNo"
@@ -118,34 +106,7 @@
             <br />
           </v-flex>
 
-          <v-flex xs12 pt-1>
-          
-
-            <v-layout wrap>
-              <v-flex xs12 lg6>
-                <p class="text-xs-left">Sign Here : </p>
-                <VueSignaturePad class="signature-pad" max-width="480px" height="200px" ref="signaturePad"
-                  :options="{ onEnd }" />
-                <v-btn flat color="warning" @click="clearAuthorSignature">
-                  <v-icon left>undo</v-icon>
-                  <span>Clear</span>
-                </v-btn>
-              </v-flex>
-
-              <v-flex xs12 lg3>
-                <v-menu v-model="menu5" :close-on-content-click="false" :nudge-right="40" transition="scale-transition"
-                  offset-y min-width="290px">
-                  <template v-slot:activator="{ on }">
-                    <v-text-field v-model="doc.body.authorSignatureDate" label="Date" readonly v-on="on">
-                    </v-text-field>
-                  </template>
-                  <v-date-picker v-model="doc.body.authorSignatureDate" @input="menu2 = false"></v-date-picker>
-                </v-menu>
-              </v-flex>
-
-            </v-layout>
-
-          </v-flex>
+         
 
         </v-layout>
       </v-flex>
@@ -164,7 +125,7 @@ import { createDoc } from "~/services/DocsService";
 
 Vue.use(VueSignaturePad);
 export default {
-  name: "OperationalPlan",
+  name: "disposalRegisterForTheHeadOffice",
   components: {
     Toolbar,
     SelectUsers
@@ -206,15 +167,15 @@ export default {
       ],
       iSign: false,
       doc: {
-        ref: "2-1-4",
-        template: "OperationalPlan",
+        ref: this.$route.params.ref,
+        template: "disposalRegisterForTheHeadOffice",
         author: store.state.user,
         formValid: true,
         docRef: Math.round(+new Date() / 1000),
         body: {
           date: new Date().toISOString().substr(0, 10),
           name: "",
-          branch: "",
+          financialYear: "",
           capacity: "",
           item: "",
           tr: [

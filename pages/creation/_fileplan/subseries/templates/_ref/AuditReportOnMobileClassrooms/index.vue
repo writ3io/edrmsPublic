@@ -1,4 +1,54 @@
 <template>
+<div id="AuditReportOnMobileClassrooms">
+<v-dialog v-model="addSignDialog" persistent max-width="680px">
+      <v-card>
+        <v-card-title>
+          <span class="headline">Forward To:</span>
+        </v-card-title>
+        <v-card-text>
+          <v-container grid-list-md>
+            <v-layout wrap justify-space-between>
+              <v-flex xs12 sm7>
+                <v-combobox
+                  v-model="signatory"
+                  :items="users"
+                  label="Choose Signatory"
+                  chips
+                  return-object
+                  item-text="SurName"
+                  item-value="EmailAdress"
+                >
+                  <template slot="selection" slot-scope="data">
+                    <v-chip
+                      :key="JSON.stringify(data.item)"
+                      :selected="data.item.selected"
+                      item-value="data.item.value"
+                      :disabled="data.disabled"
+                      class="v-chip--select-multi"
+                      @input="data.parent.selectItem(data.item)"
+                    >{{ data.item.SurName }}</v-chip>
+                  </template>
+                </v-combobox>
+              </v-flex>
+              <v-flex xs12 sm4>
+                <v-select
+                  :items="actions"
+                  v-model="signatory.action"
+                  item-text="text"
+                  return-object
+                  label="Action"
+                ></v-select>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="blue darken-1" flat @click="addSignDialog = false">Close</v-btn>
+          <v-btn color="blue darken-1" flat :loading="loading" @click="addSignatory">Add</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   <v-container grid-list-md>
     <v-layout row wrap justify-space-between>
       <v-flex xs3>
@@ -21,10 +71,10 @@
               <v-card-title>
                  
                 <v-flex xs12 sm6>
-                  <v-text-field v-model="doc.body.initialsSurname" label="DISTRICT: "></v-text-field>
+                  <v-text-field v-model="doc.body.district" label="DISTRICT: "></v-text-field>
                   </v-flex>
                   <v-flex xs12 sm6>
-                  <v-text-field v-model="doc.body.initialsSurname" label="CIRCUIT: "></v-text-field>
+                  <v-text-field v-model="doc.body.circuit" label="CIRCUIT: "></v-text-field>
                   </v-flex>
 
               </v-card-title>
@@ -125,7 +175,7 @@
               </v-card-text>
 
               <v-card-text>
-               <v-flex xs12>
+                <v-flex xs12>
               <v-switch v-model="iSign" label="Add People To Sign"></v-switch>
             </v-flex>
 
@@ -140,10 +190,10 @@
             </v-flex>
 
             <v-flex v-for="(sign, index) in doc.body.signatures" :key="index" xs12>
-              <v-card-text class="black--text ma-0 font-weight-bold text-sm-left">
-                <h1>{{sign.action.text}}</h1>
+              <v-card-text >
+                <h2 class="font-weight-medium">{{sign.action.text}}</h2>
                 <hr />
-                <h2>{{sign.SurName}}</h2>
+                <h2 class="font-weight-regular">{{sign.SurName}}</h2>
                 <h4>
                   {{sign.Designation}} |
                   <span class="grey--text">{{sign.Department}}</span>
@@ -164,6 +214,7 @@
       </v-flex>
     </v-layout>
   </v-container>
+</div>
 </template>
 
 <script>
@@ -181,7 +232,7 @@ import { createDoc } from "~/services/DocsService";
 Vue.use(VueSignaturePad);
 Vue.use(Editor);
 export default {
-  name: "Checklist",
+  name: "AuditReportOnMobileClassrooms",
   components: {
     editor: Editor,
     Toolbar,
@@ -236,12 +287,18 @@ export default {
         }
       ],
 
+      series: {},
+      saveDialog: false,
+      attachments: [],
+      isFormValid: true,
+      status: "",
       iSign: false,
+      addSignDialog: false,
+      signatory: {},
       doc: {
         ref: this.$route.params.ref,
-        template: "checklist",
+        template: "AuditReportOnMobileClassrooms",
         author: store.state.user,
-        formValid: true,
         docRef: Math.round(+new Date() / 1000),
         body: {
           address:
@@ -250,6 +307,8 @@ export default {
           date2: new Date().toISOString().substr(0, 10),
           date3: new Date().toISOString().substr(0, 10),
           date4: new Date().toISOString().substr(0, 10),
+          district:"",
+          circuit:"",
           enderUser: {},
           initialsSurname:"",
 
@@ -276,92 +335,6 @@ export default {
             
           ],
 
-          phase2: [
-            {
-              description:
-                "N.B Please confirm supplier compliance e.g Tax matters, Locality, etc. before selection.",
-              boolean: "",
-              comment: ""
-            },
-            {
-              description:
-                "Nominate at least eight (8) service providers from the CSD and list them below.",
-              boolean: "",
-              comment: "",
-              serviceProviders: []
-            },
-            {
-              description:
-                "In case of one service provider being selected, is the Emergency/Urgency justification form attached and the approval for deviation been granted by the Accounting Officer or a delegated official and reasons thereof provided? ",
-              boolean: "",
-              comment: ""
-            },
-            {
-              description:
-                "In case of sole supplier, Sole Supplier Justification form must be attached and be approved by the Accounting Officer.",
-              boolean: "",
-              comment: ""
-            },
-            {
-              description:
-                "If the above is verified, register the requisition and submit to acquisition management.",
-              boolean: "",
-              comment: ""
-            }
-          ],
-
-          phase4: [
-            {
-              description:
-                "Invite 5 quotations, preferably between 3 and 7 days depending on the type and urgency of service/commodity required.  Attach proof of invitation.",
-              boolean: "",
-              comment: ""
-            },
-            {
-              description:
-                "Closing, receiving and opening of quotations/ box , registration of received quotations and submission to secretariat for evaluation committee. Record Quotations received and amounts below",
-              boolean: "",
-              comment: "",
-              qoutations: [
-                {
-                  serviceProvider: "",
-                  amount: ""
-                },
-                {
-                  serviceProvider: "",
-                  amount: ""
-                },
-                {
-                  serviceProvider: "",
-                  amount: ""
-                },
-                {
-                  serviceProvider: "",
-                  amount: ""
-                },
-                {
-                  serviceProvider: "",
-                  amount: ""
-                },
-                {
-                  serviceProvider: "",
-                  amount: ""
-                }
-              ]
-            },
-            {
-              description:
-                "During evaluation ensure that the following are adhered to:",
-              boolean: "",
-              comment: ""
-            },
-            {
-              description:
-                "Register and submit the requisition to Purchase Unit for order generation",
-              boolean: "",
-              comment: ""
-            }
-          ],
           docRef: Math.round(+new Date() / 1000),
           attachments: [],
           authorSignature: "",
@@ -369,6 +342,13 @@ export default {
           signatures2: []
         }
       },
+
+      actions: [
+        { text: "For Approval", value: "approve", signLevel: 3 },
+        { text: "For Recommendation", value: "recommend", signLevel: 2 },
+        { text: "For Input", value: "input", signLevel: 1 },
+        { text: "For Attention", value: "attention", signLevel: 0 }
+      ],
 
       signature: null,
       snackbarText: "",
@@ -391,15 +371,42 @@ export default {
     }
   },
   methods: {
-    ...signatureHelpers(),
-    setRecipients(users) {
-      this.doc.recipients = users;
+
+   // sign
+    clearSignList() {
+      this.doc.body.signatures = [];
+      console.log(this.doc.body.signatures);
     },
-    setSigners(users) {
-      this.doc.body.signatures.push(users);
+
+    addSignatory() {
+      if (!this.signatory.action) {
+        this.addSignDialog = false;
+        return;
+      }
+      this.signatory.priority = this.signatory.action.signLevel;
+      this.doc.body.signatures.push(this.signatory);
+
+      //sort
+      this.doc.body.signatures.sort(function(a, b) {
+        return a.priority - b.priority;
+      });
+
+      this.addSignDialog = false;
+      this.signatory = {};
+      console.log(this.doc);
     },
+
+    clear() {
+      this.$refs.signaturePad.clearSignature();
+      this.signature = null;
+      this.doc.body.authorSignature = null;
+      console.log(this.signature);
+    },
+    saveSignature() {},
     onEnd() {
-      this.setAuthorSignature();
+      const { isEmpty, data } = this.$refs.signaturePad.saveSignature();
+      console.log("=== End ===");
+      this.doc.body.authorSignature = data;
     },
     addRow() {
       this.doc.body.tr.push({});

@@ -57,30 +57,31 @@ const _13459f50 = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _77f7fc6d = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/annualPerformancePlanQuarterlyReport/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/annualPerformancePlanQuarterlyReport/index" */))
 const _60001a38 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/anu/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/anu/index" */))
 const _1c990582 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/applicationForLeaveOfAbsence/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/applicationForLeaveOfAbsence/index" */))
-const _c70b1e94 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/ARepMobileClass/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/ARepMobileClass/index" */))
 const _177e7e5e = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/AssetDataRecording/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/AssetDataRecording/index" */))
 const _392fea9b = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/AssetMovement/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/AssetMovement/index" */))
 const _94ea2ed8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/AssetRegisterTable3/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/AssetRegisterTable3/index" */))
 const _6f26578c = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/AssetsMovement/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/AssetsMovement/index" */))
 const _78f9907a = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/attendance/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/attendance/index" */))
+const _d61fc4a8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/AuditReportOnMobileClassrooms/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/AuditReportOnMobileClassrooms/index" */))
 const _3d91ef3c = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/checklist/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/checklist/index" */))
 const _0be6c794 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/CheckListForAudit/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/CheckListForAudit/index" */))
 const _4cf8fbbd = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/checklistForSiteVisit/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/checklistForSiteVisit/index" */))
 const _5c00e3b9 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/circular/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/circular/index" */))
 const _0456e99c = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/claimFormFuel/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/claimFormFuel/index" */))
 const _f3529944 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/clearanceLetter/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/clearanceLetter/index" */))
-const _2307150c = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/CollectRedunUnserviceAssetsDU/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/CollectRedunUnserviceAssetsDU/index" */))
+const _1e98dae4 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/collectionOfRedundantOrUnserviceableAssetsByDisposalUnit/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/collectionOfRedundantOrUnserviceableAssetsByDisposalUnit/index" */))
 const _cd131f54 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/commitmentRegisterForm/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/commitmentRegisterForm/index" */))
 const _37b887fc = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Consolidated_Evaluation_Sheet/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Consolidated_Evaluation_Sheet/index" */))
 const _5ccccde5 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/DataCollectionTable1/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/DataCollectionTable1/index" */))
 const _505ea7a5 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/DiscussionandMotivationForm/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/DiscussionandMotivationForm/index" */))
-const _b997ee08 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/DisRegHeadOffice/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/DisRegHeadOffice/index" */))
+const _591cce32 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/disposalRegisterForTheHeadOffice/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/disposalRegisterForTheHeadOffice/index" */))
 const _79743be7 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/employeeSecurityAccessControl/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/employeeSecurityAccessControl/index" */))
 const _d49b8fa8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Evaluation_for_Oral_Presentation/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Evaluation_for_Oral_Presentation/index" */))
 const _3fd3adfc = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Evaluation_form_for_Technical_Exercise/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Evaluation_form_for_Technical_Exercise/index" */))
 const _49ed386a = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Evaluationreport/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Evaluationreport/index" */))
 const _d82a44d0 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/evaluationReport_ExamDistributionPoint/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/evaluationReport_ExamDistributionPoint/index" */))
 const _f6a93b96 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/evidenceForminstitutionSupportVisit/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/evidenceForminstitutionSupportVisit/index" */))
+const _758e8535 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/governmentVehiclesToBeDisposed/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/governmentVehiclesToBeDisposed/index" */))
 const _ac40cfb4 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/HandingTakingOverCertificate/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/HandingTakingOverCertificate/index" */))
 const _5a14d773 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/HandOverCertification/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/HandOverCertification/index" */))
 const _0b6c4772 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/HODPMDSCalculator/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/HODPMDSCalculator/index" */))
@@ -135,7 +136,6 @@ const _d7d97950 = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _2283cda7 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/TransportClaimTemplate/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/TransportClaimTemplate/index" */))
 const _bdc5bed2 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/treasuryAssetsNewlyBarcordedLog/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/treasuryAssetsNewlyBarcordedLog/index" */))
 const _24e340d8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/treasuryLocationControlSheet/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/treasuryLocationControlSheet/index" */))
-const _11087c29 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/VehiclesBeDisposed/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/VehiclesBeDisposed/index" */))
 const _311a4ca8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/voucherRequisition/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/voucherRequisition/index" */))
 const _18f6b152 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/weeklyProgramme/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/weeklyProgramme/index" */))
 const _043256c4 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/weeklyTravelPlan/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/weeklyTravelPlan/index" */))
@@ -152,20 +152,24 @@ const _47b63280 = () => interopDefault(import('../pages/previews/_id/AssetDataRe
 const _dd8fd1d8 = () => interopDefault(import('../pages/previews/_id/AssetMovement/_loaction.vue' /* webpackChunkName: "pages/previews/_id/AssetMovement/_loaction" */))
 const _7976f289 = () => interopDefault(import('../pages/previews/_id/AssetRegisterTable3/_location.vue' /* webpackChunkName: "pages/previews/_id/AssetRegisterTable3/_location" */))
 const _76671d72 = () => interopDefault(import('../pages/previews/_id/attendance/_location.vue' /* webpackChunkName: "pages/previews/_id/attendance/_location" */))
+const _5e7bd8b6 = () => interopDefault(import('../pages/previews/_id/AuditReportOnMobileClassrooms/_loaction.vue' /* webpackChunkName: "pages/previews/_id/AuditReportOnMobileClassrooms/_loaction" */))
 const _550021d2 = () => interopDefault(import('../pages/previews/_id/checklist/_location.vue' /* webpackChunkName: "pages/previews/_id/checklist/_location" */))
 const _a833af1c = () => interopDefault(import('../pages/previews/_id/checklistForSiteVisit/_location.vue' /* webpackChunkName: "pages/previews/_id/checklistForSiteVisit/_location" */))
 const _b86094b0 = () => interopDefault(import('../pages/previews/_id/circular/_location.vue' /* webpackChunkName: "pages/previews/_id/circular/_location" */))
 const _0a32cf32 = () => interopDefault(import('../pages/previews/_id/claimFormFuel/_location.vue' /* webpackChunkName: "pages/previews/_id/claimFormFuel/_location" */))
 const _696a19d3 = () => interopDefault(import('../pages/previews/_id/clearanceLetter/_location.vue' /* webpackChunkName: "pages/previews/_id/clearanceLetter/_location" */))
+const _653c2d17 = () => interopDefault(import('../pages/previews/_id/collectionOfRedundantOrUnserviceableAssetsByDisposalUnit/_loaction.vue' /* webpackChunkName: "pages/previews/_id/collectionOfRedundantOrUnserviceableAssetsByDisposalUnit/_loaction" */))
 const _24afd905 = () => interopDefault(import('../pages/previews/_id/commitmentRegisterForm/_location.vue' /* webpackChunkName: "pages/previews/_id/commitmentRegisterForm/_location" */))
 const _69b6da31 = () => interopDefault(import('../pages/previews/_id/Consolidated_Evaluation_Sheet/_location.vue' /* webpackChunkName: "pages/previews/_id/Consolidated_Evaluation_Sheet/_location" */))
 const _31586358 = () => interopDefault(import('../pages/previews/_id/DataCollectionTable1/_location.vue' /* webpackChunkName: "pages/previews/_id/DataCollectionTable1/_location" */))
 const _489543cc = () => interopDefault(import('../pages/previews/_id/DiscussionandMotivationForm/_location.vue' /* webpackChunkName: "pages/previews/_id/DiscussionandMotivationForm/_location" */))
+const _8dc176be = () => interopDefault(import('../pages/previews/_id/disposalRegisterForTheHeadOffice/_location.vue' /* webpackChunkName: "pages/previews/_id/disposalRegisterForTheHeadOffice/_location" */))
 const _3d50a09c = () => interopDefault(import('../pages/previews/_id/employeeSecurityAccessControl/_location.vue' /* webpackChunkName: "pages/previews/_id/employeeSecurityAccessControl/_location" */))
 const _789b219b = () => interopDefault(import('../pages/previews/_id/Evaluation_for_Oral_Presentation/_location.vue' /* webpackChunkName: "pages/previews/_id/Evaluation_for_Oral_Presentation/_location" */))
 const _1690e1b1 = () => interopDefault(import('../pages/previews/_id/Evaluation_form_for_Technical_Exercise/_location.vue' /* webpackChunkName: "pages/previews/_id/Evaluation_form_for_Technical_Exercise/_location" */))
 const _4f9874d9 = () => interopDefault(import('../pages/previews/_id/evaluationReport/_location.vue' /* webpackChunkName: "pages/previews/_id/evaluationReport/_location" */))
 const _ccf024ac = () => interopDefault(import('../pages/previews/_id/evidenceForminstitutionSupportVisit/_location.vue' /* webpackChunkName: "pages/previews/_id/evidenceForminstitutionSupportVisit/_location" */))
+const _1090a964 = () => interopDefault(import('../pages/previews/_id/governmentVehiclesToBeDisposed/_location.vue' /* webpackChunkName: "pages/previews/_id/governmentVehiclesToBeDisposed/_location" */))
 const _27669315 = () => interopDefault(import('../pages/previews/_id/HandingTakingOverCertificate/_location.vue' /* webpackChunkName: "pages/previews/_id/HandingTakingOverCertificate/_location" */))
 const _68bd8db0 = () => interopDefault(import('../pages/previews/_id/HandOverCertification/_location.vue' /* webpackChunkName: "pages/previews/_id/HandOverCertification/_location" */))
 const _182f257c = () => interopDefault(import('../pages/previews/_id/HODPMDSCalculator/_location.vue' /* webpackChunkName: "pages/previews/_id/HODPMDSCalculator/_location" */))
@@ -505,10 +509,6 @@ export function createRouter() {
       component: _1c990582,
       name: "creation-fileplan-subseries-templates-ref-applicationForLeaveOfAbsence"
     }, {
-      path: "/creation/:fileplan?/subseries/templates/:ref?/ARepMobileClass",
-      component: _c70b1e94,
-      name: "creation-fileplan-subseries-templates-ref-ARepMobileClass"
-    }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/AssetDataRecording",
       component: _177e7e5e,
       name: "creation-fileplan-subseries-templates-ref-AssetDataRecording"
@@ -528,6 +528,10 @@ export function createRouter() {
       path: "/creation/:fileplan?/subseries/templates/:ref?/attendance",
       component: _78f9907a,
       name: "creation-fileplan-subseries-templates-ref-attendance"
+    }, {
+      path: "/creation/:fileplan?/subseries/templates/:ref?/AuditReportOnMobileClassrooms",
+      component: _d61fc4a8,
+      name: "creation-fileplan-subseries-templates-ref-AuditReportOnMobileClassrooms"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/checklist",
       component: _3d91ef3c,
@@ -553,9 +557,9 @@ export function createRouter() {
       component: _f3529944,
       name: "creation-fileplan-subseries-templates-ref-clearanceLetter"
     }, {
-      path: "/creation/:fileplan?/subseries/templates/:ref?/CollectRedunUnserviceAssetsDU",
-      component: _2307150c,
-      name: "creation-fileplan-subseries-templates-ref-CollectRedunUnserviceAssetsDU"
+      path: "/creation/:fileplan?/subseries/templates/:ref?/collectionOfRedundantOrUnserviceableAssetsByDisposalUnit",
+      component: _1e98dae4,
+      name: "creation-fileplan-subseries-templates-ref-collectionOfRedundantOrUnserviceableAssetsByDisposalUnit"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/commitmentRegisterForm",
       component: _cd131f54,
@@ -573,9 +577,9 @@ export function createRouter() {
       component: _505ea7a5,
       name: "creation-fileplan-subseries-templates-ref-DiscussionandMotivationForm"
     }, {
-      path: "/creation/:fileplan?/subseries/templates/:ref?/DisRegHeadOffice",
-      component: _b997ee08,
-      name: "creation-fileplan-subseries-templates-ref-DisRegHeadOffice"
+      path: "/creation/:fileplan?/subseries/templates/:ref?/disposalRegisterForTheHeadOffice",
+      component: _591cce32,
+      name: "creation-fileplan-subseries-templates-ref-disposalRegisterForTheHeadOffice"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/employeeSecurityAccessControl",
       component: _79743be7,
@@ -600,6 +604,10 @@ export function createRouter() {
       path: "/creation/:fileplan?/subseries/templates/:ref?/evidenceForminstitutionSupportVisit",
       component: _f6a93b96,
       name: "creation-fileplan-subseries-templates-ref-evidenceForminstitutionSupportVisit"
+    }, {
+      path: "/creation/:fileplan?/subseries/templates/:ref?/governmentVehiclesToBeDisposed",
+      component: _758e8535,
+      name: "creation-fileplan-subseries-templates-ref-governmentVehiclesToBeDisposed"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/HandingTakingOverCertificate",
       component: _ac40cfb4,
@@ -817,10 +825,6 @@ export function createRouter() {
       component: _24e340d8,
       name: "creation-fileplan-subseries-templates-ref-treasuryLocationControlSheet"
     }, {
-      path: "/creation/:fileplan?/subseries/templates/:ref?/VehiclesBeDisposed",
-      component: _11087c29,
-      name: "creation-fileplan-subseries-templates-ref-VehiclesBeDisposed"
-    }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/voucherRequisition",
       component: _311a4ca8,
       name: "creation-fileplan-subseries-templates-ref-voucherRequisition"
@@ -885,6 +889,10 @@ export function createRouter() {
       component: _76671d72,
       name: "previews-id-attendance-location"
     }, {
+      path: "/previews/:id?/AuditReportOnMobileClassrooms/:loaction?",
+      component: _5e7bd8b6,
+      name: "previews-id-AuditReportOnMobileClassrooms-loaction"
+    }, {
       path: "/previews/:id?/checklist/:location?",
       component: _550021d2,
       name: "previews-id-checklist-location"
@@ -905,6 +913,10 @@ export function createRouter() {
       component: _696a19d3,
       name: "previews-id-clearanceLetter-location"
     }, {
+      path: "/previews/:id?/collectionOfRedundantOrUnserviceableAssetsByDisposalUnit/:loaction?",
+      component: _653c2d17,
+      name: "previews-id-collectionOfRedundantOrUnserviceableAssetsByDisposalUnit-loaction"
+    }, {
       path: "/previews/:id?/commitmentRegisterForm/:location?",
       component: _24afd905,
       name: "previews-id-commitmentRegisterForm-location"
@@ -920,6 +932,10 @@ export function createRouter() {
       path: "/previews/:id?/DiscussionandMotivationForm/:location?",
       component: _489543cc,
       name: "previews-id-DiscussionandMotivationForm-location"
+    }, {
+      path: "/previews/:id?/disposalRegisterForTheHeadOffice/:location?",
+      component: _8dc176be,
+      name: "previews-id-disposalRegisterForTheHeadOffice-location"
     }, {
       path: "/previews/:id?/employeeSecurityAccessControl/:location?",
       component: _3d50a09c,
@@ -940,6 +956,10 @@ export function createRouter() {
       path: "/previews/:id?/evidenceForminstitutionSupportVisit/:location?",
       component: _ccf024ac,
       name: "previews-id-evidenceForminstitutionSupportVisit-location"
+    }, {
+      path: "/previews/:id?/governmentVehiclesToBeDisposed/:location?",
+      component: _1090a964,
+      name: "previews-id-governmentVehiclesToBeDisposed-location"
     }, {
       path: "/previews/:id?/HandingTakingOverCertificate/:location?",
       component: _27669315,

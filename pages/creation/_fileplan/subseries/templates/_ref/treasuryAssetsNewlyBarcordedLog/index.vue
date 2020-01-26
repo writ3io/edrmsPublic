@@ -329,6 +329,12 @@ export default {
       const { isEmpty, data } = this.$refs.signaturePad.saveSignature();
       console.log("=== End ===");
       this.doc.body.authorSignature = data;
+    },
+    addRow() {
+      this.doc.body.tr.push({});
+    },
+    removeRow(index) {
+      this.doc.body.tr.splice(index, 1);
     }
   },
 
