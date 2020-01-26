@@ -83,7 +83,8 @@
                   </v-flex>
 
                   <v-flex xs12>
-                    <strong>Employment Type : </strong>{{doc.body.items}}
+                    <!-- <v-select :items="doc.body.items" label="Employment Type:" v-model="doc.body.e1" outlined></v-select> -->
+                    <!-- <strong>Employment Type : </strong>{{doc.body.items}} -->
                   </v-flex>
                  
                   
@@ -164,37 +165,36 @@
 
                     <template v-slot:items="props" v-slot:no-data>
                      
-                      <td class="px-0 py-0">
+                      <td>
                         
-                        <v-text-field v-model="props.item.blockA" single-line solo flat placeholder></v-text-field>
+                        {{props.item.blockA}}
                       </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockB" single-line solo flat placeholder></v-text-field>
-                      </td>
-
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockC" single-line solo flat placeholder></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockD" single-line solo flat placeholder></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockE" single-line solo flat placeholder></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockF" single-line solo flat placeholder></v-text-field>
+                      <td>
+                        {{props.item.blockB}}
                       </td>
 
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockG" single-line solo flat placeholder></v-text-field>
+                      <td>
+                        {{props.item.blockC}}
                       </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockH" single-line solo flat placeholder></v-text-field>
+                      <td>
+                        {{props.item.blockD}}
                       </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockI" single-line solo flat placeholder></v-text-field>
+                      <td>
+                        {{props.item.blockE}}
                       </td>
-                      <td class="px-0 py-0">
+                      <td>
+                       {{props.item.blockF}}</td>
+
+                      <td >
+                        {{props.item.blockG}}
+                      </td>
+                      <td >
+                        {{props.item.blockH}}
+                      </td>
+                      <td>
+                        {{props.item.blockI}}
+                      </td>
+                      <td >
                         <v-text-field
                           v-model="props.item.wareHouse"
                           single-line
@@ -204,7 +204,7 @@
                         ></v-text-field>
                       </td>
 
-                      <td class="px-0 py-0">
+                      <td >
                         <v-text-field
                           v-model="props.item.examStrongRoom"
                           single-line
@@ -243,95 +243,38 @@
 
                     <template v-slot:items="props" v-slot:no-data>
                      
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.capturingExamHall"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
+                      <td>
+                       {{props.item.capturingExamHall}}
                       </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.hall" single-line solo flat placeholder></v-text-field>
+                      <td>
+                        {{props.item.hall}}
+                      </td>
+
+                      <td>
+                        {{props.item.controlRoom}}
+                      <td>
+                        {{props.item.ITServerRoom}}
+                      </td>
+                      <td>
+                        {{props.item.MECMainDoor}}
+                      <td>
+                        {{props.item.HODMainDoor}}
+                      </td>
+
+                      <td>
+                        {{props.item.mainCashierBlockD}}
+                      </td>
+                      <td>
+                        {{props.item.cashierBlockA}}
+                      </td>
+                      <td >
+                       {{props.item.SCM}}
+                      <td >
+                        {{props.item.registry}}
                       </td>
 
                       <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.controlRoom"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.ITServerRoom"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.MECMainDoor"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.HODMainDoor"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.mainCashierBlockD"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.cashierBlockA"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.SCM" single-line solo flat placeholder></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.registry"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.anyOther"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
+                        {{props.item.anyOther}}
                       </td>
                       
                     </template>
@@ -376,7 +319,7 @@
                 </v-flex>
 
                 <v-flex xs12 lg6>
-                  <v-select :items="doc.body.items1" label="Applicant Photo Captured:" outlined></v-select>
+                  <!-- <v-select :items="doc.body.items1" v-model="doc.body.e2" label="Applicant Photo Captured:" outlined></v-select> -->
                 </v-flex>
 
                 <br />

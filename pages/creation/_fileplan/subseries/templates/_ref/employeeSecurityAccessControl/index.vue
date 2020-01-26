@@ -83,7 +83,7 @@
                   </v-flex>
 
                   <v-flex xs12 lg6>
-                    <v-select :items="doc.body.items" label="Employment Type:" v-model="value" outlined></v-select>
+                    <!-- <v-select :items="doc.body.items" label="Employment Type:" v-model="doc.body.e1" outlined></v-select> -->
                   </v-flex>
                  
                   
@@ -421,14 +421,15 @@
                 </v-layout>
 
                 <v-flex xs12>
-                  <strong>Card number issued :</strong> {{doc.body.cardNumber}}
+                  <v-text-field v-model="doc.body.cardNumber" label="Card number issued: "></v-text-field>
                 </v-flex>
                 <v-flex xs12>
-                  <strong>Card issued by :</strong> {{doc.body.cardIssued}}
+                  <v-text-field v-model="doc.body.cardIssued" label="Card issued by: "></v-text-field>
                 </v-flex>
 
                 <v-flex xs12 lg6>
-                  <v-select :items="doc.body.items1" label="Applicant Photo Captured:" outlined></v-select>
+                 
+                  <!-- <v-select :items="doc.body.items1" v-model="doc.body.e2" label="Applicant Photo Captured:" outlined></v-select> -->
                 </v-flex>
 
                 <br />
@@ -697,6 +698,8 @@ export default {
           cardNumber:"",
           cardIssued:"",
           items: ["Permanent", "Contract"],
+          e1:"",
+          e2:"",
           items1: ["Yes", "No"],
 
           phase1: [
