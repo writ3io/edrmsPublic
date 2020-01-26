@@ -1,4 +1,54 @@
 <template>
+<div id="weeklyProgramme">
+<v-dialog v-model="addSignDialog" persistent max-width="680px">
+      <v-card>
+        <v-card-title>
+          <span class="headline">Forward To:</span>
+        </v-card-title>
+        <v-card-text>
+          <v-container grid-list-md>
+            <v-layout wrap justify-space-between>
+              <v-flex xs12 sm7>
+                <v-combobox
+                  v-model="signatory"
+                  :items="users"
+                  label="Choose Signatory"
+                  chips
+                  return-object
+                  item-text="SurName"
+                  item-value="EmailAdress"
+                >
+                  <template slot="selection" slot-scope="data">
+                    <v-chip
+                      :key="JSON.stringify(data.item)"
+                      :selected="data.item.selected"
+                      item-value="data.item.value"
+                      :disabled="data.disabled"
+                      class="v-chip--select-multi"
+                      @input="data.parent.selectItem(data.item)"
+                    >{{ data.item.SurName }}</v-chip>
+                  </template>
+                </v-combobox>
+              </v-flex>
+              <v-flex xs12 sm4>
+                <v-select
+                  :items="actions"
+                  v-model="signatory.action"
+                  item-text="text"
+                  return-object
+                  label="Action"
+                ></v-select>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="blue darken-1" flat @click="addSignDialog = false">Close</v-btn>
+          <v-btn color="blue darken-1" flat :loading="loading" @click="addSignatory">Add</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   <v-container grid-list-md>
     <v-layout row wrap justify-space-between>
       <v-flex xs3>
@@ -24,39 +74,42 @@
                 
               <v-card-text>
               <v-flex xs12>
-                  <v-text-field v-model="doc.body.initialsSurname" label="OFFICIAL HANDING OVER: "></v-text-field>
+                  <v-text-field v-model="doc.body.officialHandingOver" label="OFFICIAL HANDING OVER: "></v-text-field>
                   </v-flex>
               
               <v-flex xs12>
-                  <v-text-field v-model="doc.body.initialsSurname" label="LOCATION OF ASSETS: "></v-text-field>
+                  <v-text-field v-model="doc.body.locationOfAssets" label="LOCATION OF ASSETS: "></v-text-field>
                   </v-flex>
 
                   <v-flex xs12>
-                  <v-text-field v-model="doc.body.initialsSurname" label="ASSET DESCRIPTION: "></v-text-field>
+                  <v-text-field v-model="doc.body.assetDescription" label="ASSET DESCRIPTION: "></v-text-field>
                   </v-flex>
               </v-card-text> 
 
               <v-card-title>
                 <v-flex xs12 sm6>
-                  <v-text-field v-model="doc.body.initialsSurname" label="ASSET NUMBER: "></v-text-field>
+                  <v-text-field v-model="doc.body.assetNumber" label="ASSET NUMBER: "></v-text-field>
                   </v-flex>
 
                   <v-flex xs12 sm6>
-                  <v-text-field v-model="doc.body.initialsSurname" label="SERIAL NUMBER: "></v-text-field>
+                  <v-text-field v-model="doc.body.serialNumber" label="SERIAL NUMBER: "></v-text-field>
                   </v-flex>
 
                   
                <v-flex xs12>
-                  <v-text-field v-model="doc.body.initialsSurname" label="OFFICIAL TAKING OVER: "></v-text-field>
+                  <v-text-field v-model="doc.body.official" label="OFFICIAL TAKING OVER: "></v-text-field>
                   </v-flex>
 
                   <v-flex xs12>
-                  <v-text-field v-model="doc.body.initialsSurname" label="NEW LOCATION OF ASSET: "></v-text-field>
+                  <v-text-field v-model="doc.body.locationOfAssets1" label="NEW LOCATION OF ASSET: "></v-text-field>
                   </v-flex>
 
                   <v-flex xs12>
-                  <v-text-field v-model="doc.body.initialsSurname" label="REASON FOR HAND OVER: "></v-text-field>
+                  <v-text-field v-model="doc.body.reasonForHandOver" label="REASON FOR HAND OVER: "></v-text-field>
                   </v-flex>
+
+
+                  
                   
                   <p><strong> terms of the provisions of s42 of the PFMA(ACT 1,1999) we hereby certify that we have completed 
                   the verification of all Government Property on hand in accordance with balances of the ledger, or other records</strong></p>
@@ -100,10 +153,10 @@
             </v-flex>
 
             <v-flex v-for="(sign, index) in doc.body.signatures" :key="index" xs12>
-              <v-card-text class="black--text ma-0 font-weight-bold text-sm-left">
-                <h1>{{sign.action.text}}</h1>
+              <v-card-text >
+                <h2 class="font-weight-medium">{{sign.action.text}}</h2>
                 <hr />
-                <h2>{{sign.SurName}}</h2>
+                <h2 class="font-weight-regular">{{sign.SurName}}</h2>
                 <h4>
                   {{sign.Designation}} |
                   <span class="grey--text">{{sign.Department}}</span>
@@ -127,6 +180,7 @@
       </v-flex>
     </v-layout>
   </v-container>
+</div>
 </template>
 
 <script>
@@ -144,7 +198,7 @@ import { createDoc } from "~/services/DocsService";
 Vue.use(VueSignaturePad);
 Vue.use(Editor);
 export default {
-  name: "Checklist",
+  name: "HandingTakingOverCertificate",
   components: {
     editor: Editor,
     Toolbar,
@@ -190,10 +244,17 @@ export default {
         // }
       ],
 
+       series: {},
+      saveDialog: false,
+      attachments: [],
+      isFormValid: true,
+      status: "",
       iSign: false,
+      addSignDialog: false,
+      signatory: {},
       doc: {
         ref: this.$route.params.ref,
-        template: "checklist",
+        template: "HandingTakingOverCertificate",
         author: store.state.user,
         formValid: true,
         docRef: Math.round(+new Date() / 1000),
@@ -204,16 +265,16 @@ export default {
           date2: new Date().toISOString().substr(0, 10),
           date3: new Date().toISOString().substr(0, 10),
           date4: new Date().toISOString().substr(0, 10),
+          officialHandingOver:"",
+          locationOfAssets:"",
+          assetDescription:"",
+          assetNumber:"",
+          serialNumber:"",
+          official:"",
+          locationOfAssets1:"",
+          reasonForHandOver:"",
           enderUser: {},
           initialsSurname:"",
-
-          // days: [
-          //   { dayOfWeek: "Monday", value: "", width: "10%" },
-          //   { dayOfWeek: "Tuesday", value: "" },
-          //   { dayOfWeek: "Wednesday", value: "" },
-          //   { dayOfWeek: "Thursday", value: "" },
-          //   { dayOfWeek: "Friday", value: "" }
-          // ],
           phase1: [
             {
               description: "Is there a register to record in/ outgoing classified information?",
@@ -364,6 +425,13 @@ export default {
         }
       },
 
+      actions: [
+        { text: "For Approval", value: "approve", signLevel: 3 },
+        { text: "For Recommendation", value: "recommend", signLevel: 2 },
+        { text: "For Input", value: "input", signLevel: 1 },
+        { text: "For Attention", value: "attention", signLevel: 0 }
+      ],
+
       signature: null,
       snackbarText: "",
       snackbar: false,
@@ -385,15 +453,42 @@ export default {
     }
   },
   methods: {
-    ...signatureHelpers(),
-    setRecipients(users) {
-      this.doc.recipients = users;
+
+   // sign
+    clearSignList() {
+      this.doc.body.signatures = [];
+      console.log(this.doc.body.signatures);
     },
-    setSigners(users) {
-      this.doc.body.signatures.push(users);
+
+    addSignatory() {
+      if (!this.signatory.action) {
+        this.addSignDialog = false;
+        return;
+      }
+      this.signatory.priority = this.signatory.action.signLevel;
+      this.doc.body.signatures.push(this.signatory);
+
+      //sort
+      this.doc.body.signatures.sort(function(a, b) {
+        return a.priority - b.priority;
+      });
+
+      this.addSignDialog = false;
+      this.signatory = {};
+      console.log(this.doc);
     },
+
+    clear() {
+      this.$refs.signaturePad.clearSignature();
+      this.signature = null;
+      this.doc.body.authorSignature = null;
+      console.log(this.signature);
+    },
+    saveSignature() {},
     onEnd() {
-      this.setAuthorSignature();
+      const { isEmpty, data } = this.$refs.signaturePad.saveSignature();
+      console.log("=== End ===");
+      this.doc.body.authorSignature = data;
     }
   },
 

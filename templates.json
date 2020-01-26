@@ -530,16 +530,7 @@
     }
     ],
 
-    "6-1-1-2": [{
-
-        "ref": "6-1-1-2",
-
-        "name": "HandingTakingOverCert",
-
-        "type": "pdf"
-
-
-    },
+    "6-1-1-2": [
     {
 
         "ref": "6-1-1-2",
@@ -564,7 +555,7 @@
 
         "ref": "6-1-1-2",
 
-        "name": "TABarcordedLog",
+        "name": "HandOverCertification",
 
         "type": "pdf"
 
@@ -573,7 +564,17 @@
 
         "ref": "6-1-1-2",
 
-        "name": "HandOverCert",
+        "name": "HandingTakingOverCertificate",
+
+        "type": "pdf"
+
+
+    },
+    {
+
+        "ref": "6-1-1-2",
+
+        "name": "treasuryAssetsNewlyBarcordedLog",
 
         "type": "pdf"
 
