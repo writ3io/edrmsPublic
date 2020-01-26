@@ -128,13 +128,13 @@ const _41fcf78e = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _3aeab892 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/standardOperatingProceduresApp/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/standardOperatingProceduresApp/index" */))
 const _5effc88f = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/summaryOfKillometersTravelled/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/summaryOfKillometersTravelled/index" */))
 const _1ca90371 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/supplychainmanagement/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/supplychainmanagement/index" */))
-const _0bd7afbe = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/TABehalfOfSchools/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/TABehalfOfSchools/index" */))
 const _121ccfa1 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/temporaryIncapacityLeave/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/temporaryIncapacityLeave/index" */))
 const _1ad95932 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Term3SchoolRM/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Term3SchoolRM/index" */))
-const _7a4b4bc7 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/TLocationControlSheet/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/TLocationControlSheet/index" */))
+const _cb83b502 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/transferOfAssetsBoughtOnBehalfOfSchools/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/transferOfAssetsBoughtOnBehalfOfSchools/index" */))
 const _d7d97950 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/transportClaimForms/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/transportClaimForms/index" */))
 const _2283cda7 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/TransportClaimTemplate/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/TransportClaimTemplate/index" */))
 const _bdc5bed2 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/treasuryAssetsNewlyBarcordedLog/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/treasuryAssetsNewlyBarcordedLog/index" */))
+const _24e340d8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/treasuryLocationControlSheet/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/treasuryLocationControlSheet/index" */))
 const _11087c29 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/VehiclesBeDisposed/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/VehiclesBeDisposed/index" */))
 const _311a4ca8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/voucherRequisition/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/voucherRequisition/index" */))
 const _18f6b152 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/weeklyProgramme/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/weeklyProgramme/index" */))
@@ -200,9 +200,11 @@ const _080d846e = () => interopDefault(import('../pages/previews/_id/SSAVettingR
 const _4d75b6e6 = () => interopDefault(import('../pages/previews/_id/standardOperatingProceduresApp/_location.vue' /* webpackChunkName: "pages/previews/_id/standardOperatingProceduresApp/_location" */))
 const _23759944 = () => interopDefault(import('../pages/previews/_id/summaryOfKillometersTravelled/_location.vue' /* webpackChunkName: "pages/previews/_id/summaryOfKillometersTravelled/_location" */))
 const _0aab7390 = () => interopDefault(import('../pages/previews/_id/temporaryIncapacityLeave/_location.vue' /* webpackChunkName: "pages/previews/_id/temporaryIncapacityLeave/_location" */))
+const _36adea74 = () => interopDefault(import('../pages/previews/_id/transferOfAssetsBoughtOnBehalfOfSchools/_location.vue' /* webpackChunkName: "pages/previews/_id/transferOfAssetsBoughtOnBehalfOfSchools/_location" */))
 const _59e76966 = () => interopDefault(import('../pages/previews/_id/transportClaimForms/_location.vue' /* webpackChunkName: "pages/previews/_id/transportClaimForms/_location" */))
 const _fb87b454 = () => interopDefault(import('../pages/previews/_id/TransportClaimTemplate/_location.vue' /* webpackChunkName: "pages/previews/_id/TransportClaimTemplate/_location" */))
 const _4c7a7c8c = () => interopDefault(import('../pages/previews/_id/treasuryAssetsNewlyBarcordedLog/_location.vue' /* webpackChunkName: "pages/previews/_id/treasuryAssetsNewlyBarcordedLog/_location" */))
+const _433018fa = () => interopDefault(import('../pages/previews/_id/treasuryLocationControlSheet/_location.vue' /* webpackChunkName: "pages/previews/_id/treasuryLocationControlSheet/_location" */))
 const _33c92d68 = () => interopDefault(import('../pages/previews/_id/weeklyProgramme/_location.vue' /* webpackChunkName: "pages/previews/_id/weeklyProgramme/_location" */))
 const _5233a1e6 = () => interopDefault(import('../pages/previews/_id/weeklyTravelPlan/_location.vue' /* webpackChunkName: "pages/previews/_id/weeklyTravelPlan/_location" */))
 const _47b7b1ef = () => interopDefault(import('../pages/usage/_fileplan/_id/index.vue' /* webpackChunkName: "pages/usage/_fileplan/_id/index" */))
@@ -787,10 +789,6 @@ export function createRouter() {
       component: _1ca90371,
       name: "creation-fileplan-subseries-templates-ref-supplychainmanagement"
     }, {
-      path: "/creation/:fileplan?/subseries/templates/:ref?/TABehalfOfSchools",
-      component: _0bd7afbe,
-      name: "creation-fileplan-subseries-templates-ref-TABehalfOfSchools"
-    }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/temporaryIncapacityLeave",
       component: _121ccfa1,
       name: "creation-fileplan-subseries-templates-ref-temporaryIncapacityLeave"
@@ -799,9 +797,9 @@ export function createRouter() {
       component: _1ad95932,
       name: "creation-fileplan-subseries-templates-ref-Term3SchoolRM"
     }, {
-      path: "/creation/:fileplan?/subseries/templates/:ref?/TLocationControlSheet",
-      component: _7a4b4bc7,
-      name: "creation-fileplan-subseries-templates-ref-TLocationControlSheet"
+      path: "/creation/:fileplan?/subseries/templates/:ref?/transferOfAssetsBoughtOnBehalfOfSchools",
+      component: _cb83b502,
+      name: "creation-fileplan-subseries-templates-ref-transferOfAssetsBoughtOnBehalfOfSchools"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/transportClaimForms",
       component: _d7d97950,
@@ -814,6 +812,10 @@ export function createRouter() {
       path: "/creation/:fileplan?/subseries/templates/:ref?/treasuryAssetsNewlyBarcordedLog",
       component: _bdc5bed2,
       name: "creation-fileplan-subseries-templates-ref-treasuryAssetsNewlyBarcordedLog"
+    }, {
+      path: "/creation/:fileplan?/subseries/templates/:ref?/treasuryLocationControlSheet",
+      component: _24e340d8,
+      name: "creation-fileplan-subseries-templates-ref-treasuryLocationControlSheet"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/VehiclesBeDisposed",
       component: _11087c29,
@@ -1075,6 +1077,10 @@ export function createRouter() {
       component: _0aab7390,
       name: "previews-id-temporaryIncapacityLeave-location"
     }, {
+      path: "/previews/:id?/transferOfAssetsBoughtOnBehalfOfSchools/:location?",
+      component: _36adea74,
+      name: "previews-id-transferOfAssetsBoughtOnBehalfOfSchools-location"
+    }, {
       path: "/previews/:id?/transportClaimForms/:location?",
       component: _59e76966,
       name: "previews-id-transportClaimForms-location"
@@ -1086,6 +1092,10 @@ export function createRouter() {
       path: "/previews/:id?/treasuryAssetsNewlyBarcordedLog/:location?",
       component: _4c7a7c8c,
       name: "previews-id-treasuryAssetsNewlyBarcordedLog-location"
+    }, {
+      path: "/previews/:id?/treasuryLocationControlSheet/:location?",
+      component: _433018fa,
+      name: "previews-id-treasuryLocationControlSheet-location"
     }, {
       path: "/previews/:id?/weeklyProgramme/:location?",
       component: _33c92d68,

@@ -1,4 +1,54 @@
 <template>
+<div id="treasuryLocationControlSheet">
+<v-dialog v-model="addSignDialog" persistent max-width="680px">
+      <v-card>
+        <v-card-title>
+          <span class="headline">Forward To:</span>
+        </v-card-title>
+        <v-card-text>
+          <v-container grid-list-md>
+            <v-layout wrap justify-space-between>
+              <v-flex xs12 sm7>
+                <v-combobox
+                  v-model="signatory"
+                  :items="users"
+                  label="Choose Signatory"
+                  chips
+                  return-object
+                  item-text="SurName"
+                  item-value="EmailAdress"
+                >
+                  <template slot="selection" slot-scope="data">
+                    <v-chip
+                      :key="JSON.stringify(data.item)"
+                      :selected="data.item.selected"
+                      item-value="data.item.value"
+                      :disabled="data.disabled"
+                      class="v-chip--select-multi"
+                      @input="data.parent.selectItem(data.item)"
+                    >{{ data.item.SurName }}</v-chip>
+                  </template>
+                </v-combobox>
+              </v-flex>
+              <v-flex xs12 sm4>
+                <v-select
+                  :items="actions"
+                  v-model="signatory.action"
+                  item-text="text"
+                  return-object
+                  label="Action"
+                ></v-select>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="blue darken-1" flat @click="addSignDialog = false">Close</v-btn>
+          <v-btn color="blue darken-1" flat :loading="loading" @click="addSignatory">Add</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   <v-container grid-list-md>
     <v-layout justify-space-between>
       <v-flex xs3>
@@ -10,31 +60,29 @@
       <v-flex xs9>
         <v-layout wrap>
           <v-flex xs12>
-            <h3 class="text-xs-center">TRANSFER OF ASSETS BOUGHT ON BEHALF OF SCHOOLS</h3>
+            <h3 class="text-xs-center">LIMPOPO PROVINCIAL LOCATION CONTROL SHEET</h3>
             
             <br />
             <v-layout wrap justify-right>
-                <v-flex xs12>
-                <v-text-field v-model="doc.body.branch" label="NAME OF INSTITUTION / DISTRICT:"></v-text-field>
+              <v-flex xs12>
+                <v-text-field v-model="doc.body.name" label="NAME:"></v-text-field>
               </v-flex>
               <v-flex xs12>
-                <v-menu transition="scale-transition" offset-y min-width="290px">
-                  <template v-slot:activator="{ on }">
-                    <v-text-field
-                      v-model="doc.body.date"
-                      label="FINANCIAL YEAR: "
-                      readonly
-                      v-on="on"
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker v-model="doc.body.date" @input="menu2 = false"></v-date-picker>
-                </v-menu>
+                <v-text-field v-model="doc.body.site" label="SITE:"></v-text-field>
               </v-flex>
             </v-layout>
           </v-flex>
 
           <v-flex xs12>
-           
+            <v-alert
+                    pa-0
+                    :value="true"
+                    type="info"
+                  >
+                    Note: This document must be completed for every location where you scan assets. All fields must be completed. The comments field can be used to indicate locked location and assets that is not marked. Please keep this neat
+
+                  </v-alert>
+                  <br/>
             <v-data-table :headers="headers" :items="doc.body.tr" hide-actions class="elevation-1">
               <template slot="headerCell" slot-scope="props">
                 <v-tooltip bottom>
@@ -48,65 +96,38 @@
               <template v-slot:items="props" v-slot:no-data="">
                 <td class="text-xs-center">
                   <v-text-field
-                    v-model="props.item.descriptionOfAsset"
+                    v-model="props.item.roomBar"
                     single-line
                     solo
                     flat
-                    placeholder="Description Of Asset"
+                    placeholder="Room Bar"
                   ></v-text-field>
                 </td>
                 <td class="text-xs-right px-0 py-0">
                   <v-text-field
-                    v-model="props.item.assetNumber"
+                    v-model="props.item.dateScanned"
                     single-line
                     solo
                     flat
-                    placeholder="Asset Number"
+                    placeholder="Date Scanned"
                   ></v-text-field>
                 </td>
                 <td class="text-xs-right px-0 py-0">
                   <v-text-field
-                    v-model="props.item.serialNumber"
+                    v-model="props.item.totalAssetsScanned"
                     single-line
                     solo
                     flat
-                    placeholder="Serial Number"
+                    placeholder="Total Assets Scanned"
                   ></v-text-field>
                 </td>
                 <td class="text-xs-right px-0 py-0">
                   <v-text-field
-                    v-model="props.item.oldLocation"
+                    v-model="props.item.comment"
                     single-line
                     solo
                     flat
-                    placeholder="Old Location"
-                  ></v-text-field>
-                </td>
-                <td class="text-xs-right px-0 py-0">
-                  <v-text-field
-                    v-model="props.item.newLocation"
-                    single-line
-                    solo
-                    flat
-                    placeholder="New Location"
-                  ></v-text-field>
-                </td>
-                <td class="text-xs-right px-0 py-0">
-                  <v-text-field
-                    v-model="props.item.reasonForTransfer"
-                    single-line
-                    solo
-                    flat
-                    placeholder="Reason For Transfer"
-                  ></v-text-field>
-                </td>
-                <td class="text-xs-right px-0 py-0">
-                  <v-text-field
-                    v-model="props.item.dateTransferred"
-                    single-line
-                    solo
-                    flat
-                    placeholder="Date Transferred"
+                    placeholder="Comment"
                   ></v-text-field>
                 </td>
                  <td class="text-xs-center px-0 py-0">
@@ -159,6 +180,7 @@
       </v-flex>
     </v-layout>
   </v-container>
+</div>
 </template>
 
 <script>
@@ -172,7 +194,7 @@ import { createDoc } from "~/services/DocsService";
 
 Vue.use(VueSignaturePad);
 export default {
-  name: "OperationalPlan",
+  name: "treasuryLocationControlSheet",
   components: {
     Toolbar,
     SelectUsers
@@ -183,70 +205,59 @@ export default {
       dialog: false,
       headers: [
         {
-          text: "DESCRIPTION OF ASSET",
+          text: "ROOM BAR #",
           align: "left",
           value: ""
         },
         {
-          text: "ASSET NUMBER",
+          text: "DATE SCANNED",
           value: ""
         },
         {
-          text: "SERIAL NUMBER",
+          text: "TOTAL ASSETS SCANNED",
           value: ""
         },
         {
-          text: "OLD LOCATION",
-          value: ""
-        },
-         {
-          text: "NEW LOCATION",
+          text: "COMMENTS",
           value: ""
         },
         {
-          text: "REASON FOR TRANSFER",
-          value: ""
-        },
-        {
-          text: "DATE TRANFERRED",
-          value: ""
-        },
-        {
-          text: "ACTIONS",
+          text: "Actions",
           value: "carbs"
         }
       ],
+      series: {},
+      saveDialog: false,
+      attachments: [],
+      isFormValid: true,
+      status: "",
       iSign: false,
+      addSignDialog: false,
+      signatory: {},
       doc: {
-        ref: "2-1-4",
-        template: "OperationalPlan",
+        ref: this.$route.params.ref,
+        template: "treasuryLocationControlSheet",
         author: store.state.user,
         formValid: true,
         docRef: Math.round(+new Date() / 1000),
         body: {
           date: new Date().toISOString().substr(0, 10),
           name: "",
-          branch: "",
+          site: "",
           capacity: "",
           item: "",
           tr: [
             {
-              descriptionOfAsset: "",
-              assetNumber: "",
-              serialNumber: "",
-              oldLocation: "",
-              newLocation: "",
-              reasonForTransfer: "",
-              dateTransferred: "",
+              roomBar: "",
+              dateScanned: "",
+              totalAssetsScanned: "",
+              cooment: "",
             },
-             {
-              descriptionOfAsset: "",
-              assetNumber: "",
-              serialNumber: "",
-              oldLocation: "",
-              newLocation: "",
-              reasonForTransfer: "",
-              dateTransferred: "",
+            {
+              roomBar: "",
+              dateScanned: "",
+              totalAssetsScanned: "",
+              cooment: "",
             }
           ],
           docRef: Math.round(+new Date() / 1000),
@@ -256,6 +267,13 @@ export default {
           signatures: []
         }
       },
+
+      actions: [
+        { text: "For Approval", value: "approve", signLevel: 3 },
+        { text: "For Recommendation", value: "recommend", signLevel: 2 },
+        { text: "For Input", value: "input", signLevel: 1 },
+        { text: "For Attention", value: "attention", signLevel: 0 }
+      ],
 
       signature: null,
       snackbarText: "",
@@ -278,15 +296,42 @@ export default {
     }
   },
   methods: {
-    ...signatureHelpers(),
-    setRecipients(users) {
-      this.doc.recipients = users;
+
+   // sign
+    clearSignList() {
+      this.doc.body.signatures = [];
+      console.log(this.doc.body.signatures);
     },
-    setSigners(users) {
-      this.doc.body.signatures = users;
+
+    addSignatory() {
+      if (!this.signatory.action) {
+        this.addSignDialog = false;
+        return;
+      }
+      this.signatory.priority = this.signatory.action.signLevel;
+      this.doc.body.signatures.push(this.signatory);
+
+      //sort
+      this.doc.body.signatures.sort(function(a, b) {
+        return a.priority - b.priority;
+      });
+
+      this.addSignDialog = false;
+      this.signatory = {};
+      console.log(this.doc);
     },
+
+    clear() {
+      this.$refs.signaturePad.clearSignature();
+      this.signature = null;
+      this.doc.body.authorSignature = null;
+      console.log(this.signature);
+    },
+    saveSignature() {},
     onEnd() {
-      this.setAuthorSignature();
+      const { isEmpty, data } = this.$refs.signaturePad.saveSignature();
+      console.log("=== End ===");
+      this.doc.body.authorSignature = data;
     },
     addRow() {
       this.doc.body.tr.push({});
