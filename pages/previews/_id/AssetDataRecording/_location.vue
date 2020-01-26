@@ -42,10 +42,7 @@
                         <td class>{{ props.item.description }}</td>
 
                         <td>
-                          <v-radio-group v-model="props.item.boolean" :mandatory="false">
-                            <v-radio label="Yes" value="Yes"></v-radio>
-                            <v-radio label="No" value="No"></v-radio>
-                          </v-radio-group>
+                          {{props.item.boolean}}
                         </td>
                       </template>
 
@@ -55,7 +52,7 @@
                     </v-data-table>
 
                     <v-flex xs12 sm6>
-                      <v-text-field v-model="doc.body.folioNo" label="Folio No.: "></v-text-field>
+                      <strong>Folio No.:</strong>{{doc.body.folioNo}}
                     </v-flex>
                   </v-flex>
                 </v-layout>
@@ -83,13 +80,7 @@
                         <td class>{{ props.item.description }}</td>
 
                         <td>
-                          <v-text-field
-                            v-model="props.item.inputSpace"
-                            solo
-                            flat
-                            placeholder
-                            class="styled-input"
-                          ></v-text-field>
+                        {{props.item.inputSpace}}
                         </td>
 
                         <td class="comment-bg">{{ props.item.comment }}</td>
@@ -144,55 +135,27 @@
                   <v-flex xs12 pt-1>
                     <v-layout wrap>
                       <v-flex xs12 lg6>
-                        <p class="text-xs-left">Sign Here :</p>
-                        <VueSignaturePad
-                          class="signature-pad"
-                          max-width="480px"
-                          height="200px"
-                          ref="signaturePad"
-                          :options="{ onEnd }"
-                        />
-                        <v-btn flat color="warning" @click="clearAuthorSignature">
-                          <v-icon left>undo</v-icon>
-                          <span>Clear</span>
-                        </v-btn>
+                        <v-flex xs12 lg6>
+                          <p>Signature:</p>
+                          <img style="width:100%" :src="doc.body.authorSignature" alt />
+                        </v-flex>
                       </v-flex>
 
                       <v-flex xs12 lg3>
-                        <v-menu
-                          v-model="menu5"
-                          :close-on-content-click="false"
-                          :nudge-right="40"
-                          transition="scale-transition"
-                          offset-y
-                          min-width="290px"
-                        >
-                          <template v-slot:activator="{ on }">
-                            <v-text-field
-                              v-model="doc.body.authorSignatureDate"
-                              label="Date"
-                              readonly
-                              v-on="on"
-                            ></v-text-field>
-                          </template>
-                          <v-date-picker
-                            v-model="doc.body.authorSignatureDate"
-                            @input="menu2 = false"
-                          ></v-date-picker>
-                        </v-menu>
+                        <p>Date: {{doc.body.authorSignatureDate}}</p>
                       </v-flex>
                     </v-layout>
                   </v-flex>
 
                   <v-flex xs12 lg4>
-                    <v-text-field v-model="doc.body.parselNo" label="User Parsel No.:"></v-text-field>
+                    <strong>User Parsel No.:</strong>{{doc.body.parselNo}}
                   </v-flex>
 
                   <v-flex xs12 lg6>
-                    <v-text-field v-model="doc.body.verifierName" label="Verifier Name:"></v-text-field>
+                       <strong>Verifier Name :</strong>{{doc.body.verifierName}}
                   </v-flex>
                   <v-flex xs12 lg6>
-                    <v-text-field v-model="doc.body.captureInitial" label="Capture Initial:"></v-text-field>
+                      <strong>Capture Initial :</strong>{{doc.body.captureInitial}}
                   </v-flex>
                 </v-layout>
               </v-card-text>
@@ -208,7 +171,7 @@
 
 <script>
 import Vue from "vue";
-import Toolbar from "~/components/FormToolbar";
+import Toolbar from "~/components/PreviewToolbar";
 import SelectUsers from "~/components/SelectUsers";
 import store from "~/store/store";
 import Editor from "@tinymce/tinymce-vue";
@@ -293,159 +256,6 @@ export default {
         // }
       ],
       iSign: false,
-      doc: {
-        ref: this.$route.params.ref,
-        template: "AssetDataRecording",
-        author: store.state.user,
-        formValid: true,
-        docRef: Math.round(+new Date() / 1000),
-        body: {
-          address: "",
-          date1: new Date().toISOString().substr(0, 10),
-          date2: new Date().toISOString().substr(0, 10),
-          date3: new Date().toISOString().substr(0, 10),
-          date4: new Date().toISOString().substr(0, 10),
-          enderUser: {},
-          initialsSurname: "",
-          verifierName: "",
-          captureInitial: "",
-          parselNo: "",
-          usersignature: "",
-
-          phase1: [
-            {
-              description: " Mandatory: Class ",
-              inputSpace: "",
-              comment: "Non Residential, Computer Equipment, Furnture & Office"
-            },
-            {
-              description: "Mandatory: Asset Number",
-              inputSpace: "",
-              comment: "8 Long Number"
-            },
-            {
-              description: "Mandatory: Description",
-              inputSpace: "",
-              comment: ""
-            },
-            {
-              description: "",
-              inputSpace: "",
-              comment: ""
-            },
-            {
-              description: "Mandatory: Acquisition Date",
-              inputSpace: "",
-              comment: "yyyy/mm/dd"
-            },
-            {
-              description: "Mandatory: Supplier",
-              inputSpace: "",
-              comment: ""
-            },
-            {
-              description: "Mandatory: Payment Advice No.",
-              inputSpace: "",
-              comment: "Expenditure Generated Number"
-            },
-            {
-              description: "If Applicable: Unique Identifier ",
-              inputSpace: "",
-              comment: "Serial number/Registration Number/Project Code"
-            },
-            {
-              description: "Mandatory: Location ",
-              inputSpace: "",
-              comment: ""
-            },
-            {
-              description: "Mandatory: User ",
-              inputSpace: "",
-              comment: ""
-            },
-            {
-              description: "Mandatory: Accounting Area ",
-              inputSpace: "",
-              comment:
-                "Mopani, Capricorn, Sekhukhune, Vhemba, Waterberg, Head Office"
-            },
-            {
-              description: "Mandatory: Major/Minor ",
-              inputSpace: "",
-              comment: "Major or Minor"
-            },
-            {
-              description: "Mandatory: Institution ",
-              inputSpace: "",
-              comment: "Circuit, EMPC, School"
-            },
-            {
-              description: "Mandatory: Asset Condition ",
-              inputSpace: "",
-              comment: "Exellent, Good, Reduntant, Unserviceable"
-            },
-            {
-              description: "Mandatory: Capture Year/Purchase Year ",
-              inputSpace: "",
-              comment:
-                "2010, 2009, 2008.... 1990 etc or default to Purchase Year"
-            },
-            {
-              description: "Mandatory: Acquisition Cost ",
-              inputSpace: "",
-              comment:
-                "Payment Advice/Invoice Unit Cost(Or R1.00 for founds assets)"
-            }
-          ],
-
-          phase2: [
-            {
-              description: "MASTER",
-              boolean: "",
-              comment: ""
-            }
-          ],
-
-          phase3: [
-            {
-              description: " Mandatory: Registration No.: ",
-              inputSpace: "",
-              comment: "Number Plate Number"
-            },
-            {
-              description: "Mandatory: Class Code:",
-              inputSpace: "",
-              comment: ""
-            },
-            {
-              description: "If Applicable Engine No.:",
-              inputSpace: "",
-              comment: ""
-            },
-            {
-              description: "If Applicable Kilo: Reading:",
-              inputSpace: "",
-              comment: ""
-            },
-            {
-              description: "Mandatory: Chassis No.:",
-              inputSpace: "",
-              comment: ""
-            },
-            {
-              description: "If Applicable: Licence Renewal: ",
-              inputSpace: "",
-              comment: ""
-            }
-          ],
-
-          docRef: Math.round(+new Date() / 1000),
-          attachments: [],
-          authorSignature: "",
-          signatures: [],
-          signatures2: []
-        }
-      },
 
       signature: null,
       snackbarText: "",
@@ -453,42 +263,48 @@ export default {
       snackbarColor: "success",
       loading: false,
       min_height: 320,
-      plugins:
-        "fullscreen print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern help",
-      toolbar:
-        "fullscreen | basicDateButton | formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat"
+      plugins: "fullscreen print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern help",
+      toolbar: "fullscreen | basicDateButton | formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat"
     };
   },
   computed: {
+    doc() {
+      return store.state.doc;
+    },
     time() {
       return Date.now();
     },
-    users() {
-      return store.state.users;
+    setAction(action) {
+      return doc.action == action;
+    }
+  },
+  watch: {
+    doc(data) {
+      console.log("We have data!", data);
     }
   },
   methods: {
-    ...signatureHelpers(),
-    setRecipients(users) {
-      this.doc.recipients = users;
-    },
-    setSigners(users) {
-      this.doc.body.signatures.push(users);
+    // sign
+    clear() {
+      this.$refs.signaturePad.clearSignature();
+      let pos = this.doc.body.signatures.map(function(e) { return e.EmailAdress; }).indexOf(store.state.user.EmailAdress);    
+      let user = this.doc.body.signatures[pos]
+      user.signature = "";
+      console.log(user);
     },
     onEnd() {
-      this.setAuthorSignature();
-    },
-    addRow() {
-      this.doc.body.phase9.push({});
-    },
-    removeRow(index) {
-      this.doc.body.phase9.splice(index, 1);
+      const { isEmpty, data } = this.$refs.signaturePad.saveSignature();
+      let pos = this.doc.body.signatures.map(function(e) { return e.EmailAdress; }).indexOf(store.state.user.EmailAdress);    
+      let user = this.doc.body.signatures[pos]
+      user.signature = data;
+      user.signatureDate = Date.now();
+      console.log(user);
+      console.log("=== End ===");
     }
   },
-
-  created() {
-    console.log(store.state.users);
-    console.log(this.$route);
+  async created() {
+    console.log(this.ref, this.$route.params.id);
+    await store.dispatch("getDocById", this.$route.params.id);
   }
 };
 </script>

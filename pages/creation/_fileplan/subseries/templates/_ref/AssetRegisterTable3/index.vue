@@ -251,7 +251,7 @@ import { createDoc } from "~/services/DocsService";
 
 Vue.use(VueSignaturePad);
 export default {
-  name: "OperationalPlan",
+  name: "AssetRegisterTable3",
   components: {
     Toolbar,
     SelectUsers
@@ -342,8 +342,8 @@ export default {
       ],
       iSign: false,
       doc: {
-        ref: "2-1-4",
-        template: "OperationalPlan",
+        ref: this.$route.params.ref,
+        template: "AssetRegisterTable3",
         author: store.state.user,
         formValid: true,
         docRef: Math.round(+new Date() / 1000),

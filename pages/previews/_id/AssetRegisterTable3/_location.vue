@@ -10,15 +10,14 @@
       <v-flex xs9>
         <v-layout wrap>
           <v-flex xs12>
-            <h3 class="text-xs-center">OPERATIONAL PLAN FORM</h3>
-            <br/>
+            <h3 class="text-xs-center">ASSET REGISTER TABLE 3</h3>
+
             <v-layout wrap justify-right>
               <v-flex xs12>
-                <p>OPERATIONAL PLAN FOR YEAR ENDING: {{doc.body.date}}</p>
+               <strong>Financial Year :</strong>{{doc.body.date}}
+               
               </v-flex>
-              <v-flex xs12>
-                <p>BRANCH/SUB-BRANCH / DIRECTORATE: {{doc.body.branch}}</p>
-              </v-flex>
+              
             </v-layout>
           </v-flex>
 
@@ -34,72 +33,82 @@
               </template>
 
               <template v-slot:items="props" v-slot:no-data="">
-                <td class="text-xs-center">
-                  <p>{{props.item.strategicObjective}}</p>
+                <td>
+                  {{props.item.assetClass}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.outcome}}</p>
+                <td>
+                  {{props.item.assetNumber}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.performanceIndicator}}</p>
+                <td>
+                 {{props.item.assetName}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.baseline}}</p>
+                <td>
+                  {{props.item.deliveryDate}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.annualTarget}}</p>
+                <td>
+                  {{props.item.acquisitionDate}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.activities}}</p>
+                <td>
+                  {{props.item.supplier}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.timeFrames}}</p>
+                <td>
+                  {{props.item.claimNo}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.meansOfVerification}}</p>
+                <td>
+                  {{props.item.paymentNo}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.budget}}</p>
+                <td >
+                  {{props.item.orderNo}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.responsibility}}</p>
+                <td>
+                 {{props.item.invoice}}
+                </td>
+                <td>
+                  {{props.item.uniqueIdentifier}}
+                </td>
+                <td>
+                {{props.item.location}}
+                </td>
+                <td >
+                 {{props.item.user}}
+                </td>
+                
+                <td >
+                  {{props.item.persalNo}}
+                </td>
+
+                <td >
+                  {{props.item.acquisitionCost}}
+                </td>
+
+                <td >
+                  {{props.item.adjustment}}
+                </td>
+                <td >
+                  {{props.item.carryingValue}}
+                </td>
+                <td >
+                  {{props.item.accountingArea}}
                 </td>
                 
               </template>
+
+              <template v-slot:no-data>
+                <div :value="true" class="text-xs-center">No Form Input Fields</div>
+              </template>
+
+              
             </v-data-table>
-            <br/>
-          </v-flex>
-
-
-          <v-flex xs12 lg4>
-            <p>I {{doc.body.name}}</p>
-          </v-flex>
-          <v-flex xs12 lg4>
-            <p>In my capacity as {{doc.body.capacity}}</p>
-            
-          </v-flex>
-          <v-flex xs12>
-                <p>hereby confirm that I have verified this plan for accuracy and completeness to the best of my ability.</p>
+            <br />
           </v-flex>
 
           <v-flex xs12 pt-1>
           
 
-            <v-layout wrap>
-              <v-flex xs12 lg6>
-                <v-flex xs12 lg6>
-                  <p>Signature: </p>
-                <img style="width:100%" :src="doc.body.authorSignature" alt />
-              </v-flex>
-              </v-flex>
-
-              <v-flex xs12 lg3>
-                <p>Date: {{doc.body.authorSignatureDate}}</p>
-              </v-flex>
-
-            </v-layout>
+            
 
           </v-flex>
+
         </v-layout>
       </v-flex>
     </v-layout>
@@ -111,85 +120,97 @@ import Vue from "vue";
 import Toolbar from "~/components/PreviewToolbar";
 import SelectUsers from "~/components/SelectUsers";
 import store from "~/store/store";
+import { signatureHelpers } from "~/services/helpers";
 import VueSignaturePad from "vue-signature-pad";
-import record from "~/services/docLog";
 import { createDoc } from "~/services/DocsService";
 
 Vue.use(VueSignaturePad);
 export default {
-  name: "operationalPlan",
+  name: "AssetRegisterTable3",
   components: {
     Toolbar,
     SelectUsers
   },
   data() {
     return {
-       menu5: false,
-      menu: false,
-      //time picker
-      menu2: false,
-      modal2: false,
-      //
 
-      dialogm1: {},
       dialog: false,
-
-      TIDs : { // document Tracking Ids
-        parentId : this.$route.params.parentId,
-        docReference: this.$route.params.docRef,
-        updateValue : "meeting"
-      },
-
-      hasParentId : false,
-      
-      pendingMeetings : [],
       headers: [
         {
-          text: "STRATEGIC OBJECTIVE",
+          text: "ASSET CLASS / SUBCAT",
           align: "left",
           value: ""
         },
         {
-          text: "OUTCOME",
+          text: "ASSET NUMBER",
           value: ""
         },
         {
-          text: "PERFORMANCE INDICATOR",
+          text: "ASSET NAME / DESCRIPTION",
           value: ""
         },
         {
-          text: "BASELINE",
+          text: "DELIVERY DATE",
           value: ""
         },
         {
-          text: "ANNUAL TARGET",
+          text: "ACQUISITION DATE",
           value: ""
         },
         {
-          text: "ACTIVITIES",
+          text: "SUPPLIER",
           value: ""
         },
         {
-          text: "TIME FRAMES",
+          text: "CLAIM NO",
           value: ""
         },
         {
-          text: "MEANS OF VERIFICATION",
+          text: "PAYMENT NO",
           value: ""
         },
         {
-          text: "BUDGET",
+          text: "ORDER NO",
           value: ""
         },
         {
-          text: "RESPONSIBILITY",
+          text: "INVOICE",
+          value: ""
+        },
+        {
+          text: "UNIQUE IDENTIFIER",
+          value: ""
+        },
+        {
+          text: "LOCATION",
+          value: ""
+        },
+        {
+          text: "USER",
+          value: ""
+        },
+        {
+          text: "PERSAL NO.",
+          value: ""
+        },
+        {
+          text: "ACQUISITION COST",
+          value: ""
+        },
+        {
+          text: "ADJUSTMENT",
+          value: ""
+        },
+        {
+          text: "CARRYING VALUE",
+          value: ""
+        },
+        {
+          text: "ACCOUNTING AREA",
           value: ""
         },
 
-        // {
-        //   text: "Actions",
-        //   value: "carbs"
-        // }
+       
       ],
       iSign: false,
 

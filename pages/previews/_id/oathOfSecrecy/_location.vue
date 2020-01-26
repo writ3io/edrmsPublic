@@ -37,16 +37,15 @@
 
                 <v-layout xs12 wrap>
                   <v-flex xs12 lg5>
-                    <v-text-field v-model="doc.body.initialsSurname" label="(Full Name/Surname): "></v-text-field>
+                      <strong>(Full Name/Surname) :</strong> {{doc.body.initialsSurname}}
                   </v-flex>
                   <v-flex xs12 lg4>
-                    <v-text-field v-model="doc.body.identityNumber" label="(Identity Number): "></v-text-field>
+                      <strong>(Identity Number) :</strong> {{doc.body.identityNumber}}
                   </v-flex>
                   <v-flex xs12 lg3>
-                    <v-text-field v-model="doc.body.persalNumber" label="(Persal Number): "></v-text-field>
+                      <strong>(Persal Number) :</strong> {{doc.body.persalNumber}}
                   </v-flex>
                 </v-layout>
-
 
                 <br />
 
@@ -69,81 +68,38 @@
                   </ol>
 
                   <v-flex xs12>
-                    <v-text-field v-model="doc.body.place" label="Place: "></v-text-field>
+                      <strong>Place :</strong> {{doc.body.place}}
                   </v-flex>
 
-                  <v-flex xs12 lg6>
-                    <p class="text-xs-left">Sign Here :</p>
-                    <VueSignaturePad
-                      class="signature-pad"
-                      max-width="480px"
-                      height="200px"
-                      ref="signaturePad"
-                      :options="{ onEnd }"
-                    />
-                    <v-btn flat color="warning" @click="clearAuthorSignature">
-                      <v-icon left>undo</v-icon>
-                      <span>Clear</span>
-                    </v-btn>
-                  </v-flex>
+                  <v-flex xs12 pt-1>
+                    <v-layout wrap>
+                      <v-flex xs12 lg6>
+                        <v-flex xs12 lg6>
+                          <p>Signature:</p>
+                          <img style="width:100%" :src="doc.body.authorSignature" alt />
+                        </v-flex>
+                      </v-flex>
 
-                  <v-flex xs12 lg3>
-                    <v-menu
-                      v-model="menu5"
-                      :close-on-content-click="false"
-                      :nudge-right="40"
-                      transition="scale-transition"
-                      offset-y
-                      min-width="290px"
-                    >
-                      <template v-slot:activator="{ on }">
-                        <v-text-field v-model="doc.body.authorSignatureDate" label="Date" readonly v-on="on">
-                        </v-text-field>
-                      </template>
-                      <v-date-picker v-model="doc.body.authorSignatureDate" @input="menu2 = false"></v-date-picker>
-                    </v-menu>
+                      <v-flex xs12 lg3>
+                        <p>Date: {{doc.body.authorSignatureDate}}</p>
+                      </v-flex>
+                    </v-layout>
                   </v-flex>
 
                   <v-flex xs12 lg5>
-                    <v-text-field v-model="doc.body.witness1" label="Witness 1: "></v-text-field>
+                    <strong>Witness 1 :</strong> {{doc.body.witness1}}
                   </v-flex>
 
                   <v-flex xs12 sm4>
-                    <v-menu
-                      v-model="menu1a"
-                      :close-on-content-click="false"
-                      :nudge-right="40"
-                      transition="scale-transition"
-                      offset-y
-                      min-width="290px"
-                    >
-                      <template v-slot:activator="{ on }">
-                        <v-text-field v-model="doc.body.date1" label="Date: " readonly v-on="on">
-                        </v-text-field>
-                      </template>
-                      <v-date-picker v-model="doc.body.date1" @input="menu1b = false"></v-date-picker>
-                    </v-menu>
+                    <strong>Date :</strong> {{doc.body.date1}}
                   </v-flex>
 
                   <v-flex xs12 lg5>
-                    <v-text-field v-model="doc.body.witness2" label="Witness 2: "></v-text-field>
+                      <strong>Witness 2 :</strong> {{doc.body.witness2}}
                   </v-flex>
 
                   <v-flex xs12 sm4>
-                    <v-menu
-                      v-model="menu2a"
-                      :close-on-content-click="false"
-                      :nudge-right="40"
-                      transition="scale-transition"
-                      offset-y
-                      min-width="290px"
-                    >
-                      <template v-slot:activator="{ on }">
-                        <v-text-field v-model="doc.body.date2" label="Date: " readonly v-on="on">
-                        </v-text-field>
-                      </template>
-                      <v-date-picker v-model="doc.body.date2" @input="menu2b = false"></v-date-picker>
-                    </v-menu>
+                   <strong>Date :</strong> {{doc.body.date2}}
                   </v-flex>
 
                   <i>
@@ -163,7 +119,7 @@
 
 <script>
 import Vue from "vue";
-import Toolbar from "~/components/FormToolbar";
+import Toolbar from "~/components/PreviewToolbar";
 import SelectUsers from "~/components/SelectUsers";
 import store from "~/store/store";
 import Editor from "@tinymce/tinymce-vue";
@@ -356,67 +312,6 @@ export default {
       ],
 
       iSign: false,
-      doc: {
-        ref: this.$route.params.ref,
-        template: "oathOfSecrecy",
-        author: store.state.user,
-        formValid: true,
-        docRef: Math.round(+new Date() / 1000),
-
-        body: {
-          address: "",
-          date1: new Date().toISOString().substr(0, 10),
-          date2: new Date().toISOString().substr(0, 10),
-          date3: new Date().toISOString().substr(0, 10),
-          date4: new Date().toISOString().substr(0, 10),
-          enderUser: {},
-          initialsSurname: "",
-          identityNumber:"",
-          persalNumber:"",
-          witness1:"",
-          witness2:"",
-          items: ["Permanent", "Contract"],
-          items1: ["Yes", "No"],
-
-          phase1: [
-            {
-              blockA: "",
-              blockB: "",
-              blockC: "",
-              blockD: "",
-              blockE: "",
-              blockF: "",
-              blockG: "",
-              blockH: "",
-              blockI: "",
-              wareHouse: "",
-              examStrongRoom: ""
-            }
-          ],
-
-          phase2: [
-            {
-              capturingExamHall: "",
-              hall: "",
-              controlRoom: "",
-              ITServerRoom: "",
-              MECMainDoor: "",
-              HODMainDoor: "",
-              mainCashierBlockD: "",
-              cashierBlockA: "",
-              SCM: "",
-              registry: "",
-              anyOther: ""
-            }
-          ],
-
-          docRef: Math.round(+new Date() / 1000),
-          attachments: [],
-          authorSignature: "",
-          signatures: [],
-          signatures2: []
-        }
-      },
 
       signature: null,
       snackbarText: "",
@@ -431,35 +326,51 @@ export default {
     };
   },
   computed: {
+    doc() {
+      return store.state.doc;
+    },
     time() {
       return Date.now();
     },
-    users() {
-      return store.state.users;
+    setAction(action) {
+      return doc.action == action;
+    }
+  },
+  watch: {
+    doc(data) {
+      console.log("We have data!", data);
     }
   },
   methods: {
-    ...signatureHelpers(),
-    setRecipients(users) {
-      this.doc.recipients = users;
-    },
-    setSigners(users) {
-      this.doc.body.signatures.push(users);
+    // sign
+    clear() {
+      this.$refs.signaturePad.clearSignature();
+      let pos = this.doc.body.signatures
+        .map(function(e) {
+          return e.EmailAdress;
+        })
+        .indexOf(store.state.user.EmailAdress);
+      let user = this.doc.body.signatures[pos];
+      user.signature = "";
+      console.log(user);
     },
     onEnd() {
-      this.setAuthorSignature();
-    },
-    addRow() {
-      this.doc.body.phase9.push({});
-    },
-    removeRow(index) {
-      this.doc.body.phase9.splice(index, 1);
+      const { isEmpty, data } = this.$refs.signaturePad.saveSignature();
+      let pos = this.doc.body.signatures
+        .map(function(e) {
+          return e.EmailAdress;
+        })
+        .indexOf(store.state.user.EmailAdress);
+      let user = this.doc.body.signatures[pos];
+      user.signature = data;
+      user.signatureDate = Date.now();
+      console.log(user);
+      console.log("=== End ===");
     }
   },
-
-  created() {
-    console.log(store.state.users);
-    console.log(this.$route);
+  async created() {
+    console.log(this.ref, this.$route.params.id);
+    await store.dispatch("getDocById", this.$route.params.id);
   }
 };
 </script>

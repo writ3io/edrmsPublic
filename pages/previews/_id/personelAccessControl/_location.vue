@@ -64,26 +64,27 @@
                 <h4>Section A – details of applicant for enrollment</h4>
                 <v-layout xs12 wrap border class="card-border">
                   <v-flex xs12>
-                    <v-text-field v-model="doc.body.initials" label="Initials: "></v-text-field>
+                    <strong> Initials : </strong>{{doc.body.initials}}
                   </v-flex>
                   <v-flex xs12>
-                    <v-text-field v-model="doc.body.surname" label="Surname: "></v-text-field>
+                    <strong> Surname : </strong>{{doc.body.surname}}
                   </v-flex>
                   <v-flex xs12 lg6>
-                    <v-text-field v-model="doc.body.idNumber" label="ID No: "></v-text-field>
+                    <strong>ID No : </strong>{{doc.body.idNumber}}
                   </v-flex>
                   <v-flex xs12 lg5>
-                    <v-text-field v-model="doc.body.persalNumber" label="Persal No: "></v-text-field>
+                    <strong>Persal No : </strong>{{doc.body.persalNumber}}
                   </v-flex>
                   <v-flex xs12>
-                    <v-text-field v-model="doc.body.directorate" label="Directorate: "></v-text-field>
+                    <strong>Directorate: : </strong>{{doc.body.directorate}}
                   </v-flex>
                   <v-flex xs12>
-                    <v-text-field v-model="doc.body.position" label="Position: "></v-text-field>
+                   <strong>Position : </strong>{{doc.body.position}}
                   </v-flex>
 
-                  <v-flex xs12 lg6>
+                  <v-flex xs12>
                     <!-- <v-select :items="doc.body.items" label="Employment Type:" v-model="doc.body.e1" outlined></v-select> -->
+                    <!-- <strong>Employment Type : </strong>{{doc.body.items}} -->
                   </v-flex>
                  
                   
@@ -93,37 +94,11 @@
                         <p><strong>If contract,</strong></p>
                     </v-flex>    
                     <v-flex xs12 lg5>    
-                      <v-menu
-                        v-model="menu1a"
-                        :close-on-content-click="false"
-                        :nudge-right="40"
-                        transition="scale-transition"
-                        offset-y
-                        min-width="290px" 
-                      >
-                        <template v-slot:activator="{ on }">
-                            <v-text-field v-model="doc.body.date" label="Start: " readonly v-on="on">
-                            </v-text-field>
-                        </template>
-                        <v-date-picker v-model="doc.body.date" @input="menu1b = false"></v-date-picker>
-                      </v-menu>
+                      <strong>Start :</strong><u>{{doc.body.date}}</u>
                     </v-flex>
 
                     <v-flex xs12 lg5>
-                      <v-menu
-                        v-model="menu2a"
-                        :close-on-content-click="false"
-                        :nudge-right="40"
-                        transition="scale-transition"
-                        offset-y
-                        min-width="290px"
-                      >
-                        <template v-slot:activator="{ on }">
-                            <v-text-field v-model="doc.body.date1" label="Finish: " readonly v-on="on">
-                            </v-text-field>
-                        </template>
-                        <v-date-picker v-model="doc.body.date1" @input="menu2b = false"></v-date-picker>
-                      </v-menu>
+                      <strong>Finish :</strong><u>{{doc.body.date1}}</u>
                     </v-flex>
                     </v-layout>
                   
@@ -138,28 +113,15 @@
                     </p>
                   </v-flex>
 
-                  <v-flex xs12 lg6>
-                   <SelectUsers v-on:getUsers="setSigners($event)" label="Select Name: " />
-                  </v-flex>
-
                   
 
-                  <v-flex xs12 lg3>
-                   <v-menu
-                        v-model="menu3a"
-                        :close-on-content-click="false"
-                        :nudge-right="40"
-                        transition="scale-transition"
-                        offset-y
-                        min-width="290px"
-                      >
-                        <template v-slot:activator="{ on }">
-                            <v-text-field v-model="doc.body.date2" label="Start: " readonly v-on="on">
-                            </v-text-field>
-                        </template>
-                        <v-date-picker v-model="doc.body.date2" @input="menu3b = false"></v-date-picker>
-                      </v-menu>
-                  </v-flex>
+                  <v-flex xs12 lg6>
+                         <p><strong>Print Name:</strong>{{doc.body.signatures[0].SurName}}</p>
+                    </v-flex>
+
+                    <v-flex xs12 lg3>
+                         <strong>Date :</strong>{{doc.body.date2}}
+                    </v-flex>
                 </v-layout>
 
                 <br />
@@ -203,36 +165,36 @@
 
                     <template v-slot:items="props" v-slot:no-data>
                      
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockA" single-line solo flat placeholder></v-text-field>
+                      <td>
+                        
+                        {{props.item.blockA}}
                       </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockB" single-line solo flat placeholder></v-text-field>
-                      </td>
-
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockC" single-line solo flat placeholder></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockD" single-line solo flat placeholder></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockE" single-line solo flat placeholder></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockF" single-line solo flat placeholder></v-text-field>
+                      <td>
+                        {{props.item.blockB}}
                       </td>
 
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockG" single-line solo flat placeholder></v-text-field>
+                      <td>
+                        {{props.item.blockC}}
                       </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockH" single-line solo flat placeholder></v-text-field>
+                      <td>
+                        {{props.item.blockD}}
                       </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.blockI" single-line solo flat placeholder></v-text-field>
+                      <td>
+                        {{props.item.blockE}}
                       </td>
-                      <td class="px-0 py-0">
+                      <td>
+                       {{props.item.blockF}}</td>
+
+                      <td >
+                        {{props.item.blockG}}
+                      </td>
+                      <td >
+                        {{props.item.blockH}}
+                      </td>
+                      <td>
+                        {{props.item.blockI}}
+                      </td>
+                      <td >
                         <v-text-field
                           v-model="props.item.wareHouse"
                           single-line
@@ -242,7 +204,7 @@
                         ></v-text-field>
                       </td>
 
-                      <td class="px-0 py-0">
+                      <td >
                         <v-text-field
                           v-model="props.item.examStrongRoom"
                           single-line
@@ -281,95 +243,38 @@
 
                     <template v-slot:items="props" v-slot:no-data>
                      
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.capturingExamHall"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
+                      <td>
+                       {{props.item.capturingExamHall}}
                       </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.hall" single-line solo flat placeholder></v-text-field>
+                      <td>
+                        {{props.item.hall}}
+                      </td>
+
+                      <td>
+                        {{props.item.controlRoom}}
+                      <td>
+                        {{props.item.ITServerRoom}}
+                      </td>
+                      <td>
+                        {{props.item.MECMainDoor}}
+                      <td>
+                        {{props.item.HODMainDoor}}
+                      </td>
+
+                      <td>
+                        {{props.item.mainCashierBlockD}}
+                      </td>
+                      <td>
+                        {{props.item.cashierBlockA}}
+                      </td>
+                      <td >
+                       {{props.item.SCM}}
+                      <td >
+                        {{props.item.registry}}
                       </td>
 
                       <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.controlRoom"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.ITServerRoom"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.MECMainDoor"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.HODMainDoor"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.mainCashierBlockD"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.cashierBlockA"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field v-model="props.item.SCM" single-line solo flat placeholder></v-text-field>
-                      </td>
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.registry"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
-                      </td>
-
-                      <td class="px-0 py-0">
-                        <v-text-field
-                          v-model="props.item.anyOther"
-                          single-line
-                          solo
-                          flat
-                          placeholder
-                        ></v-text-field>
+                        {{props.item.anyOther}}
                       </td>
                       
                     </template>
@@ -394,41 +299,26 @@
 
                   <p>I am aware that I will be held liable if the above information is found to be false, untrue, misleading.</p>
                 </v-flex>
-
-               
                  
                 <v-layout wrap>
+                    
                     <v-flex xs12 lg6>
-                   <SelectUsers v-on:getUsers="setSigners1($event)" label="Select Name: " />
+                         <p><strong>Print Name:</strong>{{doc.body.signatures[1].SurName}}</p>
                     </v-flex>
 
                     <v-flex xs12 lg3>
-                    <v-menu
-                        v-model="menu4a"
-                        :close-on-content-click="false"
-                        :nudge-right="40"
-                        transition="scale-transition" 
-                        offset-y
-                        min-width="290px"
-                      >
-                        <template v-slot:activator="{ on }">
-                            <v-text-field v-model="doc.body.date3" label="Start: " readonly v-on="on">
-                            </v-text-field>
-                        </template>
-                        <v-date-picker v-model="doc.body.date3" @input="menu4b = false"></v-date-picker>
-                      </v-menu>
+                         <strong>Date :</strong>{{doc.body.date3}}
                     </v-flex>
                 </v-layout>
 
                 <v-flex xs12>
-                  <v-text-field v-model="doc.body.cardNumber" label="Card number issued: "></v-text-field>
+                  <strong>Card number issued :</strong> {{doc.body.cardNumber}}
                 </v-flex>
                 <v-flex xs12>
-                  <v-text-field v-model="doc.body.cardIssued" label="Card issued by: "></v-text-field>
+                  <strong>Card issued by :</strong> {{doc.body.cardIssued}}
                 </v-flex>
 
                 <v-flex xs12 lg6>
-                 
                   <!-- <v-select :items="doc.body.items1" v-model="doc.body.e2" label="Applicant Photo Captured:" outlined></v-select> -->
                 </v-flex>
 
@@ -440,28 +330,17 @@
                   </p>
                 </v-flex>
 
-                
+               
                 <v-layout wrap>
+                     
                     <v-flex xs12 lg6>
-                    <SelectUsers v-on:getUsers="setSigners2($event)" label="Select Name: " />
+                         <p><strong>Print Name :</strong>{{doc.body.signatures[1].SurName}}</p>
                     </v-flex>
-                    
+
                     <v-flex xs12 lg3>
-                    <v-menu
-                        v-model="menu5a"
-                        :close-on-content-click="false"
-                        :nudge-right="40"
-                        transition="scale-transition"
-                        offset-y
-                        min-width="290px"
-                      >
-                        <template v-slot:activator="{ on }">
-                            <v-text-field v-model="doc.body.date4" label="Start: " readonly v-on="on">
-                            </v-text-field>
-                        </template>
-                        <v-date-picker v-model="doc.body.date4" @input="menu5b = false"></v-date-picker>
-                      </v-menu>
+                         <strong>Date :</strong>{{doc.body.date4}}
                     </v-flex>
+
                 </v-layout>
               </v-card-text>
             </v-card>
@@ -474,7 +353,7 @@
 
 <script>
 import Vue from "vue";
-import Toolbar from "~/components/FormToolbar";
+import Toolbar from "~/components/PreviewToolbar";
 import SelectUsers from "~/components/SelectUsers";
 import store from "~/store/store";
 import Editor from "@tinymce/tinymce-vue";
@@ -504,8 +383,6 @@ export default {
       menu3b: false,
       menu4a: false,
       menu4b: false,
-      menu5a: false,
-      menu5b: false,
 
       headers2: [
         {
@@ -668,81 +545,7 @@ export default {
         }
       ],
 
-      iSign: false,
-      doc: {
-        ref: this.$route.params.ref,
-        template: "personelAccessControl",
-        author: store.state.user,
-        formValid: true,
-        docRef: Math.round(+new Date() / 1000),
-
-        body: {
-          address: "",
-          date: new Date().toISOString().substr(0, 10),
-          date1: new Date().toISOString().substr(0, 10),
-          date2: new Date().toISOString().substr(0, 10),
-          date3: new Date().toISOString().substr(0, 10),
-          date4: new Date().toISOString().substr(0, 10),
-          initials:"",
-          surname:"",
-          idNumber:"",
-          persalNumber:"",
-          directorate:"",
-          position:"",
-          employmentType:"",
-          printName2:"",
-          enderUser: {},
-          initialsSurname: "",
-          printName:"",
-          printName1:"",
-          cardNumber:"",
-          cardIssued:"",
-          items: ["Permanent", "Contract"],
-          e1:"",
-          e2:"",
-          items1: ["Yes", "No"],
-
-          phase1: [
-            {
-              blockA: "",
-              blockB: "",
-              blockC: "",
-              blockD: "",
-              blockE: "",
-              blockF: "",
-              blockG: "",
-              blockH: "",
-              blockI: "",
-              wareHouse: "",
-              examStrongRoom: ""
-            }
-          ],
-
-          phase2: [
-            {
-              capturingExamHall: "",
-              hall: "",
-              controlRoom: "",
-              ITServerRoom: "",
-              MECMainDoor: "",
-              HODMainDoor: "",
-              mainCashierBlockD: "",
-              cashierBlockA: "",
-              SCM: "",
-              registry: "",
-              anyOther: ""
-            }
-          ],
-
-          docRef: Math.round(+new Date() / 1000),
-          attachments: [],
-          authorSignature: "",
-          signatures: [],
-          signatures2: []
-        }
-      },
-
-      signature: null,
+     signature: null,
       snackbarText: "",
       snackbar: false,
       snackbarColor: "success",
@@ -755,41 +558,43 @@ export default {
     };
   },
   computed: {
+    doc() {
+      return store.state.doc;
+    },
     time() {
       return Date.now();
     },
-    users() {
-      return store.state.users;
+    setAction(action) {
+      return doc.action == action;
+    }
+  },
+  watch: {
+    doc(data) {
+      console.log("We have data!", data);
     }
   },
   methods: {
-    ...signatureHelpers(),
-    setRecipients(users) {
-      this.doc.recipients = users;
-    },
-    setSigners(users) {
-      this.doc.body.signatures.push(users);
-    },
-     setSigners1(users) {
-      this.doc.body.signatures.push(users);
-    },
-     setSigners2(users) {
-      this.doc.body.signatures.push(users);
+    // sign
+    clear() {
+      this.$refs.signaturePad.clearSignature();
+      let pos = this.doc.body.signatures.map(function(e) { return e.EmailAdress; }).indexOf(store.state.user.EmailAdress);    
+      let user = this.doc.body.signatures[pos]
+      user.signature = "";
+      console.log(user);
     },
     onEnd() {
-      this.setAuthorSignature();
-    },
-    addRow() {
-      this.doc.body.phase9.push({});
-    },
-    removeRow(index) {
-      this.doc.body.phase9.splice(index, 1);
+      const { isEmpty, data } = this.$refs.signaturePad.saveSignature();
+      let pos = this.doc.body.signatures.map(function(e) { return e.EmailAdress; }).indexOf(store.state.user.EmailAdress);    
+      let user = this.doc.body.signatures[pos]
+      user.signature = data;
+      user.signatureDate = Date.now();
+      console.log(user);
+      console.log("=== End ===");
     }
   },
-
-  created() {
-    console.log(store.state.users);
-    console.log(this.$route);
+  async created() {
+    console.log(this.ref, this.$route.params.id);
+    await store.dispatch("getDocById", this.$route.params.id);
   }
 };
 </script>

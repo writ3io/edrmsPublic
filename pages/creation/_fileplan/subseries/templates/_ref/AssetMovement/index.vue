@@ -66,31 +66,31 @@
                 <v-card-text class="pt-0">
                   <v-layout xs12 wrap>
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.location" label="LOCATION:"></v-text-field>
+                      <v-text-field v-model="doc.body.location1" label="LOCATION:"></v-text-field>
                     </v-flex>
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.address" label="ADDRESS:"></v-text-field>
+                      <v-text-field v-model="doc.body.address1" label="ADDRESS:"></v-text-field>
                     </v-flex>
                     <v-flex xs12 lg6>
-                      <v-text-field v-model="doc.body.locationCode" label="LOCATION CODE:"></v-text-field>
+                      <v-text-field v-model="doc.body.locationCode1" label="LOCATION CODE:"></v-text-field>
                     </v-flex>
 
                     <v-flex xs12 lg6>
-                      <v-text-field v-model="doc.body.roomNo" label="ROOM NO.:"></v-text-field>
+                      <v-text-field v-model="doc.body.roomNo1" label="ROOM NO.:"></v-text-field>
                     </v-flex>
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.username" label="USERNAME & SURNAME:"></v-text-field>
+                      <v-text-field v-model="doc.body.username1" label="USERNAME & SURNAME:"></v-text-field>
                     </v-flex>
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.section" label="SECTION:"></v-text-field>
+                      <v-text-field v-model="doc.body.section1" label="SECTION:"></v-text-field>
                     </v-flex>
                     <v-flex xs12 lg6>
-                      <v-text-field v-model="doc.body.tel" label="TEL:"></v-text-field>
+                      <v-text-field v-model="doc.body.tel1" label="TEL:"></v-text-field>
                     </v-flex>
                     <v-flex xs12 lg6>
-                      <v-text-field v-model="doc.body.floor" label="FLOOR:"></v-text-field>
+                      <v-text-field v-model="doc.body.floor1" label="FLOOR:"></v-text-field>
                     </v-flex>
                   </v-layout>
                 </v-card-text>
@@ -330,8 +330,8 @@ export default {
       ],
       iSign: false,
       doc: {
-        ref: "2-1-4",
-        template: "OperationalPlan",
+        ref: this.$route.params.ref,
+        template: "AssetMovement",
         author: store.state.user,
         formValid: true,
         docRef: Math.round(+new Date() / 1000),
@@ -347,6 +347,16 @@ export default {
           tel:"",
           floor: "",
           item: "",
+          name1: "",
+          location1: "",
+          address1:"",
+          locationCode1:"",
+          roomNo1:"",
+          username1:"",
+          section1:"",
+          tel1:"",
+          floor1: "",
+          item1: "",
           tr: [
             {
               barcode: "",

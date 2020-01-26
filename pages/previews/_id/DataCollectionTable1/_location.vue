@@ -3,26 +3,54 @@
     <v-layout justify-space-between>
       <v-flex xs3>
         <v-layout>
-          <Toolbar :data="doc"/>
+          <Toolbar :data="doc" />
         </v-layout>
       </v-flex>
 
       <v-flex xs9>
         <v-layout wrap>
           <v-flex xs12>
-            <h3 class="text-xs-center">OPERATIONAL PLAN FORM</h3>
-            <br/>
-            <v-layout wrap justify-right>
-              <v-flex xs12>
-                <p>OPERATIONAL PLAN FOR YEAR ENDING: {{doc.body.date}}</p>
-              </v-flex>
-              <v-flex xs12>
-                <p>BRANCH/SUB-BRANCH / DIRECTORATE: {{doc.body.branch}}</p>
-              </v-flex>
-            </v-layout>
+            <h2 class="text-xs-center">DATA COLLECTION TABLE 1</h2>
+
+            <br />
+
+            <v-flex xs12>
+              <v-card>
+                <v-card-title class="justify-center pt-0 pb-0">
+                  <br />
+                </v-card-title>
+                <v-card-text class="pt-0">
+                  <v-layout xs12 wrap>
+                    
+                    <v-flex xs12 lg6>
+                      <strong>BUILDING NAME :</strong>{{doc.body.buildingName}}
+                    </v-flex>
+
+                    <v-flex xs12 lg6>
+                      <strong>TOWN :</strong>{{doc.body.town}}
+                    </v-flex>
+                    
+                    <v-flex xs12 lg6>
+                      <strong>PHYSICAL ADDRESS :</strong>{{doc.body.address}}
+                    </v-flex>
+                    <v-flex xs12 lg6>
+                      <strong>SURBUB :</strong>{{doc.body.surbub}}
+                    </v-flex>
+                  </v-layout>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+
+            <br />
+
+
+            
+
           </v-flex>
 
           <v-flex xs12>
+            
+
             <v-data-table :headers="headers" :items="doc.body.tr" hide-actions class="elevation-1">
               <template slot="headerCell" slot-scope="props">
                 <v-tooltip bottom>
@@ -33,73 +61,37 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="">
-                <td class="text-xs-center">
-                  <p>{{props.item.strategicObjective}}</p>
+              <template v-slot:items="props" v-slot:no-data>
+                <td>
+                 {{props.item.barcode}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.outcome}}</p>
+                <td>
+                  {{props.item.existingRoom}}
+                <td>
+                  {{props.item.occupant}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.performanceIndicator}}</p>
+                <td>
+                  {{props.item.location}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.baseline}}</p>
+                <td>
+                  {{props.item.phoneNumber}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.annualTarget}}</p>
+                <td>
+                 {{props.item.floor}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.activities}}</p>
+                <td>
+                  {{props.item.directorate}}
                 </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.timeFrames}}</p>
-                </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.meansOfVerification}}</p>
-                </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.budget}}</p>
-                </td>
-                <td class="text-xs-center px-0 py-0">
-                  <p>{{props.item.responsibility}}</p>
-                </td>
-                
+              </template>
+
+              <template v-slot:no-data>
+                <div :value="true" class="text-xs-center">No Form Input Fields</div>
               </template>
             </v-data-table>
-            <br/>
+            <br />
           </v-flex>
 
-
-          <v-flex xs12 lg4>
-            <p>I {{doc.body.name}}</p>
-          </v-flex>
-          <v-flex xs12 lg4>
-            <p>In my capacity as {{doc.body.capacity}}</p>
-            
-          </v-flex>
-          <v-flex xs12>
-                <p>hereby confirm that I have verified this plan for accuracy and completeness to the best of my ability.</p>
-          </v-flex>
-
-          <v-flex xs12 pt-1>
           
-
-            <v-layout wrap>
-              <v-flex xs12 lg6>
-                <v-flex xs12 lg6>
-                  <p>Signature: </p>
-                <img style="width:100%" :src="doc.body.authorSignature" alt />
-              </v-flex>
-              </v-flex>
-
-              <v-flex xs12 lg3>
-                <p>Date: {{doc.body.authorSignatureDate}}</p>
-              </v-flex>
-
-            </v-layout>
-
-          </v-flex>
         </v-layout>
       </v-flex>
     </v-layout>
@@ -111,86 +103,57 @@ import Vue from "vue";
 import Toolbar from "~/components/PreviewToolbar";
 import SelectUsers from "~/components/SelectUsers";
 import store from "~/store/store";
+import { signatureHelpers } from "~/services/helpers";
 import VueSignaturePad from "vue-signature-pad";
-import record from "~/services/docLog";
 import { createDoc } from "~/services/DocsService";
 
 Vue.use(VueSignaturePad);
 export default {
-  name: "operationalPlan",
+  name: "DataCollectionTable1",
   components: {
     Toolbar,
     SelectUsers
   },
   data() {
     return {
-       menu5: false,
-      menu: false,
-      //time picker
-      menu2: false,
-      modal2: false,
-      //
-
-      dialogm1: {},
       dialog: false,
-
-      TIDs : { // document Tracking Ids
-        parentId : this.$route.params.parentId,
-        docReference: this.$route.params.docRef,
-        updateValue : "meeting"
-      },
-
-      hasParentId : false,
-      
-      pendingMeetings : [],
       headers: [
         {
-          text: "STRATEGIC OBJECTIVE",
+          text: "ROOM BAR CODE",
           align: "left",
           value: ""
         },
         {
-          text: "OUTCOME",
+          text: "EXISTING ROOM NUMBER",
           value: ""
         },
         {
-          text: "PERFORMANCE INDICATOR",
+          text: "OCCUPANT/RESPONIBLE PERSON NAME & SURNAME",
           value: ""
         },
         {
-          text: "BASELINE",
+          text: "LOCATION/ROOM DESCRIPTION",
           value: ""
         },
         {
-          text: "ANNUAL TARGET",
-          value: ""
-        },
-        {
-          text: "ACTIVITIES",
-          value: ""
-        },
-        {
-          text: "TIME FRAMES",
-          value: ""
-        },
-        {
-          text: "MEANS OF VERIFICATION",
-          value: ""
-        },
-        {
-          text: "BUDGET",
-          value: ""
-        },
-        {
-          text: "RESPONSIBILITY",
-          value: ""
-        },
+          text: "PHONE NUMBER",
 
-        // {
-        //   text: "Actions",
-        //   value: "carbs"
-        // }
+          value: ""
+        },
+        ,
+        {
+          text: "FLOOR",
+
+          value: ""
+        },
+        ,
+        {
+          text: "DIRECTORATE",
+
+          value: ""
+        }
       ],
+      
       iSign: false,
 
       signature: null,
@@ -268,6 +231,11 @@ th {
 
 .terms_conditions {
   list-style: initial;
+}
+
+.card-border {
+  border: 2px solid #dddddd;
+  padding: 5px 10px;
 }
 </style>
 
