@@ -19,7 +19,7 @@
               <br />
               <h3 class="text-xs-center red--text text">CONFIDENTIAL</h3>
               <v-flex xs6 offset-xs3>
-                <h3 class="text-xs-center main-heading">SECURITY CLEARANCE FORM Z204</h3>
+                <h3 class="text-xs-center main-heading">SECURITY CLEARANCE FORM</h3>
               </v-flex>
 
               <v-card-text class="pt-0 mt-0">
@@ -36,17 +36,15 @@
                 </v-layout>
                 <v-layout xs12 wrap border class="card-border">
                   <v-flex xs12>
-                    <v-text-field
-                      v-model="doc.body.initialsSurname"
-                      label="NAME OF IMMEDIATE SUPERVISOR/DELEGATED OFFICIAL: "
-                    ></v-text-field>
+                    <strong>IMMEDIATE SUPERVISOR/DELEGATED OFFICIAL :</strong><div v-if="doc.body.signatures != []">{{doc.body.signatures[0].SurName}}</div>
+                  
                   </v-flex>
                   <v-flex xs12 lg6>
-                    <v-text-field v-model="doc.body.initialsSurname" label="TEL. "></v-text-field>
+                    <p><strong>TEL. :</strong>{{doc.body.tel}}</p>
                   </v-flex>
 
                   <v-flex xs12 lg6>
-                    <v-select :items="doc.body.items" label="LEVEL OF CLEARANCE:" outlined></v-select>
+                    <p><strong>LEVEL OF CLEARANCE :</strong>{{doc.body.levelOfClearance}}</p>
                   </v-flex>
                 </v-layout>
               </v-card-text>
@@ -54,9 +52,9 @@
               <br />
 
               <!-- 
-                                =====================================
-                                INSTRUCTIONS FOR THE COMPLETION OF THE QUESTIONNARE
-                                =====================================
+                =====================================
+                INSTRUCTIONS FOR THE COMPLETION OF THE QUESTIONNARE
+                =====================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -83,8 +81,8 @@
                       <li>
                         Please attach the following items to this questionnaire when completed:
                         <ul>
-                          <li>Certified copy of identity document and passport (applicant, spouse and/or cohabiting</li>
-partner).
+                          <li>Certified copy of identity document and passport (applicant, spouse and/or cohabiting partner).</li>
+
                           <li>Certified copy of marriage and/or divorce certificate</li>
 
                           <li>Certified copy of academic qualification (s)</li>
@@ -105,9 +103,9 @@ partner).
               <br />
 
               <!-- 
-                =====================================
-                1. PERSONAL PARTICULARS
-                =====================================
+                                =====================================
+                                1. PERSONAL PARTICULARS
+                                =====================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -134,26 +132,15 @@ partner).
                         <td class>{{ props.item.description }}</td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.idNumber}}
                         </td>
 
                         <td>
-                          <v-radio-group v-model="props.item.boolean" :mandatory="false">
-                            <v-radio label="Male" value="Male"></v-radio>
-                            <v-radio label="Female" value="Female"></v-radio>
-                          </v-radio-group>
+                          {{props.item.boolean}}
                         </td>
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                      
                     </v-data-table>
 
                     <v-data-table
@@ -175,29 +162,15 @@ partner).
                         <td class>{{ props.item.description }}</td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.comment}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                         {{props.item.comment1}}
                         </td>
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                     
                     </v-data-table>
 
                     <v-data-table
@@ -217,44 +190,15 @@ partner).
 
                       <template v-slot:items="props" v-slot:no-data>
                         <td class>
-                          <v-select :items="doc.body.items1" label="SELECT" outlined></v-select>
+                          {{props.item.levelOfClearance}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
-                        </td>
-
-                        <td class="px-0 py-0">
-                          <v-menu
-                            v-model="menu1a"
-                            :close-on-content-click="false"
-                            :nudge-right="40"
-                            transition="scale-transition"
-                            offset-y
-                            min-width="290px"
-                          >
-                            <template v-slot:activator="{ on }">
-                              <v-text-field
-                                v-model="doc.body.date1"
-                                label="Date: "
-                                readonly
-                                v-on="on"
-                              ></v-text-field>
-                            </template>
-                            <v-date-picker v-model="doc.body.date1" @input="menu1b = false"></v-date-picker>
-                          </v-menu>
+                         {{props.item.date10}}
                         </td>
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                     
                     </v-data-table>
 
                     <v-data-table
@@ -276,63 +220,30 @@ partner).
                         <td class>{{ props.item.description }}</td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.surName}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.fisrtName}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.medianName}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.nameCalled}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-menu
-                            v-model="menu1a"
-                            :close-on-content-click="false"
-                            :nudge-right="40"
-                            transition="scale-transition"
-                            offset-y
-                            min-width="290px"
-                          >
-                            <template v-slot:activator="{ on }">
-                              <v-text-field v-model="doc.body.date1" readonly v-on="on"></v-text-field>
-                            </template>
-                            <v-date-picker v-model="doc.body.date1" @input="menu1b = false"></v-date-picker>
-                          </v-menu>
+                          <div v-if="props.index == 1">
+                            {{doc.body.date3}}
+                          </div>
+                          <div v-else>
+                            {{doc.body.date2}}
+                          </div>
                         </td>
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                      
                     </v-data-table>
 
                     <v-data-table
@@ -372,76 +283,38 @@ partner).
 
                       <template v-slot:items="props" v-slot:no-data>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.day}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.month}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.year}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.country}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.place}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.phoneNumber}}
                         </td>
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                      
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                        =====================================
-                        2.	RESIDENTIAL ADDRESSES
-                        =====================================
+                                =====================================
+                                2.	RESIDENTIAL ADDRESSES
+                                =====================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -467,81 +340,42 @@ partner).
                         <td class>{{ props.item.description }}</td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.numberNameOfStreet}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.cityTown}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.province}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                         {{props.item.country}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.telNumber}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-menu
-                            v-model="menu1a"
-                            :close-on-content-click="false"
-                            :nudge-right="40"
-                            transition="scale-transition"
-                            offset-y
-                            min-width="290px"
-                          >
-                            <template v-slot:activator="{ on }">
-                              <v-text-field v-model="doc.body.date1" readonly v-on="on"></v-text-field>
-                            </template>
-                            <v-date-picker v-model="doc.body.date1" @input="menu1b = false"></v-date-picker>
-                          </v-menu>
+                          <div v-if="props.index == 1">
+                            {{doc.body.date5}}
+                          </div>
+                          <div v-else>
+                            {{doc.body.date4}}
+                          </div>
                         </td>
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                     
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                        =====================================
-                        3. EDUCATIONAL QUALIFICATIONS
-                        =====================================
+                                =====================================
+                                3. EDUCATIONAL QUALIFICATIONS
+                                =====================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -566,75 +400,36 @@ partner).
 
                       <template v-slot:items="props" v-slot:no-data>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.qualification}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.nameOfInstitution}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        {{props.item.cityAndCountry}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                         {{props.item.from}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.to}}
                         </td>
-                        <td class="text-xs-center px-0 py-0">
-                          <v-icon small color="red " @click="removeRow(props.index)">delete</v-icon>
-                        </td>
+
+                        
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
-
-                      <template v-slot:footer>
-                        <td colspan="12" class="text-xs-center px-0 py-0 mx-0 primary">
-                          <v-icon @click="addRow" color="white">add</v-icon>
-                        </td>
-                      </template>
+                      
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                    =====================================
-                    4. SPOUSE OR COHABITING PARTNER
-                    =====================================
+                            =====================================
+                            4. SPOUSE OR COHABITING PARTNER
+                            =====================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -661,38 +456,22 @@ partner).
                         <td class>{{ props.item.description }}</td>
 
                         <td>
-                          <v-text-field
-                            v-model="props.item.comment"
-                            solo
-                            flat
-                            placeholder
-                            class="styled-input"
-                          ></v-text-field>
+                          {{props.item.comment}}
                         </td>
 
-                        <!--  <td class="px-0 py-0">
-                                    <v-text-field
-                                        v-model="props.item.comment"
-                                        single-line
-                                        solo
-                                        flat
-                                        placeholder
-                                    ></v-text-field>
-                        </td>-->
+              
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                  
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                    =====================================
-                    5. HEALTH
-                    =====================================
+                            =====================================
+                            5. HEALTH
+                            =====================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -719,16 +498,11 @@ partner).
                         <td class>{{ props.item.description }}</td>
 
                         <td>
-                          <v-radio-group v-model="props.item.boolean" :mandatory="false">
-                            <v-radio label="Yes" value="Yes"></v-radio>
-                            <v-radio label="No" value="No"></v-radio>
-                          </v-radio-group>
+                          {{props.item.boolean}}
                         </td>
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                     
                     </v-data-table>
 
                     <v-data-table
@@ -766,16 +540,11 @@ partner).
                         <td class>{{ props.item.description }}</td>
 
                         <td>
-                          <v-radio-group v-model="props.item.boolean" :mandatory="false">
-                            <v-radio label="Yes" value="Yes"></v-radio>
-                            <v-radio label="No" value="No"></v-radio>
-                          </v-radio-group>
+                          {{props.item.boolean}}
                         </td>
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                      
                     </v-data-table>
 
                     <v-data-table
@@ -811,56 +580,30 @@ partner).
 
                       <template v-slot:items="props" v-slot:no-data>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.description"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                         {{props.item.description}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.counsellor}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                         {{props.item.contactNumber}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.natureOfProblem}}
                         </td>
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                      
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                    =====================================
-                    6. PREVIOUS MARRIAGE(S)
-                    =====================================
+                            =====================================
+                            6. PREVIOUS MARRIAGE(S)
+                            =====================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -886,7 +629,7 @@ partner).
 
                     <v-data-table
                       :headers="headers7"
-                      :items="doc.body.phase7"
+                      :items="doc.body.phase33"
                       hide-actions
                       class="elevation-1"
                     >
@@ -901,52 +644,17 @@ partner).
 
                       <template v-slot:items="props" v-slot:no-data>
                         <td class="px-0 py-0">
-                          <v-menu
-                            v-model="menu1a"
-                            :close-on-content-click="false"
-                            :nudge-right="40"
-                            transition="scale-transition"
-                            offset-y
-                            min-width="290px"
-                          >
-                            <template v-slot:activator="{ on }">
-                              <v-text-field
-                                v-model="doc.body.date1"
-                                label="(1) Date: "
-                                readonly
-                                v-on="on"
-                              ></v-text-field>
-                            </template>
-                            <v-date-picker v-model="doc.body.date1" @input="menu1b = false"></v-date-picker>
-                          </v-menu>
+                              {{doc.body.date6}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.surName}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.firstName}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.idNumber}}
                         </td>
                       </template>
 
@@ -973,32 +681,14 @@ partner).
                       <template v-slot:items="props" v-slot:no-data>
                         <td class="px-0 py-0"></td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.countryOfBirth}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.nationality}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.address}}
                         </td>
                       </template>
 
@@ -1009,7 +699,7 @@ partner).
 
                     <v-data-table
                       :headers="headers7"
-                      :items="doc.body.phase7"
+                      :items="doc.body.phase28"
                       hide-actions
                       class="elevation-1"
                     >
@@ -1024,52 +714,17 @@ partner).
 
                       <template v-slot:items="props" v-slot:no-data>
                         <td class="px-0 py-0">
-                          <v-menu
-                            v-model="menu1a"
-                            :close-on-content-click="false"
-                            :nudge-right="40"
-                            transition="scale-transition"
-                            offset-y
-                            min-width="290px"
-                          >
-                            <template v-slot:activator="{ on }">
-                              <v-text-field
-                                v-model="doc.body.date1"
-                                label="(2) Date: "
-                                readonly
-                                v-on="on"
-                              ></v-text-field>
-                            </template>
-                            <v-date-picker v-model="doc.body.date1" @input="menu1b = false"></v-date-picker>
-                          </v-menu>
+                          {{doc.body.date7}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.surName}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                         {{props.item.firstName}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.idNumber}}
                         </td>
                       </template>
 
@@ -1080,7 +735,7 @@ partner).
 
                     <v-data-table
                       :headers="headers8"
-                      :items="doc.body.phase8"
+                      :items="doc.body.phase29"
                       hide-actions
                       class="elevation-1"
                     >
@@ -1096,47 +751,27 @@ partner).
                       <template v-slot:items="props" v-slot:no-data>
                         <td class="px-0 py-0"></td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.countryOfBirth}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                         {{props.item.nationality}}
                         </td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                         {{props.item.address}}
                         </td>
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                     
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                    ================================================================================================================
-                    7. RELATIVES: Include parents, parents in law, siblings and all children (not applicable to deceased persons)
-                    ================================================================================================================ 
+                            ================================================================================================================
+                            7. RELATIVES: Include parents, parents in law, siblings and all children (not applicable to deceased persons)
+                            ================================================================================================================ 
               -->
 
               <v-card-text>
@@ -1161,100 +796,44 @@ partner).
 
                       <template v-slot:items="props" v-slot:no-data>
                         <td class="text-xs-center">
-                          <v-text-field
-                            v-model="props.item.relationship"
-                            single-line
-                            solo
-                            flat
-                            placeholder="Relationship"
-                          ></v-text-field>
+                          {{props.item.relationship}}
                         </td>
                         <td class="text-xs-right px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.presentSurname"
-                            single-line
-                            solo
-                            flat
-                            placeholder="Present Surname"
-                          ></v-text-field>
+                          {{props.item.presentSurname}}
                         </td>
                         <td class="text-xs-right px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.previousSurname"
-                            single-line
-                            solo
-                            flat
-                            placeholder="Performance Indicator"
-                          ></v-text-field>
+                          {{props.item.previousSurname}}
                         </td>
                         <td class="text-xs-right px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.firstNames"
-                            single-line
-                            solo
-                            flat
-                            placeholder="First Names"
-                          ></v-text-field>
+                          {{props.item.firstNames}}
                         </td>
                         <td class="text-xs-right px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.identityNumber"
-                            single-line
-                            solo
-                            flat
-                            placeholder="Identity Number"
-                          ></v-text-field>
+                          {{props.item.identityNumber}}
                         </td>
                         <td class="text-xs-right px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.countryOfBirth"
-                            single-line
-                            solo
-                            flat
-                            placeholder="Country Of Birth"
-                          ></v-text-field>
+                         {{props.item.countryOfBirth}}
                         </td>
                         <td class="text-xs-right px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.nationality"
-                            single-line
-                            solo
-                            flat
-                            placeholder="Nationality"
-                          ></v-text-field>
+                          {{props.item.nationality}}
+                          
                         </td>
                         <td class="text-xs-right px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.fullResidentialAddress"
-                            single-line
-                            solo
-                            flat
-                            placeholder="Full Residential Address"
-                          ></v-text-field>
+                          {{props.item.fullResidentialAddress}}
+                          
                         </td>
-                        <td class="text-xs-center px-0 py-0">
-                          <v-icon small color="red " @click="removeRow(props.index)">delete</v-icon>
-                        </td>
+                        
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
-
-                      <template v-slot:footer>
-                        <td colspan="12" class="text-xs-center px-0 py-0 mx-0 primary">
-                          <v-icon @click="addRow" color="white">add</v-icon>
-                        </td>
-                      </template>
+                      
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                    ================
-                    8. IMMIGRANT
-                    ================ 
+                            ================
+                            8. IMMIGRANT
+                            ================ 
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -1280,7 +859,7 @@ partner).
 
                     <v-data-table
                       :headers="headers11"
-                      :items="doc.body.phase11"
+                      :items="doc.body.phase32"
                       hide-actions
                       class="elevation-1"
                     >
@@ -1294,44 +873,25 @@ partner).
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.port}}
                         </td>
 
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.fromWhichCountry}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                         {{props.item.permit}}
+                         
                         </td>
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                     
                     </v-data-table>
 
                     <v-data-table
                       :headers="headers12"
-                      :items="doc.body.phase8"
+                      :items="doc.body.phase30"
                       hide-actions
                       class="elevation-1"
                     >
@@ -1347,38 +907,16 @@ partner).
                       <template v-slot:items="props" v-slot:no-data>
                         <td class="px-0 py-0"></td>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        {{doc.body.date8}}
                         </td>
 
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.certificateNumber}}
                         </td>
-                        <!-- <td class="px-0 py-0">
-                                    <v-text-field
-                                        v-model="props.item.comment"
-                                        single-line
-                                        solo
-                                        flat
-                                        placeholder
-                                    ></v-text-field>
-                        </td>-->
+                   
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                     
                     </v-data-table>
 
                     <v-data-table
@@ -1416,21 +954,16 @@ partner).
                         <td class>{{ props.item.description }}</td>
 
                         <td>
-                          <v-radio-group v-model="props.item.boolean" :mandatory="false">
-                            <v-radio label="Yes" value="Yes"></v-radio>
-                            <v-radio label="No" value="No"></v-radio>
-                          </v-radio-group>
-                        </td>
+                          {{props.item.boolean}}
+                        </td> 
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                    
                     </v-data-table>
 
                     <v-data-table
                       :headers="headers13"
-                      :items="doc.body.phase7"
+                      :items="doc.body.phase31"
                       hide-actions
                       class="elevation-1"
                     >
@@ -1444,48 +977,28 @@ partner).
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                         {{props.item.passportNumber}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.counrtyIssued}}
                         </td>
 
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{doc.body.date9}}
                         </td>
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                      
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                    =====================================
-                    9.VISITS/RESIDENCE OUTSIDE THE RSA
-                    =====================================
+                            =====================================
+                            9.VISITS/RESIDENCE OUTSIDE THE RSA
+                            =====================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -1510,67 +1023,33 @@ partner).
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.country}}
                         </td>
 
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.purposeOfVisit}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.dateFrom}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.dateTo}}
                         </td>
 
-                        <td class="text-xs-center px-0 py-0">
-                          <v-icon small color="red " @click="removeRow(props.index)">delete</v-icon>
-                        </td>
+                        
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
-
-                      <template v-slot:footer>
-                        <td colspan="12" class="text-xs-center px-0 py-0 mx-0 primary">
-                          <v-icon @click="addRow" color="white">add</v-icon>
-                        </td>
-                      </template>
+                      
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                    =====================================
-                    10. CONTACT OR SUSPECTED CONTACT WITH FOREIGN INTELLIGENCE SERVICES
-                    =====================================
+                            =====================================
+                            10. CONTACT OR SUSPECTED CONTACT WITH FOREIGN INTELLIGENCE SERVICES
+                            =====================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -1581,7 +1060,7 @@ partner).
                     HAVE YOU HAD ANY CONTACT WITH FOREIGN INTELLIGENCE SERVICES OR SUSPECTED MEMBERS OF FOREIGN INTELLIGENCE SERVICES:
                     <v-data-table
                       :headers="headers17"
-                      :items="doc.body.phase11"
+                      :items="doc.body.phase12"
                       hide-actions
                       class="elevation-1"
                     >
@@ -1595,67 +1074,31 @@ partner).
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td >
+                         
+                              {{doc.body.date1}}
                         </td>
 
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td >
+                          {{props.item.serviceName}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td >
+                          {{props.item.contactName}}
                         </td>
-
-                        <!-- <td class="text-xs-right px-0 py-0">
-                                    <v-text-field
-                                        v-model="props.item.fullResidentialAddress"
-                                        single-line
-                                        solo
-                                        flat
-                                        placeholder="Full Residential Address"
-                                    ></v-text-field>
-                        </td>-->
-                        <td class="text-xs-center px-0 py-0">
-                          <v-icon small color="red " @click="removeRow(props.index)">delete</v-icon>
-                        </td>
+                      
+                        
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
-
-                      <template v-slot:footer>
-                        <td colspan="12" class="text-xs-center px-0 py-0 mx-0 primary">
-                          <v-icon @click="addRow" color="white">add</v-icon>
-                        </td>
-                      </template>
+                      
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                    =====================================
-                    11.	LEGAL ACTIONS
-                    =====================================
+                            =====================================
+                            11.	LEGAL ACTIONS
+                            =====================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -1682,10 +1125,7 @@ partner).
                         <td class>{{ props.item.description }}</td>
 
                         <td>
-                          <v-radio-group v-model="props.item.boolean" :mandatory="false">
-                            <v-radio label="Yes" value="Yes"></v-radio>
-                            <v-radio label="No" value="No"></v-radio>
-                          </v-radio-group>
+                          {{props.item.boolean}}
                         </td>
                       </template>
 
@@ -1726,58 +1166,25 @@ partner).
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.place}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.date}}
                         </td>
 
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                         {{props.item.natureOfcase}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.finding}}
+                          
                         </td>
 
-                        <td class="text-xs-center px-0 py-0">
-                          <v-icon small color="red " @click="removeRow(props.index)">delete</v-icon>
-                        </td>
+                        
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
-
-                      <template v-slot:footer>
-                        <td colspan="12" class="text-xs-center px-0 py-0 mx-0 primary">
-                          <v-icon @click="addRow" color="white">add</v-icon>
-                        </td>
-                      </template>
+                      
                     </v-data-table>
                     <v-data-table
                       :headers="headers20"
@@ -1797,7 +1204,7 @@ partner).
 
                     <v-data-table
                       :headers="headers21"
-                      :items="doc.body.phase7"
+                      :items="doc.body.phase13"
                       hide-actions
                       class="elevation-1"
                     >
@@ -1812,57 +1219,26 @@ partner).
 
                       <template v-slot:items="props" v-slot:no-data>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.place}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td >
+                          {{props.item.date}}
                         </td>
 
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td >
+                          {{props.item.byWhom}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.finding}}
+
+                         
+
                         </td>
 
-                        <td class="text-xs-center px-0 py-0">
-                          <v-icon small color="red " @click="removeRow(props.index)">delete</v-icon>
-                        </td>
+                        
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
-
-                      <template v-slot:footer>
-                        <td colspan="12" class="text-xs-center px-0 py-0 mx-0 primary">
-                          <v-icon @click="addRow" color="white">add</v-icon>
-                        </td>
-                      </template>
+                      
                     </v-data-table>
 
                     <v-flex
@@ -1872,7 +1248,7 @@ partner).
 
                     <v-data-table
                       :headers="headers17"
-                      :items="doc.body.phase11"
+                      :items="doc.body.phase14"
                       hide-actions
                       class="elevation-1"
                     >
@@ -1886,67 +1262,30 @@ partner).
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.date}}
                         </td>
 
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.nameOfService}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.nameOfContact}}
                         </td>
 
-                        <!-- <td class="text-xs-right px-0 py-0">
-                                    <v-text-field
-                                        v-model="props.item.fullResidentialAddress"
-                                        single-line
-                                        solo
-                                        flat
-                                        placeholder="Full Residential Address"
-                                    ></v-text-field>
-                        </td>-->
-                        <td class="text-xs-center px-0 py-0">
-                          <v-icon small color="red " @click="removeRow(props.index)">delete</v-icon>
-                        </td>
+                        
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
-
-                      <template v-slot:footer>
-                        <td colspan="12" class="text-xs-center px-0 py-0 mx-0 primary">
-                          <v-icon @click="addRow" color="white">add</v-icon>
-                        </td>
-                      </template>
+                      
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                    =====================================
-                    12. EMPLOYMENT HISTORY
-                    =====================================
+                =====================================
+                12. EMPLOYMENT HISTORY
+                =====================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -1957,7 +1296,7 @@ partner).
                     NAME ALL PLACES OF EMPLOYMENT DURING THE PST 10 YEARS INCLUDING YOUR PRESENT OCCUPATION:
                     <v-data-table
                       :headers="headers23"
-                      :items="doc.body.phase11"
+                      :items="doc.body.phase16"
                       hide-actions
                       class="elevation-1"
                     >
@@ -1971,75 +1310,39 @@ partner).
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td >
+                          {{props.item.serviceNumber}}
+                         
                         </td>
 
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                        {{props.item.nameOfEmployer}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.supervisorName}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.supervisorTel}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td >
+                          {{props.item.address}}
+                          
                         </td>
-                        <td class="text-xs-center px-0 py-0">
-                          <v-icon small color="red " @click="removeRow(props.index)">delete</v-icon>
-                        </td>
+                       
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                      
 
-                      <template v-slot:footer>
-                        <td colspan="12" class="text-xs-center px-0 py-0 mx-0 primary">
-                          <v-icon @click="addRow" color="white">add</v-icon>
-                        </td>
-                      </template>
+                      
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                    =====================================
-                    13. REFERENCES
-                    =====================================
+                            =====================================
+                            13. REFERENCES
+                            =====================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -2050,7 +1353,7 @@ partner).
                     NAME 5 PERSONS (NOT RELATIVES) TO WHOM YOU HAVE BEEN WELL-KNOWN FOR A PERIOD OF 5-20 YEARS
                     <v-data-table
                       :headers="headers24"
-                      :items="doc.body.phase11"
+                      :items="doc.body.phase17"
                       hide-actions
                       class="elevation-1"
                     >
@@ -2064,112 +1367,50 @@ partner).
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.title}}
                         </td>
 
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
-                        </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
-                        </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.surname}}
                         </td>
                         <td>
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.firstName}}
+                        </td>
+                        <td >
+                          {{props.item.address}}
+                        </td>
+                        <td>
+                         {{props.item.homeTel}}
                         </td>
 
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.businessAddress}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.busTel}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.yearsKnown}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                         {{props.item.idNumber}}
+
+                         
                         </td>
-                        <td class="text-xs-center px-0 py-0">
-                          <v-icon small color="red " @click="removeRow(props.index)">delete</v-icon>
-                        </td>
+                        
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
-
-                      <template v-slot:footer>
-                        <td colspan="12" class="text-xs-center px-0 py-0 mx-0 primary">
-                          <v-icon @click="addRow" color="white">add</v-icon>
-                        </td>
-                      </template>
+                      
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                    ==================================================================
-                    14. SERVICE IN SECURITY SERVICES (INCLUDING SAPS/FOREIGN SERVICES)
-                    ==================================================================
+                            ==================================================================
+                            14. SERVICE IN SECURITY SERVICES (INCLUDING SAPS/FOREIGN SERVICES)
+                            ==================================================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -2179,7 +1420,7 @@ partner).
                   <v-flex>
                     <v-data-table
                       :headers="headers25"
-                      :items="doc.body.phase11"
+                      :items="doc.body.phase18"
                       hide-actions
                       class="elevation-1"
                     >
@@ -2194,74 +1435,36 @@ partner).
 
                       <template v-slot:items="props" v-slot:no-data>
                         <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                          {{props.item.country}}
                         </td>
 
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.serviceNumber}}
+                         
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                         {{props.item.from}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.to}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.serviceName}}
+                          
                         </td>
-                        <td class="text-xs-center px-0 py-0">
-                          <v-icon small color="red " @click="removeRow(props.index)">delete</v-icon>
-                        </td>
+                        
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
-
-                      <template v-slot:footer>
-                        <td colspan="12" class="text-xs-center px-0 py-0 mx-0 primary">
-                          <v-icon @click="addRow" color="white">add</v-icon>
-                        </td>
-                      </template>
+                      
                     </v-data-table>
                   </v-flex>
                 </v-layout>
               </v-card-text>
 
               <!-- 
-                    ==================================================================
-                    15. HAVE YOU EVER BEEN ISSUED WITH A SECURITY CLEARANCE/DENIED
-                    ==================================================================
+                            ==================================================================
+                            15. HAVE YOU EVER BEEN ISSUED WITH A SECURITY CLEARANCE/DENIED
+                            ==================================================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -2271,7 +1474,7 @@ partner).
                   <v-flex>
                     <v-data-table
                       :headers="headers26"
-                      :items="doc.body.phase11"
+                      :items="doc.body.phase19"
                       hide-actions
                       class="elevation-1"
                     >
@@ -2285,47 +1488,21 @@ partner).
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                        {{props.item.level}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.dateIssued}}
                         </td>
-                        <td class="px-0 py-0">
-                          <v-text-field
-                            v-model="props.item.comment"
-                            single-line
-                            solo
-                            flat
-                            placeholder
-                          ></v-text-field>
+                        <td>
+                          {{props.item.Institution}}
                         </td>
-                        <td class="text-xs-center px-0 py-0">
-                          <v-icon small color="red " @click="removeRow(props.index)">delete</v-icon>
-                        </td>
+                        
                       </template>
 
-                      <template v-slot:no-data>
-                        <div :value="true" class="text-xs-center">No Form Input Fields</div>
-                      </template>
+                      
 
-                      <template v-slot:footer>
-                        <td colspan="12" class="text-xs-center px-0 py-0 mx-0 primary">
-                          <v-icon @click="addRow" color="white">add</v-icon>
-                        </td>
-                      </template>
+                      
                     </v-data-table>
                   </v-flex>
                 </v-layout>
@@ -2333,9 +1510,9 @@ partner).
               <br />
 
               <!-- 
-                    ==================================================================
-                    16. DECLARATION
-                    ==================================================================
+                            ==================================================================
+                            16. DECLARATION
+                            ==================================================================
               -->
 
               <v-card-text class="pt-0 mt-0">
@@ -2345,25 +1522,25 @@ partner).
                   <v-flex>
                     <p>(A) DO YOU AND UNDERSTAND THE CONTENTS OF THE ABOVE DECLARATION?</p>
                     <v-flex xs12 lg6>
-                      <v-text-field v-model="doc.body.initialsSurname" label="ANSWER: "></v-text-field>
+                      <p><strong>ANSWER :</strong>{{doc.body.answerA}}</p>
                     </v-flex>
                     <p>(B) DO YOU HAVE ANY OBJECTIONS TO TAKING THE PRESCRIBED OATH/AFFIRMATION?</p>
                     <v-flex xs12 lg6>
-                      <v-text-field v-model="doc.body.initialsSurname" label="ANSWER: "></v-text-field>
+                      <p><strong>ANSWER :</strong>{{doc.body.answerB}}</p>
                     </v-flex>
                     <p>(C) DO YOU CONSIDER THE PRESCRIBED OATH/AFFIRMATION TO BE BINDING ON YOUR CONSCIENCE?</p>
                     <v-flex xs12 lg6>
-                      <v-text-field v-model="doc.body.initialsSurname" label="ANSWER: "></v-text-field>
+                      <p><strong>ANSWER :</strong>{{doc.body.answerC}}</p>
+                      
                     </v-flex>
                     <p>
                       (D) I CERTIFY THAT THE ABOVE QUESTIONS WERE PUT TO ME AND THAT THE ANSWERS, AS REFLECTED ABOVE, WERE
                       WRITTEN DOWN IN MY PRESENCE.
                     </p>
                     <v-flex xs6 offset-xs3>
-                      <v-text-field v-model="doc.body.initialsSurname" label=" "></v-text-field>
-                      <p class="text-xs-center">
-                        <strong>SIGNATURE OF DEPONENT</strong>
-                      </p>
+                      <strong>SIGNATURE OF DEPONENT :</strong><div v-if="doc.body.signatures != []">{{doc.body.signatures[1].SurName}}</div>
+                      
+                   
                     </v-flex>
 
                     <br />
@@ -2373,42 +1550,21 @@ partner).
                       PLACED THERON IN MY PRESENCE.
                     </p>
                     <v-flex xs6 offset-xs3>
-                      <v-text-field v-model="doc.body.initialsSurname" label=" "></v-text-field>
-                      <p class="text-xs-center">
-                        <strong>COMMISSIONER OF OATH / JUSTICE OF THE PEACE</strong>
-                      </p>
+                      <strong>COMMISSIONER OF OATH / JUSTICE OF THE PEACE :</strong><div v-if="doc.body.signatures != []">{{doc.body.signatures[2].SurName}}</div>
+                  
                     </v-flex>
-                    <v-flex xs12>
-                      <v-text-field
-                        v-model="doc.body.initialsSurname"
-                        label="FULL FIRST NAME AND SURNAME: "
-                      ></v-text-field>
-                    </v-flex>
-                    <v-flex xs12>
-                      <v-text-field v-model="doc.body.initialsSurname" label="DESIGNATION (RANK): "></v-text-field>
-                    </v-flex>
+                   
                     <p>EX OFFICIO REPUBLIC OF SOUTH AFRICA</p>
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.initialsSurname" label="PHYSICAL ADDRESS: "></v-text-field>
+                      <p><strong>PHYSICAL ADDRESS :</strong>{{doc.body.physicalAddress}}</p>
                     </v-flex>
 
                     <v-flex xs12 sm4>
-                      <v-menu
-                        v-model="menu1a"
-                        :close-on-content-click="false"
-                        :nudge-right="40"
-                        transition="scale-transition"
-                        offset-y
-                        min-width="290px"
-                      >
-                        <template v-slot:activator="{ on }">
-                          <v-text-field v-model="doc.body.date1" label="DATE: " readonly v-on="on"></v-text-field>
-                        </template>
-                        <v-date-picker v-model="doc.body.date1" @input="menu1b = false"></v-date-picker>
-                      </v-menu>
+                       <p><strong>DATE :</strong>{{doc.body.date}}</p>
+                      
                     </v-flex>
                     <v-flex xs12 sm6>
-                      <v-text-field v-model="doc.body.initialsSurname" label="PLACE: "></v-text-field>
+                      <p><strong>PLACE :</strong>{{doc.body.place}}</p>
                     </v-flex>
                   </v-flex>
                 </v-layout>
@@ -2437,7 +1593,7 @@ partner).
 
 <script>
 import Vue from "vue";
-import Toolbar from "~/components/FormToolbar";
+import Toolbar from "~/components/PreviewToolbar";
 import SelectUsers from "~/components/SelectUsers";
 import store from "~/store/store";
 import Editor from "@tinymce/tinymce-vue";
@@ -2450,7 +1606,7 @@ import { createDoc } from "~/services/DocsService";
 Vue.use(VueSignaturePad);
 Vue.use(Editor);
 export default {
-  name: "Checklist",
+  name: "SecurityClearance",
   components: {
     editor: Editor,
     Toolbar,
@@ -2915,10 +2071,6 @@ export default {
           align: "center",
           value: ""
           //   width: "10%"
-        },
-        {
-          text: "ACTIONS",
-          value: "carbs"
         }
       ],
       headers10: [
@@ -2940,24 +2092,7 @@ export default {
           value: ""
           //   width: "10%"
         }
-        // {
-        //   text: "ITEM CHECKED",
-        //   value: ""
-        // },
-        // {
-        //   text: "YES / NO",
-        //   value: ""
-        //   //   width: "10%"
-        // },
-        // {
-        //   text: "COMMENTS",
-        //   value: ""
-        // }
-        // {
-        //   text: "TIME",
-        //   value: "",
-        //   width: "10%"
-        // }
+       
       ],
       headers11: [
         {
@@ -3004,13 +2139,7 @@ export default {
           value: "",
           width: "150px"
         }
-        // {
-        //   text: "FULL RESIDENTIAL ADDRESS",
-        //   align: "center",
-        //   sortable: false,
-        //   value: ""
-        //   //   width: "10%"
-        // }
+        
       ],
 
       headers13: [
@@ -3035,13 +2164,7 @@ export default {
           value: "",
           width: "150px"
         }
-        // {
-        //   text: "FULL RESIDENTIAL ADDRESS",
-        //   align: "center",
-        //   sortable: false,
-        //   value: ""
-        //   //   width: "10%"
-        // }
+        
       ],
       headers14: [
         {
@@ -3102,18 +2225,6 @@ export default {
           align: "center",
           sortable: false,
           value: ""
-        },
-        // {
-        //   text: "DATE TO",
-        //   align: "center",
-        //   sortable: false,
-        //   value: ""
-        //   //   width: "10%"
-        // },
-        {
-          text: "ACTIONS",
-          sortable: false,
-          value: "carbs"
         }
       ],
       headers18: [
@@ -3151,11 +2262,6 @@ export default {
           sortable: false,
           value: ""
           //   width: "10%"
-        },
-        {
-          text: "ACTIONS",
-          sortable: false,
-          value: "carbs"
         }
       ],
       headers20: [
@@ -3193,11 +2299,6 @@ export default {
           sortable: false,
           value: ""
           //   width: "10%"
-        },
-        {
-          text: "ACTIONS",
-          sortable: false,
-          value: "carbs"
         }
       ],
       headers22: [
@@ -3218,18 +2319,6 @@ export default {
           align: "center",
           sortable: false,
           value: ""
-        },
-        // {
-        //   text: "DATE TO",
-        //   align: "center",
-        //   sortable: false,
-        //   value: ""
-        //   //   width: "10%"
-        // },
-        {
-          text: "ACTIONS",
-          sortable: false,
-          value: "carbs"
         }
       ],
       headers23: [
@@ -3264,11 +2353,6 @@ export default {
           sortable: false,
           value: ""
           //   width: "10%"
-        },
-        {
-          text: "ACTIONS",
-          sortable: false,
-          value: "scarbs"
         }
       ],
       headers24: [
@@ -3331,11 +2415,6 @@ export default {
           sortable: false,
           value: ""
           //   width: "10%"
-        },
-        {
-          text: "ACTIONS",
-          sortable: false,
-          value: "scarbs"
         }
       ],
 
@@ -3371,11 +2450,6 @@ export default {
           sortable: false,
           value: ""
           //   width: "10%"
-        },
-        {
-          text: "ACTIONS",
-          sortable: false,
-          value: "scarbs"
         }
       ],
       headers26: [
@@ -3396,271 +2470,10 @@ export default {
           align: "center",
           sortable: false,
           value: ""
-        },
-        {
-          text: "ACTIONS",
-          sortable: false,
-          value: "scarbs"
         }
       ],
 
-      iSign: false,
-      doc: {
-        ref: this.$route.params.ref,
-        template: "checklist",
-        author: store.state.user,
-        formValid: true,
-        docRef: Math.round(+new Date() / 1000),
-        body: {
-          address: "",
-          date1: new Date().toISOString().substr(0, 10),
-          date2: new Date().toISOString().substr(0, 10),
-          date3: new Date().toISOString().substr(0, 10),
-          date4: new Date().toISOString().substr(0, 10),
-          enderUser: {},
-          initialsSurname: "",
-          items: ["RECORD", "COFIDENTIAL", "SECRET", "TOP SECRET"],
-          items1: [
-            "SINGLE",
-            "MARRIED",
-            "SEPARATED",
-            "DIVORCED",
-            "WIDOW/WIDOWER",
-            "COHABITING"
-          ],
-
-          phase1: [
-            {
-              description: " IDENTITY No.",
-              comment: ""
-            },
-            {
-              description: "SURNAME",
-              comment: ""
-            },
-            {
-              description: "FULL FIRST NAMES",
-              comment: "",
-              fullname: "FULL_FIRST_NAMES"
-            },
-            {
-              description: "PRESENT",
-              comment: ""
-            },
-            {
-              description: "PREVIOUS",
-              comment: ""
-            },
-            {
-              description: "HOME ADDRESS",
-              comment: ""
-            },
-            {
-              description: "TEL. HOME",
-              comment: ""
-            },
-            {
-              description: "TEL. WORK",
-              comment: ""
-            }
-          ],
-
-          phase2: [
-            {
-              description:
-                "HAVE YOU EVER UNDERGONE PSYCHIATRIC TREATMENT AND/OR PSYCHOLOGICAL THERAPY?",
-              boolean: "",
-              comment: ""
-            }
-          ],
-
-          phase3: [
-            {
-              description:
-                "Invite 5 quotations, preferably between 3 and 7 days depending on the type and urgency of service/commodity required.  Attach proof of invitation.",
-              boolean: "",
-              comment: ""
-            }
-          ],
-          phase4: [
-            {
-              description: "HAVE YOU EVER BEEN TREATED FOR ALCOHOL ABUSE?",
-              boolean: "",
-              comment: ""
-            },
-            {
-              description: "HAVE YOU EVER BEEN TREATED FOR DRUG ABUSE?",
-              boolean: "",
-              comment: ""
-            }
-          ],
-
-          phase5: [
-            {
-              description: "(i)",
-              boolean: "",
-              comment: ""
-            },
-            {
-              description: "(ii)",
-              boolean: "",
-              comment: ""
-            },
-            {
-              description: "(iii)",
-              boolean: "",
-              comment: ""
-            }
-          ],
-
-          phase6: [
-            {
-              description: "(i)",
-              boolean: "",
-              comment: ""
-            },
-            {
-              description: "(ii)",
-              boolean: "",
-              comment: ""
-            },
-            {
-              description: "(iii)",
-              boolean: "",
-              comment: ""
-            }
-          ],
-          phase7: [
-            {
-              comment: ""
-            }
-          ],
-          phase8: [
-            {
-              comment: ""
-            }
-          ],
-          phase9: [
-            {
-              relationship: "",
-              presentSurname: "",
-              previousSurname: "",
-              firstNames: "",
-              identityNumber: "",
-              countryOfBirth: "",
-              nationality: "",
-              fullResidentialAddress: ""
-            },
-            {
-              relationship: "",
-              presentSurname: "",
-              previousSurname: "",
-              firstNames: "",
-              identityNumber: "",
-              countryOfBirth: "",
-              nationality: "",
-              fullResidentialAddress: ""
-            }
-          ],
-          phase10: [
-            {
-              comment: ""
-            }
-          ],
-          phase11: [
-            {
-              comment: ""
-            }
-          ],
-          phase15: [
-            {
-              description:
-                "DO YOU HAVE A PERMANENT RESIDENCE PERMIT FOR THE RSA?",
-              boolean: "",
-              comment: ""
-            }
-          ],
-          phase20: [
-            {
-              description:
-                "HAVE YOU EVER BEEN CONVICTED OR ARE THERE ANY PENDING CASES FOR A CRIMINAL/ DEPARTMENTAL OFFENCE(S)? ( ADMISSION OF GUILT OUTSIDE A COURT MUST ALSO BE SUBMITTED )",
-              boolean: "",
-              comment: ""
-            }
-          ],
-          phase21: [
-            {
-              description: "IDENTITY No.",
-              boolean: "",
-              comment: ""
-            }
-          ],
-          phase22: [
-            {
-              description: "CITIZENSHIP",
-              boolean: "",
-              comment: ""
-            }
-          ],
-          phase23: [
-            {
-              description: "SINGLE",
-              boolean: "",
-              comment: ""
-            }
-          ],
-          phase24: [
-            {
-              description: "PRESENT",
-              boolean: "",
-              comment: ""
-            },
-            {
-              description: "PREVIOUS",
-              boolean: "",
-              comment: ""
-            }
-          ],
-          phase25: [
-            {
-              description: "",
-              boolean: "",
-              comment: ""
-            }
-          ],
-          phase26: [
-            {
-              description: "CURRENT ADDRESS (NOT POSTAL ADDRESS)",
-              boolean: "",
-              comment: ""
-            },
-            {
-              description: "PREVIOUS ADDRESS (NOT POSTAL ADDRESS)",
-              boolean: "",
-              comment: ""
-            }
-          ],
-          phase27: [
-            {
-              description: "",
-              boolean: "",
-              comment: ""
-            },
-            {
-              description: "",
-              boolean: "",
-              comment: ""
-            }
-          ],
-          docRef: Math.round(+new Date() / 1000),
-          attachments: [],
-          authorSignature: "",
-          signatures: [],
-          signatures2: []
-        }
-      },
-
-      signature: null,
+       signature: null,
       snackbarText: "",
       snackbar: false,
       snackbarColor: "success",
@@ -3673,35 +2486,43 @@ export default {
     };
   },
   computed: {
+    doc() {
+      return store.state.doc;
+    },
     time() {
       return Date.now();
     },
-    users() {
-      return store.state.users;
+    setAction(action) {
+      return doc.action == action;
+    }
+  },
+  watch: {
+    doc(data) {
+      console.log("We have data!", data);
     }
   },
   methods: {
-    ...signatureHelpers(),
-    setRecipients(users) {
-      this.doc.recipients = users;
-    },
-    setSigners(users) {
-      this.doc.body.signatures.push(users);
+    // sign
+    clear() {
+      this.$refs.signaturePad.clearSignature();
+      let pos = this.doc.body.signatures.map(function(e) { return e.EmailAdress; }).indexOf(store.state.user.EmailAdress);    
+      let user = this.doc.body.signatures[pos]
+      user.signature = "";
+      console.log(user);
     },
     onEnd() {
-      this.setAuthorSignature();
-    },
-    addRow() {
-      this.doc.body.phase9.push({});
-    },
-    removeRow(index) {
-      this.doc.body.phase9.splice(index, 1);
+      const { isEmpty, data } = this.$refs.signaturePad.saveSignature();
+      let pos = this.doc.body.signatures.map(function(e) { return e.EmailAdress; }).indexOf(store.state.user.EmailAdress);    
+      let user = this.doc.body.signatures[pos]
+      user.signature = data;
+      user.signatureDate = Date.now();
+      console.log(user);
+      console.log("=== End ===");
     }
   },
-
-  created() {
-    console.log(store.state.users);
-    console.log(this.$route);
+  async created() {
+    console.log(this.ref, this.$route.params.id);
+    await store.dispatch("getDocById", this.$route.params.id);
   }
 };
 </script>

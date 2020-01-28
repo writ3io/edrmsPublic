@@ -83,7 +83,11 @@
                   </v-flex>
 
                   <v-flex xs12 lg6>
-                    <!-- <v-select :items="doc.body.items" label="Employment Type:" v-model="doc.body.e1" outlined></v-select> -->
+                    <p>Employment Type:</p>
+                     <v-radio-group v-model="doc.body.employmentType" :mandatory="false">
+                            <v-radio label="Permanent" value="Permanent"></v-radio>
+                            <v-radio label="Contract" value="Contract"></v-radio>
+                          </v-radio-group>
                   </v-flex>
                  
                   
@@ -428,6 +432,11 @@
                 </v-flex>
 
                 <v-flex xs12 lg6>
+                  <p>Applicant Photo Captured:</p>
+                     <v-radio-group v-model="doc.body.boolean" :mandatory="false">
+                             <v-radio label="Yes" value="Yes"></v-radio>
+                            <v-radio label="No" value="No"></v-radio>
+                          </v-radio-group>
                  
                   <!-- <v-select :items="doc.body.items1" v-model="doc.body.e2" label="Applicant Photo Captured:" outlined></v-select> -->
                 </v-flex>
@@ -697,10 +706,8 @@ export default {
           printName1:"",
           cardNumber:"",
           cardIssued:"",
-          items: ["Permanent", "Contract"],
-          e1:"",
-          e2:"",
-          items1: ["Yes", "No"],
+          e1:null,
+          boolean:"",
 
           phase1: [
             {

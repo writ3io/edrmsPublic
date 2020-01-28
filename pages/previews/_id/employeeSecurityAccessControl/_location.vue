@@ -83,8 +83,8 @@
                   </v-flex>
 
                   <v-flex xs12>
-                    <!-- <v-select :items="doc.body.items" label="Employment Type:" v-model="doc.body.e1" outlined></v-select> -->
-                    <!-- <strong>Employment Type : </strong>{{doc.body.items}} -->
+                   <!-- <p>Employment Type:</p>
+                     {{doc.body.employmentType}} -->
                   </v-flex>
                  
                   
