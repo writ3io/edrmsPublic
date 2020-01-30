@@ -36,7 +36,7 @@
                 </v-layout>
                 <v-layout xs12 wrap border class="card-border">
                   <v-flex xs12>
-                    <strong>IMMEDIATE SUPERVISOR/DELEGATED OFFICIAL :</strong><div v-if="doc.body.signatures != []">{{doc.body.signatures[0].SurName}}</div>
+                    <strong>IMMEDIATE SUPERVISOR/DELEGATED OFFICIAL :</strong><div v-if="doc.body.signatures[0].SurName != null">{{doc.body.signatures[0].SurName}}</div><div v-else>{{Empty}}</div>
                   
                   </v-flex>
                   <v-flex xs12 lg6>
@@ -1538,7 +1538,7 @@
                       WRITTEN DOWN IN MY PRESENCE.
                     </p>
                     <v-flex xs6 offset-xs3>
-                      <strong>SIGNATURE OF DEPONENT :</strong><div v-if="doc.body.signatures != []">{{doc.body.signatures[1].SurName}}</div>
+                      <strong>SIGNATURE OF DEPONENT :</strong><div v-if="doc.body.signatures != null">{{doc.body.signatures[1].SurName}}</div><div v-else>{{Empty}}</div>
                       
                    
                     </v-flex>
@@ -1550,7 +1550,7 @@
                       PLACED THERON IN MY PRESENCE.
                     </p>
                     <v-flex xs6 offset-xs3>
-                      <strong>COMMISSIONER OF OATH / JUSTICE OF THE PEACE :</strong><div v-if="doc.body.signatures != []">{{doc.body.signatures[2].SurName}}</div>
+                      <strong>COMMISSIONER OF OATH / JUSTICE OF THE PEACE :</strong><div v-if="doc.body.signatures != null">{{doc.body.signatures[2].SurName}}</div><div v-else>{{Empty}}</div>
                   
                     </v-flex>
                    

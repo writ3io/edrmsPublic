@@ -56,7 +56,6 @@ const _4e09f8a6 = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _13459f50 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/AnnualAssessmentHOD/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/AnnualAssessmentHOD/index" */))
 const _3735e054 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/annualPerformancePlan/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/annualPerformancePlan/index" */))
 const _77f7fc6d = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/annualPerformancePlanQuarterlyReport/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/annualPerformancePlanQuarterlyReport/index" */))
-const _60001a38 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/anu/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/anu/index" */))
 const _1c990582 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/applicationForLeaveOfAbsence/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/applicationForLeaveOfAbsence/index" */))
 const _177e7e5e = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/AssetDataRecording/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/AssetDataRecording/index" */))
 const _392fea9b = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/AssetMovement/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/AssetMovement/index" */))
@@ -110,6 +109,7 @@ const _472d35d7 = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _1deba9fb = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Panel_Declaration/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Panel_Declaration/index" */))
 const _bba40870 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/PerformanceAgreementForHOD/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/PerformanceAgreementForHOD/index" */))
 const _9e43c720 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/personelAcessControl/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/personelAcessControl/index" */))
+const _3edae82e = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/quarterlyReportingTemplate/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/quarterlyReportingTemplate/index" */))
 const _0ef73d6a = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Recruitment_Form_Annexure_A/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Recruitment_Form_Annexure_A/index" */))
 const _fe459208 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Recruitment_Form_Annexure_B1/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Recruitment_Form_Annexure_B1/index" */))
 const _1209d53f = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Reference_Check_Template/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Reference_Check_Template/index" */))
@@ -123,6 +123,7 @@ const _5709bf0e = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _95c559e2 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Score_Sheet_For_Interviews/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Score_Sheet_For_Interviews/index" */))
 const _1763f5f0 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Score_Sheet_For_Interviews_Level_1_12/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Score_Sheet_For_Interviews_Level_1_12/index" */))
 const _2df823d8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/SecurityClearance/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/SecurityClearance/index" */))
+const _43b4f574 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/SecurityClearanceZ204/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/SecurityClearanceZ204/index" */))
 const _c637fa16 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/siteInspection/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/siteInspection/index" */))
 const _285d439a = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/specification_form/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/specification_form/index" */))
 const _41fcf78e = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/SSAVettingRequest/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/SSAVettingRequest/index" */))
@@ -146,6 +147,7 @@ const _4bc7a233 = () => interopDefault(import('../pages/previews/_id/Acceptance_
 const _f66e4ed6 = () => interopDefault(import('../pages/previews/_id/acknowledgementOfDebt/_location.vue' /* webpackChunkName: "pages/previews/_id/acknowledgementOfDebt/_location" */))
 const _58753355 = () => interopDefault(import('../pages/previews/_id/agenda/_location.vue' /* webpackChunkName: "pages/previews/_id/agenda/_location" */))
 const _4fa675ce = () => interopDefault(import('../pages/previews/_id/AnnualPerformanceAssessmentsHOD/_location.vue' /* webpackChunkName: "pages/previews/_id/AnnualPerformanceAssessmentsHOD/_location" */))
+const _6eeeefea = () => interopDefault(import('../pages/previews/_id/annualPerformancePlan/_location.vue' /* webpackChunkName: "pages/previews/_id/annualPerformancePlan/_location" */))
 const _96790248 = () => interopDefault(import('../pages/previews/_id/annualPerformancePlanQuarterlyReport/_location.vue' /* webpackChunkName: "pages/previews/_id/annualPerformancePlanQuarterlyReport/_location" */))
 const _ca9c1b1e = () => interopDefault(import('../pages/previews/_id/applicationForLeaveOfAbsence/_location.vue' /* webpackChunkName: "pages/previews/_id/applicationForLeaveOfAbsence/_location" */))
 const _47b63280 = () => interopDefault(import('../pages/previews/_id/AssetDataRecording/_location.vue' /* webpackChunkName: "pages/previews/_id/AssetDataRecording/_location" */))
@@ -190,6 +192,7 @@ const _044e9068 = () => interopDefault(import('../pages/previews/_id/operational
 const _53ea0da0 = () => interopDefault(import('../pages/previews/_id/Panel_Declaration/_location.vue' /* webpackChunkName: "pages/previews/_id/Panel_Declaration/_location" */))
 const _1a54dcf7 = () => interopDefault(import('../pages/previews/_id/PerformanceAgreementForHOD/_location.vue' /* webpackChunkName: "pages/previews/_id/PerformanceAgreementForHOD/_location" */))
 const _0942c52e = () => interopDefault(import('../pages/previews/_id/personelAccessControl/_location.vue' /* webpackChunkName: "pages/previews/_id/personelAccessControl/_location" */))
+const _75c27498 = () => interopDefault(import('../pages/previews/_id/quarterlyReportingTemplate/_location.vue' /* webpackChunkName: "pages/previews/_id/quarterlyReportingTemplate/_location" */))
 const _6658ed42 = () => interopDefault(import('../pages/previews/_id/Recruitment_Form_Annexure_A/_location.vue' /* webpackChunkName: "pages/previews/_id/Recruitment_Form_Annexure_A/_location" */))
 const _13a6522a = () => interopDefault(import('../pages/previews/_id/Recruitment_Form_Annexure_B1/_location.vue' /* webpackChunkName: "pages/previews/_id/Recruitment_Form_Annexure_B1/_location" */))
 const _c97f0ba4 = () => interopDefault(import('../pages/previews/_id/Reference_Check_Template/_location.vue' /* webpackChunkName: "pages/previews/_id/Reference_Check_Template/_location" */))
@@ -199,6 +202,7 @@ const _a53fdc40 = () => interopDefault(import('../pages/previews/_id/schemeBClai
 const _48e48b25 = () => interopDefault(import('../pages/previews/_id/Score_Sheet_For_Interviews_Level_1_12/_location.vue' /* webpackChunkName: "pages/previews/_id/Score_Sheet_For_Interviews_Level_1_12/_location" */))
 const _28ad8e84 = () => interopDefault(import('../pages/previews/_id/Score_Sheet_For_Interviews/_location.vue' /* webpackChunkName: "pages/previews/_id/Score_Sheet_For_Interviews/_location" */))
 const _954586e6 = () => interopDefault(import('../pages/previews/_id/SecurityClearance/_location.vue' /* webpackChunkName: "pages/previews/_id/SecurityClearance/_location" */))
+const _e7df22ae = () => interopDefault(import('../pages/previews/_id/SecurityClearanceZ204/_location.vue' /* webpackChunkName: "pages/previews/_id/SecurityClearanceZ204/_location" */))
 const _3fb47db8 = () => interopDefault(import('../pages/previews/_id/siteInspection/_location.vue' /* webpackChunkName: "pages/previews/_id/siteInspection/_location" */))
 const _40d228c9 = () => interopDefault(import('../pages/previews/_id/specification_form/_location.vue' /* webpackChunkName: "pages/previews/_id/specification_form/_location" */))
 const _080d846e = () => interopDefault(import('../pages/previews/_id/SSAVettingRequest/_location.vue' /* webpackChunkName: "pages/previews/_id/SSAVettingRequest/_location" */))
@@ -506,10 +510,6 @@ export function createRouter() {
       component: _77f7fc6d,
       name: "creation-fileplan-subseries-templates-ref-annualPerformancePlanQuarterlyReport"
     }, {
-      path: "/creation/:fileplan?/subseries/templates/:ref?/anu",
-      component: _60001a38,
-      name: "creation-fileplan-subseries-templates-ref-anu"
-    }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/applicationForLeaveOfAbsence",
       component: _1c990582,
       name: "creation-fileplan-subseries-templates-ref-applicationForLeaveOfAbsence"
@@ -722,6 +722,10 @@ export function createRouter() {
       component: _9e43c720,
       name: "creation-fileplan-subseries-templates-ref-personelAcessControl"
     }, {
+      path: "/creation/:fileplan?/subseries/templates/:ref?/quarterlyReportingTemplate",
+      component: _3edae82e,
+      name: "creation-fileplan-subseries-templates-ref-quarterlyReportingTemplate"
+    }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/Recruitment_Form_Annexure_A",
       component: _0ef73d6a,
       name: "creation-fileplan-subseries-templates-ref-Recruitment_Form_Annexure_A"
@@ -773,6 +777,10 @@ export function createRouter() {
       path: "/creation/:fileplan?/subseries/templates/:ref?/SecurityClearance",
       component: _2df823d8,
       name: "creation-fileplan-subseries-templates-ref-SecurityClearance"
+    }, {
+      path: "/creation/:fileplan?/subseries/templates/:ref?/SecurityClearanceZ204",
+      component: _43b4f574,
+      name: "creation-fileplan-subseries-templates-ref-SecurityClearanceZ204"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/siteInspection",
       component: _c637fa16,
@@ -865,6 +873,10 @@ export function createRouter() {
       path: "/previews/:id?/AnnualPerformanceAssessmentsHOD/:location?",
       component: _4fa675ce,
       name: "previews-id-AnnualPerformanceAssessmentsHOD-location"
+    }, {
+      path: "/previews/:id?/annualPerformancePlan/:location?",
+      component: _6eeeefea,
+      name: "previews-id-annualPerformancePlan-location"
     }, {
       path: "/previews/:id?/annualPerformancePlanQuarterlyReport/:location?",
       component: _96790248,
@@ -1042,6 +1054,10 @@ export function createRouter() {
       component: _0942c52e,
       name: "previews-id-personelAccessControl-location"
     }, {
+      path: "/previews/:id?/quarterlyReportingTemplate/:location?",
+      component: _75c27498,
+      name: "previews-id-quarterlyReportingTemplate-location"
+    }, {
       path: "/previews/:id?/Recruitment_Form_Annexure_A/:location?",
       component: _6658ed42,
       name: "previews-id-Recruitment_Form_Annexure_A-location"
@@ -1077,6 +1093,10 @@ export function createRouter() {
       path: "/previews/:id?/SecurityClearance/:location?",
       component: _954586e6,
       name: "previews-id-SecurityClearance-location"
+    }, {
+      path: "/previews/:id?/SecurityClearanceZ204/:location?",
+      component: _e7df22ae,
+      name: "previews-id-SecurityClearanceZ204-location"
     }, {
       path: "/previews/:id?/siteInspection/:location?",
       component: _3fb47db8,

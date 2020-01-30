@@ -83,8 +83,7 @@
                   </v-flex>
 
                   <v-flex xs12>
-                   <!-- <p>Employment Type:</p>
-                     {{doc.body.employmentType}} -->
+                   <strong>Employment Type:</strong> {{doc.body.employmentType}}
                   </v-flex>
                  
                   
@@ -319,7 +318,7 @@
                 </v-flex>
 
                 <v-flex xs12 lg6>
-                  <!-- <v-select :items="doc.body.items1" v-model="doc.body.e2" label="Applicant Photo Captured:" outlined></v-select> -->
+                  <strong>Applicant Photo Captured :</strong> {{doc.body.boolean}}
                 </v-flex>
 
                 <br />

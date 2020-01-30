@@ -86,7 +86,7 @@
                     <p>Employment Type:</p>
                      <v-radio-group v-model="doc.body.employmentType" :mandatory="false">
                             <v-radio label="Permanent" value="Permanent"></v-radio>
-                            <v-radio label="Contract" value="Contract"></v-radio>
+                            <v-radio label="Contract" value="Contract"></v-radio> 
                           </v-radio-group>
                   </v-flex>
                  

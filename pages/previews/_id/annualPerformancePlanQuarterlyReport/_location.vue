@@ -508,7 +508,7 @@ import { createDoc } from "~/services/DocsService";
 
 Vue.use(VueSignaturePad);
 export default {
-  name: "annualPerformancePlanQR",
+  name: "annualPerformancePlanQuarterlyReport",
   components: {
     Toolbar,
     SelectUsers
