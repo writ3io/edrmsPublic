@@ -86,6 +86,7 @@ const _ac40cfb4 = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _5a14d773 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/HandOverCertification/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/HandOverCertification/index" */))
 const _0b6c4772 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/HODPMDSCalculator/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/HODPMDSCalculator/index" */))
 const _2a97878d = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/HRD_Implementation_Plan/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/HRD_Implementation_Plan/index" */))
+const _49d224f2 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/implementationPlanForTheAmended/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/implementationPlanForTheAmended/index" */))
 const _b9addc40 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Individual_Panel_Evaluation_Form/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Individual_Panel_Evaluation_Form/index" */))
 const _007db93c = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/invitationforbids/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/invitationforbids/index" */))
 const _84d6be5a = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/iternaryForMiddleManagementOfficials/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/iternaryForMiddleManagementOfficials/index" */))
@@ -629,6 +630,10 @@ export function createRouter() {
       path: "/creation/:fileplan?/subseries/templates/:ref?/HRD_Implementation_Plan",
       component: _2a97878d,
       name: "creation-fileplan-subseries-templates-ref-HRD_Implementation_Plan"
+    }, {
+      path: "/creation/:fileplan?/subseries/templates/:ref?/implementationPlanForTheAmended",
+      component: _49d224f2,
+      name: "creation-fileplan-subseries-templates-ref-implementationPlanForTheAmended"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/Individual_Panel_Evaluation_Form",
       component: _b9addc40,
