@@ -52,7 +52,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -310,7 +310,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -568,7 +568,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -810,7 +810,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -1052,7 +1052,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -1294,7 +1294,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -1536,7 +1536,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -1778,7 +1778,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -2020,7 +2020,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -2262,7 +2262,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -2504,7 +2504,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -2746,7 +2746,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -2988,7 +2988,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -3229,7 +3229,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -3470,7 +3470,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -3712,7 +3712,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -3954,7 +3954,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -4195,7 +4195,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -4437,7 +4437,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -4679,7 +4679,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
@@ -4921,7 +4921,7 @@
                 </v-tooltip>
               </template>
 
-              <template v-slot:items="props" v-slot:no-data="Hello">
+              <template v-slot:items="props" v-slot:no-data="">
                 <td class="px-0 py-0">{{ props.item.description }}</td>
 
                 <td class>
