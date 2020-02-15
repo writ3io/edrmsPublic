@@ -55,6 +55,7 @@ const _feb19540 = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _4e09f8a6 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/agenda/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/agenda/index" */))
 const _13459f50 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/AnnualAssessmentHOD/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/AnnualAssessmentHOD/index" */))
 const _073da2bd = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/annualDistrictPlanningManagement&Monitoring/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/annualDistrictPlanningManagement&Monitoring/index" */))
+const _7ccd6246 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/annualDistrictPlanningManagement&MonitoringTerm2-4/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/annualDistrictPlanningManagement&MonitoringTerm2-4/index" */))
 const _3735e054 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/annualPerformancePlan/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/annualPerformancePlan/index" */))
 const _77f7fc6d = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/annualPerformancePlanQuarterlyReport/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/annualPerformancePlanQuarterlyReport/index" */))
 const _1c990582 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/applicationForLeaveOfAbsence/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/applicationForLeaveOfAbsence/index" */))
@@ -507,6 +508,10 @@ export function createRouter() {
       path: "/creation/:fileplan?/subseries/templates/:ref?/annualDistrictPlanningManagement&Monitoring",
       component: _073da2bd,
       name: "creation-fileplan-subseries-templates-ref-annualDistrictPlanningManagement&Monitoring"
+    }, {
+      path: "/creation/:fileplan?/subseries/templates/:ref?/annualDistrictPlanningManagement&MonitoringTerm2-4",
+      component: _7ccd6246,
+      name: "creation-fileplan-subseries-templates-ref-annualDistrictPlanningManagement&MonitoringTerm2-4"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/annualPerformancePlan",
       component: _3735e054,
