@@ -127,6 +127,7 @@ const _95c559e2 = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _1763f5f0 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Score_Sheet_For_Interviews_Level_1_12/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Score_Sheet_For_Interviews_Level_1_12/index" */))
 const _2df823d8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/SecurityClearance/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/SecurityClearance/index" */))
 const _43b4f574 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/SecurityClearanceZ204/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/SecurityClearanceZ204/index" */))
+const _1126e84f = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/SGBFunctionalityTool/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/SGBFunctionalityTool/index" */))
 const _c637fa16 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/siteInspection/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/siteInspection/index" */))
 const _285d439a = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/specification_form/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/specification_form/index" */))
 const _41fcf78e = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/SSAVettingRequest/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/SSAVettingRequest/index" */))
@@ -796,6 +797,10 @@ export function createRouter() {
       path: "/creation/:fileplan?/subseries/templates/:ref?/SecurityClearanceZ204",
       component: _43b4f574,
       name: "creation-fileplan-subseries-templates-ref-SecurityClearanceZ204"
+    }, {
+      path: "/creation/:fileplan?/subseries/templates/:ref?/SGBFunctionalityTool",
+      component: _1126e84f,
+      name: "creation-fileplan-subseries-templates-ref-SGBFunctionalityTool"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/siteInspection",
       component: _c637fa16,

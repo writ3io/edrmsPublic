@@ -3647,7 +3647,7 @@ import { createDoc } from "~/services/DocsService";
 Vue.use(VueSignaturePad);
 Vue.use(Editor);
 export default {
-  name: "annualDistrictPlanningManagement&Monitoring",
+  name: "SGBFunctionalityTool",
   components: {
     editor: Editor,
     Toolbar,
@@ -5231,7 +5231,7 @@ export default {
       iSign: false,
       doc: {
         ref: this.$route.params.ref,
-        template: "annualDistrictPlanningManagement&Monitoring",
+        template: "SGBFunctionalityTool",
         author: store.state.user,
         formValid: true,
         docRef: Math.round(+new Date() / 1000),
