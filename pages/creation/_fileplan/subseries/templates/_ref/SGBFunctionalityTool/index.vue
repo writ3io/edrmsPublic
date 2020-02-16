@@ -1127,6 +1127,290 @@
                 <br />
 
 
+                    <!-- 
+              ================================================================
+              SGB Functionality Tool: Ratings Descriptors
+              ================================================================
+              -->
+
+                 <v-layout xs12 wrap border>
+                  <v-flex>
+                
+                 <br/>
+
+                    <h4>SGB Functionality Tool: Ratings Descriptors</h4>
+                    
+
+               
+
+                
+                <v-data-table
+                      :headers="headers48"
+                      :items="doc.body.phase53"
+                      hide-actions
+                      class="elevation-1"
+                    >
+                    <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+
+                    
+
+                      
+                    
+
+                    
+                    </v-data-table>
+
+                   
+
+
+
+                    <v-data-table
+                      :headers="headers49"
+                      :items="doc.body.phase55"
+                      hide-actions
+                      class="elevation-1"
+                    >
+                    <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+
+                    <template v-slot:items="props" v-slot:no-data>
+
+                     
+                      
+                        
+                        <td >
+                          <div v-if="props.index == 0">
+                              <div v-for = "n in 10" :key="n">
+                                <v-layout wrap >
+                               
+                                 <v-flex class="sub-items">
+                                   {{props.item.documents[n]}}
+                                 </v-flex>
+                                </v-layout>
+                              </div>
+                          </div>
+                      </td>
+
+
+                    <td>
+
+                      {{props.item.description}}
+
+                        <div v-if="props.index == 0">
+                          <div v-for = "n in 4" :key="n">
+                                <v-layout wrap >
+                               
+                                 <v-flex class="sub-items">
+                                   <li>{{props.item.listItems[n]}}</li>
+                                 </v-flex>
+                                </v-layout>
+                            </div>
+                          </div>
+
+                         <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+                      
+                     
+                    
+
+                     <td>
+                       {{props.item.description1}}
+
+                         <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+
+
+
+
+                      <td>
+                        {{props.item.description2}}
+                         <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+
+                      <td>
+                        {{props.item.description3}}
+                         <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+                      
+                     
+
+                      
+
+                      
+                    </template>
+
+                    
+                    </v-data-table>
+
+
+                     <br/>
+
+                    <h4><u>Section 3</u></h4>
+                    <h4>OVERVIEW OF AREAS: School Governing Body Functionality</h4>
+
+               
+                    <br/>
+
+                    <v-data-table
+                      :headers="headers49"
+                      :items="doc.body.phase56"
+                      hide-actions
+                      class="elevation-1"
+                    >
+                    <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+
+                    <template v-slot:items="props" v-slot:no-data>
+                      
+                        
+                        <td >{{props.item.description}}</td>
+                        <td >
+                            <v-layout wrap>
+                              <v-flex xs9>
+                                <v-text-field
+                                  v-model="props.item.score"
+                                  single-line
+                                  solo
+                                  flat
+                                  placeholder
+                                ></v-text-field> 
+                              </v-flex>
+                              <v-flex xs3>
+                                {{props.item.description1}}
+                              </v-flex>
+                            </v-layout>
+                        </td>
+
+                        <td >
+                            <v-layout wrap>
+                              <v-flex xs9>
+                                <v-text-field
+                                  v-model="props.item.percentage"
+                                  single-line
+                                  solo
+                                  flat
+                                  placeholder
+                                ></v-text-field> 
+                              </v-flex>
+                              <v-flex xs3>
+                                {{props.item.description2}}
+                              </v-flex>
+                            </v-layout>
+                        </td>
+
+                         <td >
+                            <v-layout wrap>
+                              <v-flex xs9>
+                                <v-text-field
+                                  v-model="props.item.score1"
+                                  single-line
+                                  solo
+                                  flat
+                                  placeholder
+                                ></v-text-field> 
+                              </v-flex>
+                              <v-flex xs3>
+                                {{props.item.description1}}
+                              </v-flex>
+                            </v-layout>
+                        </td>
+
+                        <td >
+                            <v-layout wrap>
+                              <v-flex xs9>
+                                <v-text-field
+                                  v-model="props.item.percentage1"
+                                  single-line
+                                  solo
+                                  flat
+                                  placeholder
+                                ></v-text-field> 
+                              </v-flex>
+                              <v-flex xs3>
+                                {{props.item.description2}}
+                              </v-flex>
+                            </v-layout>
+                        </td>
+                      
+                     
+                    
+
+                    
+                      
+                     
+
+                      
+
+                      
+                    </template>
+
+                    
+                    </v-data-table>
+                      
+                      
+                     
+
+                      
+
+                      
+                   
+             
+                   
+
+                    </v-flex>
+                </v-layout>
+
+
+                <br />
+
+
 
 
               </v-card-text>
@@ -1434,407 +1718,55 @@ export default {
           width: "20%"
         }],
 
-        headers48: [
+        
+         headers48: [
         {
-          text: "12.4",
+          text: "KEY AREA",
           align: "left",
           sortable: false,
           value: "",
-          width: "10%"
+          width: "40%"
         },
         {
-          text: "<strong>4. Are Delegations: </strong>",
+          text: "<strong>Ratings Descriptors</strong>",
           align: "left",
           sortable: false,
           value: "",
-          width: "15%"
-        },
-        {
-          text: "<strong>Term 2</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 3</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 4</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Comments</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "15%"
+          width: "60%"
         }],
 
          headers49: [
-        
         {
-          text: "<strong>13. D. DISTRICT ORGANISATION AND FUNCTIONS</strong> <br /> <i>The following relate to district functions. Please indicate the status of each by marking with a (X) in the appropriate box, and provide supporting evidence.Guidance to Grade 12 learners given through radio and television.</i>",
-          align: "left",
-          sortable: false,
-          value: ""
-        }
-      ],
-
-      headers50: [
-        {
-          text: "13.1",
+          text: "<strong>A.	Policies and Documents Legislated by SASA</strong>",
           align: "left",
           sortable: false,
           value: "",
-          width: "10%"
+          width: "40%"
         },
         {
-          text: "<strong>District Curriculum Support</strong>",
-          align: "left",
+          text: "<strong>3</strong>",
+          align: "center",
           sortable: false,
           value: "",
           width: "15%"
         },
         {
-          text: "<strong>Term 2</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 3</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 4</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Comments</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "15%"
-        }],
-
-        headers51: [
-        {
-          text: "13.2",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "10%"
-        },
-        {
-          text: "<strong>District Management and Governance Support</strong>",
-          align: "left",
+          text: "<strong>2</strong>",
+          align: "center",
           sortable: false,
           value: "",
           width: "15%"
         },
         {
-          text: "<strong>Term 2</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 3</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 4</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Comments</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "15%"
-        }],
-
-        headers52: [
-        {
-          text: "13.3",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "10%"
-        },
-        {
-          text: "<strong>What training and support is given to SGBs on the following:</strong>",
-          align: "left",
+          text: "<strong>1</strong>",
+          align: "center",
           sortable: false,
           value: "",
           width: "15%"
         },
         {
-          text: "<strong>Term 2</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 3</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 4</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Comments</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "15%"
-        }],
-
-        headers53: [
-        {
-          text: "13.4",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "10%"
-        },
-        {
-          text: "<strong>Parental involvement promoted in schools?</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "15%"
-        },
-        {
-          text: "<strong>Term 2</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 3</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 4</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Comments</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "15%"
-        }],
-
-        headers54: [
-        {
-          text: "13.5",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "10%"
-        },
-        {
-          text: "<strong>District Learner Support</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "15%"
-        },
-        {
-          text: "<strong>Term 2</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 3</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 4</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Comments</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "15%"
-        }],
-
-        headers55: [
-        {
-          text: "13.6",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "10%"
-        },
-        {
-          text: "<strong>District Operations</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "15%"
-        },
-        {
-          text: "<strong>Term 2</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 3</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 4</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Comments</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "15%"
-        }],
-
-        headers56: [
-        {
-          text: "13.7",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "10%"
-        },
-        {
-          text: "<strong>Examination and Assessment</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "15%"
-        },
-        {
-          text: "<strong>Term 2</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 3</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 4</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Comments</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "15%"
-        }],
-
-        headers57: [
-        {
-          text: "14.1",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "10%"
-        },
-        {
-          text: "<strong>Batho Pele</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "15%"
-        },
-        {
-          text: "<strong>Term 2</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 3</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Term 4</strong>",
-          align: "left",
-          sortable: false,
-          value: "",
-          width: "20%"
-        },
-        {
-          text: "<strong>Comments</strong>",
-          align: "left",
+          text: "<strong>0</strong>",
+          align: "center",
           sortable: false,
           value: "",
           width: "15%"
@@ -2243,22 +2175,32 @@ export default {
               percentage1:"",
             }],
 
-             phase55: [
+            phase55: [
             {
-              planning:"Authority to manage the assets and liabilities of the PED in the district, including the safeguarding and maintenance of assets; ",
-              comments:""
-            },
-            {
-              planning:"Authority to procure goods and services, including equipment, up to a value of R500 000;",
-              comments:""
-            },
-            {
-              planning:"Authority to take appropriate disciplinary steps against any official under the District Director’s authority who commits an act of financial misconduct in terms of the PFMA. ",
-              comments:""
-            },
-            {
-              planning:"Sub Total",
-              comments:""
+              documents:[ "",
+              "SGB Constitution",
+              "Admission Policy",
+              "Language Policy",
+              "Religious Observation Policy",
+              "Learner Code of Conduct",
+              "Finance Policy(income and expenditure)",
+              "School Development Plan",
+              "Buildings, grounds and maintenance Policy",
+              "HIV and Aids Policy",
+              "School Safety Policy"
+              ],
+
+              description: "Policies have been developed:",
+              listItems:[ "","in accordance with legislation,","approved by SGB and District","Implemented","Revised and Updated"],
+              three:"",
+
+               description1: "Policy has been approved by the SGB and the district and is coherent with Legislation",
+              two:"",
+               description2: "Policy is available but has not been updated or approved",
+              one:"",
+               description3: "Policy is not availed",
+              zero:""
+              
             }],
 
              phase56: [
