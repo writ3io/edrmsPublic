@@ -1282,18 +1282,33 @@
 
                     
                     </v-data-table>
-
-
-                     <br/>
-
-                    <h4><u>Section 3</u></h4>
-                    <h4>OVERVIEW OF AREAS: School Governing Body Functionality</h4>
-
                
                     <br/>
+                    <v-data-table
+                      :headers="headers50"
+                      :items="doc.body.phase53"
+                      hide-actions
+                      class="elevation-1"
+                    >
+                    <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+
+                    
+
+                      
+                    
+
+                    
+                    </v-data-table>
 
                     <v-data-table
-                      :headers="headers49"
+                      :headers="headers51"
                       :items="doc.body.phase56"
                       hide-actions
                       class="elevation-1"
@@ -1310,75 +1325,78 @@
                     <template v-slot:items="props" v-slot:no-data>
                       
                         
-                        <td >{{props.item.description}}</td>
                         <td >
-                            <v-layout wrap>
-                              <v-flex xs9>
-                                <v-text-field
-                                  v-model="props.item.score"
-                                  single-line
-                                  solo
-                                  flat
-                                  placeholder
-                                ></v-text-field> 
-                              </v-flex>
-                              <v-flex xs3>
-                                {{props.item.description1}}
-                              </v-flex>
-                            </v-layout>
-                        </td>
+                          <div v-if="props.index == 0">
+                              <div v-for = "n in 10" :key="n">
+                                <v-layout wrap >
+                               
+                                 <v-flex class="sub-items">
+                                   {{props.item.documents[n]}}
+                                 </v-flex>
+                                </v-layout>
+                              </div>
+                          </div>
+                      </td>
 
-                        <td >
-                            <v-layout wrap>
-                              <v-flex xs9>
-                                <v-text-field
-                                  v-model="props.item.percentage"
-                                  single-line
-                                  solo
-                                  flat
-                                  placeholder
-                                ></v-text-field> 
-                              </v-flex>
-                              <v-flex xs3>
-                                {{props.item.description2}}
-                              </v-flex>
-                            </v-layout>
-                        </td>
 
-                         <td >
-                            <v-layout wrap>
-                              <v-flex xs9>
-                                <v-text-field
-                                  v-model="props.item.score1"
-                                  single-line
-                                  solo
-                                  flat
-                                  placeholder
-                                ></v-text-field> 
-                              </v-flex>
-                              <v-flex xs3>
-                                {{props.item.description1}}
-                              </v-flex>
-                            </v-layout>
-                        </td>
+                    <td>
 
-                        <td >
-                            <v-layout wrap>
-                              <v-flex xs9>
-                                <v-text-field
-                                  v-model="props.item.percentage1"
-                                  single-line
-                                  solo
-                                  flat
-                                  placeholder
-                                ></v-text-field> 
-                              </v-flex>
-                              <v-flex xs3>
-                                {{props.item.description2}}
-                              </v-flex>
-                            </v-layout>
-                        </td>
+                      {{props.item.description}}
+
+                       
+
+                         <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
                       
+                     
+                    
+
+                     <td>
+                       {{props.item.description1}}
+
+                         <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+
+
+
+
+                      <td>
+                        {{props.item.description2}}
+                         <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+
+                      <td>
+                        {{props.item.description3}}
+                         <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
                      
                     
 
@@ -1394,7 +1412,528 @@
                     
                     </v-data-table>
                       
+                    <br/>
+                    <v-data-table
+                      :headers="headers52"
+                      :items="doc.body.phase53"
+                      hide-actions
+                      class="elevation-1"
+                    >
+                    <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+
+                    
+
                       
+                    
+
+                    
+                    </v-data-table>
+
+                    <v-data-table
+                      :headers="headers51"
+                      :items="doc.body.phase57"
+                      hide-actions
+                      class="elevation-1"
+                    >
+                    <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+
+                    <template v-slot:items="props" v-slot:no-data>
+                      
+                        
+                        <td >
+                          <div v-if="props.index == 0">
+                              <div v-for = "n in 10" :key="n">
+                                <v-layout wrap >
+                               
+                                 <v-flex class="sub-items">
+                                   {{props.item.documents[n]}}
+                                 </v-flex>
+                                </v-layout>
+                              </div>
+                          </div>
+                          <div v-else>
+                            {{props.item.documents}}
+                          </div>
+                      </td>
+
+
+                    <td>
+
+                      {{props.item.description}}
+
+                       
+
+                         <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+                      
+                     
+                    
+
+                     <td>
+                       {{props.item.description1}}
+
+                         <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+
+
+
+
+                      <td>
+                        {{props.item.description2}}
+                         <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+
+                      <td>
+                        {{props.item.description3}}
+                         <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+                     
+                    
+
+                    
+                      
+                     
+
+                      
+
+                      
+                    </template>
+
+                    
+                    </v-data-table>
+
+                    <br/>
+                    <v-data-table
+                      :headers="headers53"
+                      :items="doc.body.phase54"
+                      hide-actions
+                      class="elevation-1"
+                    >
+                    <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+
+                    
+
+                      
+                    
+
+                    
+                    </v-data-table>
+
+                    <v-data-table
+                      :headers="headers51"
+                      :items="doc.body.phase58"
+                      hide-actions
+                      class="elevation-1"
+                    >
+                    <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+
+                    <template v-slot:items="props" v-slot:no-data>
+                      
+                        
+                        <td >
+                          <div v-if="props.index == 0 || props.index == 1">
+                              <div v-for = "n in 10" :key="n">
+                                <v-layout wrap >
+                               
+                                 <v-flex class="sub-items">
+                                   {{props.item.documents[n]}}
+                                 </v-flex>
+                                </v-layout>
+                              </div>
+                          </div>
+                          <div v-else>
+                            {{props.item.documents}}
+                          </div>
+                      </td>
+
+
+                    <td>
+
+                      {{props.item.description}}
+
+                       
+
+                         <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+                      
+                     
+                    
+
+                     <td>
+                       {{props.item.description1}}
+
+                         <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+
+
+
+
+                      <td>
+                        {{props.item.description2}}
+                         <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+
+                      <td>
+                        {{props.item.description3}}
+                         <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+                     
+                    
+
+                    
+                      
+                     
+
+                      
+
+                      
+                    </template>
+
+                    
+                    </v-data-table>
+
+                    <br/>
+                    <v-data-table
+                      :headers="headers54"
+                      :items="doc.body.phase54"
+                      hide-actions
+                      class="elevation-1"
+                    >
+                    <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+
+                    
+
+                      
+                    
+
+                    
+                    </v-data-table>
+
+                    <v-data-table
+                      :headers="headers51"
+                      :items="doc.body.phase59"
+                      hide-actions
+                      class="elevation-1"
+                    >
+                    <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+
+                    <template v-slot:items="props" v-slot:no-data>
+                      
+                        
+                        <td >
+                          
+                            {{props.item.documents}}
+                         
+                      </td>
+
+
+                    <td>
+
+                      {{props.item.description}}
+
+                       
+
+                         <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+                      
+                     
+                    
+
+                     <td>
+                       {{props.item.description1}}
+
+                         <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+
+
+
+
+                      <td>
+                        {{props.item.description2}}
+                         <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+
+                      <td>
+                        {{props.item.description3}}
+                         <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+                     
+                    
+
+                    
+                      
+                     
+
+                      
+
+                      
+                    </template>
+
+                    
+                    </v-data-table>
+
+                    <br/>
+
+                    <v-data-table
+                      :headers="headers55"
+                      :items="doc.body.phase53"
+                      hide-actions
+                      class="elevation-1"
+                    >
+                    <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+
+                    
+
+                      
+                    
+
+                    
+                    </v-data-table>
+
+                    <v-data-table
+                      :headers="headers51"
+                      :items="doc.body.phase60"
+                      hide-actions
+                      class="elevation-1"
+                    >
+                    <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+
+                    <template v-slot:items="props" v-slot:no-data>
+                      
+                        
+                        <td >
+                          <div v-if="props.index == 0 || props.index == 1">
+                              <div v-for = "n in 10" :key="n">
+                                <v-layout wrap >
+                               
+                                 <v-flex class="sub-items">
+                                   {{props.item.documents[n]}}
+                                 </v-flex>
+                                </v-layout>
+                              </div>
+                          </div>
+                          <div v-else>
+                            {{props.item.documents}}
+                          </div>
+                      </td>
+
+
+                    <td>
+
+                      {{props.item.description}}
+
+                       
+
+                         <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+                      
+                     
+                    
+
+                     <td>
+                       {{props.item.description1}}
+
+                         <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+
+
+
+
+                      <td>
+                        {{props.item.description2}}
+                         <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+
+                      <td>
+                        {{props.item.description3}}
+                         <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+
+                      </td>
+                     
+                    
+
+                    
+                      
+                     
+
+                      
+
+                      
+                    </template>
+
+                    
+                    </v-data-table>
+
+                    
+                      
+                       
                      
 
                       
@@ -1772,6 +2311,122 @@ export default {
           width: "15%"
         }],
 
+        headers50: [
+        {
+          text: "B.	Meetings",
+          align: "left",
+          sortable: false,
+          value: "",
+          width: "40%"
+        },
+        {
+          text: "<strong>Ratings Descriptors</strong>",
+          align: "left",
+          sortable: false,
+          value: "",
+          width: "60%"
+        }],
+
+        headers51: [
+        {
+          text: "",
+          align: "left",
+          sortable: false,
+          value: "",
+          width: "40%"
+        },
+        {
+          text: "<strong>3</strong>",
+          align: "center",
+          sortable: false,
+          value: "",
+          width: "15%"
+        },
+        {
+          text: "<strong>2</strong>",
+          align: "center",
+          sortable: false,
+          value: "",
+          width: "15%"
+        },
+        {
+          text: "<strong>1</strong>",
+          align: "center",
+          sortable: false,
+          value: "",
+          width: "15%"
+        },
+        {
+          text: "<strong>0</strong>",
+          align: "center",
+          sortable: false,
+          value: "",
+          width: "15%"
+        }],
+
+        headers52: [
+        {
+          text: "C.	Assets",
+          align: "left",
+          sortable: false,
+          value: "",
+          width: "40%"
+        },
+        {
+          text: "<strong>Ratings Descriptors</strong>",
+          align: "left",
+          sortable: false,
+          value: "",
+          width: "60%"
+        }],
+
+        headers53: [
+        {
+          text: "D.	Financial Management",
+          align: "left",
+          sortable: false,
+          value: "",
+          width: "40%"
+        },
+        {
+          text: "<strong>Ratings Descriptors</strong>",
+          align: "left",
+          sortable: false,
+          value: "",
+          width: "60%"
+        }],
+
+         headers54: [
+        {
+          text: "Financial Management(Continued)",
+          align: "left",
+          sortable: false,
+          value: "",
+          width: "40%"
+        },
+        {
+          text: "<strong>Ratings Descriptors</strong>",
+          align: "left",
+          sortable: false,
+          value: "",
+          width: "60%"
+        }],
+
+         headers55: [
+        {
+          text: "E.	Curriculum matters requiring SGB",
+          align: "left",
+          sortable: false,
+          value: "",
+          width: "40%"
+        },
+        {
+          text: "<strong>Ratings Descriptors</strong>",
+          align: "left",
+          sortable: false,
+          value: "",
+          width: "60%"
+        }],
 
         
 
@@ -2205,449 +2860,267 @@ export default {
 
              phase56: [
             {
-              planning:"Communicated by letter to the delegate.",
-              comments:""
-            },
-            {
-              planning:"Circulated within the PED, published on the PED’s website and made available, on request, to a principal, SGB chairperson or member of the public.",
-              comments:""
-            },
-            {
-              planning:"Clear and precise.",
-              comments:""
-            },
-            {
-              planning:"Appropriate to the function concerned.",
-              comments:""
-            },
-            {
-              planning:"Consistent with the appropriate legislation.",
-              comments:""
-            },
-            {
-              planning:"Accompanied by sufficient resources.",
-              comments:""
-            },
-            {
-              planning:"Subject to appropriate limitations. ",
-              comments:""
-            },
-            {
-              planning:"Accompanied by a reporting schedule.",
-              comments:""
-            },
-            {
-              planning:"Sub Total",
-              comments:""
-            },
-            {
-              planning:"Total",
-              comments:""
+              documents:[ "",
+              "Executive Committee",
+              "SGB Quarterly meetings",
+              "Parents, learners and other staff",
+              "Annual General Meeting",
+              "Finances",
+              "Disciplinary"
+              ],
+
+              description: "Meetings took place with evidence of agenda, register and minutes. Meeting resolutions are implemented.",
+              three:"",
+
+               description1: "Meetings took place with evidence of agenda, register and minutes. Meeting resolutions not implemented.",
+              two:"",
+               description2: "Ad-hoc meetings",
+              one:"",
+               description3: "No evidence of meetings having taken place.",
+              zero:""
+              
             }],
 
-            phase57: [
+           phase57: [
             {
-              planning:"Provincial curriculum policies and guidelines are implemented in accordance with national mandates.",
-              comments:""
+              documents:[ "",
+              "Maintenance Plan",
+              "Procurement Plan"
+              ],
+
+              description: "Developed and approved plans have has been budgeted for and  implemented.",
+              three:"",
+
+               description1: "Approved plans have  been budgeted for but not implemented",
+              two:"",
+               description2: "Plans have been developed",
+              one:"",
+               description3: "No plans are available",
+              zero:""
+              
             },
             {
-              planning:"Leadership and direction for curriculum management takes place.",
-              comments:""
+              documents: "Asset Register (Non-perishables)",
+
+              description: "Annual stock taken,  asset register is updated and redundant stock",
+              three:"",
+
+               description1: "Annual stock take is taken",
+              two:"",
+               description2: "Asset register is available",
+              one:"",
+               description3: "No register is available",
+              zero:""
+              
             },
             {
-              planning:"Teachers are supported and orientated on the Learning Area/Programme/Subject Content.",
-              comments:""
-            },
-            {
-              planning:"Work Plans and Work Plan agreements are developed and implemented.",
-              comments:""
-            },
-            {
-              planning:"Curriculum materials are developed and distributed to schools.",
-              comments:""
-            },
-            {
-              planning:"Teachers are provided with on-site support.",
-              comments:""
-            },
-            {
-              planning:"Teachers are assisted in curriculum planning and delivery.",
-              comments:""
-            },
-            {
-              planning:"Professional development of teachers is promoted.",
-              comments:""
-            },
-            {
-              planning:"Curriculum structures are established and maintained.",
-              comments:""
-            },
-            {
-              planning:"Communication strategies are developed.",
-              comments:""
-            },
-            {
-              planning:"Statistical databases are established and maintained.",
-              comments:""
-            },
-            {
-              planning:"Curriculum programmes are monitored and evaluated.",
-              comments:""
-            },
-            {
-              planning:"A recording and reporting instrument has been developed by the curriculum official in support of the purpose identified.",
-              comments:""
-            },
-            {
-              planning:"uccesses and challenges are identified in the implementation of the CAPS.",
-              comments:""
-            },
-            {
-              planning:"Good classroom practices are recognised as well as areas in the need of improvement.",
-              comments:""
-            },
-            {
-              planning:"Reports are available for monthly/weekly/quarterly school visits.",
-              comments:""
-            },
-            {
-              planning:"CAPS training workshops have taken place.",
-              comments:""
-            },
-            {
-              planning:"The secondary school improvement plan is in place and being implemented.",
-              comments:""
-            },
-            {
-              planning:"Dinaledi schools received additional training and resources.",
-              comments:""
-            },
-            {
-              planning:"The MST strategy is implemented.",
-              comments:""
-            },
-            {
-              planning:"Foundations for Learning (milestones) implemented in primary schools.",
-              comments:""
-            },
-            {
-              planning:"Systemic Evaluation results for baseline of LA analysis available.",
-              comments:""
-            },
-            {
-              planning:"ANA results are analysed.",
-              comments:""
-            },
-            {
-              planning:"Learners receive their ANA reports.",
-              comments:""
-            },
-            {
-              planning:"Item analysis of ANA is disseminated.",
-              comments:""
-            },
-            {
-              planning:"Sub Total",
-              comments:""
+              documents: "Inventory (Perishables)",
+
+              description: "Annual stock taken,  inventory is updated and redundant stock removed",
+              three:"",
+
+               description1: "Annual stock take is taken",
+              two:"",
+               description2: "Inventory is available",
+              one:"",
+               description3: "No  inventory is available",
+              zero:""
+              
             }],
+
 
             phase58: [
             {
-              planning:"What is the frequency of DMT meetings?",
-              comments:""
+              documents:[ "",
+              "Approved Annual Budget",
+              "Audited Financial Statements"
+              ],
+
+              description: "Budget and statement comply with SASA. Annual budget is implemented.",
+              three:"",
+
+               description1: "Budget and statement comply with SASA. Annual budget is implemented.",
+              two:"",
+               description2: "Budget and audited statements available but not SASA compliant. Financial committee",
+              one:"",
+               description3: "No annual budget Financial statements are not audited",
+              zero:""
+              
             },
             {
-              planning:"Are minutes of the DMT meetings available?",
-              comments:""
+              documents:[ "",
+              "Spend allocated provincial  funds on LTSM accordingly",
+              "Spend allocated provincial  funds on Maintenance accordingly",
+              "Spend allocated provincial  funds on Municipal Service accordingly"
+              ],
+
+              description: "Budget has been developed  in consultation with stakeholders Allocation has been spent according to the approved budgeted  allocated amount",
+              three:"",
+
+               description1: "Budget has been developed  in consultation with stakeholders Allocated funds have been spent on non-budgeted items without approval",
+              two:"",
+               description2: "Budget has been developed  in consultation with stakeholders",
+              one:"",
+               description3: "Allocated amounts have not been spent",
+              zero:""
+              
             },
             {
-              planning:"Does the District Director empower personnel during these meetings?",
-              comments:""
+              documents: "Receipt books - branded",
+
+              description: "Receipt available, branded and filed. SASAMS used.",
+              three:"",
+
+               description1: "Receipt available, branded and filed.",
+              two:"",
+               description2: "Unbranded receipt available.",
+              one:"",
+               description3: "Receipts not available",
+              zero:""
+              
             },
             {
-              planning:"What intervention strategies are proposed at DMT meetings?",
-              comments:""
-            },
-            {
-              planning:"How are those interventions implemented?",
-              comments:""
-            },
-            {
-              planning:"Training and support is given to HoDs and Deputy Principals",
-              comments:""
+              documents: "Requisition, Claim Forms and Invoices.",
+
+              description: "Requisition, Claim Forms and Invoices  are filed as per provincial requirements. SASAMS used.",
+              three:"",
+
+               description1: "Requisition, Claim Forms and Invoices are filed as per provincial requirements.",
+              two:"",
+               description2: "Requisition, Claim Forms and Invoices are available but not properly filed",
+              one:"",
+               description3: "No records",
+              zero:""
+              
             }],
+
 
             phase59: [
             {
-              planning:"- Finance",
-              comments:""
+              documents: "A system to pay Petty Cash that is monthly reconciled ",
+              
+
+              description: "Petty cash  payment is  signed and approved as per policy and is reconciled against the",
+              three:"",
+
+               description1: "Petty cash  payment is  signed and approved as per policy",
+              two:"",
+               description2: "Petty cash claim  policy is available",
+              one:"",
+               description3: "No petty cash system",
+              zero:""
+              
             },
             {
-              planning:"- Roles and responsibilities",
-              comments:""
+              documents:"Monthly  Cash Book:  Statements of  Receipts and Payments",
+              
+              description: "Statements reconciled  monthly and signed Income and expenses are allocated to budget Follow up on any errors found done",
+              three:"",
+
+               description1: "Statements reconciled  monthly and signed Income and expenses are allocated to budget No follow ",
+              two:"",
+               description2: "Statements reconciled  monthly and signed",
+              one:"",
+               description3: "Statements not reconciled on a  monthly basis",
+              zero:""
+              
             },
             {
-              planning:"- Policy development",
-              comments:""
-            },
-            {
-              planning:"- All basic building blocks in schools (timetables, budget, rosters, schedules, etc.)",
-              comments:""
+              documents: "Signatories:  EFT (Three people authorised to have PIN codes) / Cheques (Three signatories).",
+
+              description: "SGB minutes showing three people authorised to have PIN codes) / Cheques (Three signatories).",
+              three:"",
+
+               description1: "",
+              two:"",
+               description2: "",
+              one:"",
+               description3: "No SGB minutes showing proof of three signatories",
+              zero:""
+              
             }],
 
             phase60: [
             {
-              planning:"Parents are made aware of the Action Plan and Schooling 2014?",
-              comments:""
+              documents:[ "",
+              "Drafting of Annual Academic Report",
+              "Strategy to improve overall learner performance",
+              "Strategy to improve learner performance in key subjects",
+              "Setting of realistic targets"
+              ],
+
+              description: "The report, strategy and targets approved by the SGB and submitted to District. There is alignment of the report, strategy and targets.",
+              three:"",
+
+               description1: "The report, strategy and targets approved by the SGB and submitted to District. There is no alignment of the report, strategy and targets.",
+              two:"",
+               description2: "Strategy not different from everyday practice. Targets unrealistic.",
+              one:"",
+               description3: "No evidence",
+              zero:""
+              
             },
             {
-              planning:"All schools received their funding allocation? ",
-              comments:""
+              documents:[ "",
+              "Procurement of relevant textbooks per learner and per grade",
+              "Procurement of furniture",
+              "Utilization of resources in the school"
+              ],
+
+              description: "A procurement plan in place. Budget adhered to. New stock added to the register. Purchases are on time.",
+              three:"",
+
+               description1: "Procurement done with no plan in place but budget adhered to.",
+              two:"",
+               description2: "Procurement done with no plan in place",
+              one:"",
+               description3: "Shortages of resources but funds available",
+              zero:""
+              
             },
             {
-              planning:"School infrastructure conductive for teaching and learning?",
-              comments:""
+              documents: "Systems by parents to play an over site supporting role to effective learning",
+
+              description: "Programmes for parents on supporting school. Quarterly meetings held to inform and strengthen parental support. Parents sign and comment on test and Homework books",
+              three:"",
+
+               description1: "Quarterly meetings held to inform and strengthen parental support. No comments on test and  Homework book",
+              two:"",
+               description2: "Impromptu programmes for parents on supporting school.",
+              one:"",
+               description3: "No programmes for parents on supporting school.",
+              zero:""
+              
             },
             {
-              planning:"Specialist services are available to schools",
-              comments:""
+              documents: "Reporting systems to hold staff and accountable",
+
+              description: "Management plan in place for accounting meetings. Accounting reports available. Remedial plans put in place.",
+              three:"",
+
+               description1: "Management plan in place for accounting meetings. Accounting reports available. No remedial plans put in place.",
+              two:"",
+               description2: "Accounting sessions not recorded.",
+              one:"",
+               description3: "Accounting sessions not held.",
+              zero:""
+              
             },
             {
-              planning:"Monitoring and support services been provided to schools through e-Education?",
-              comments:""
-            },
-            {
-              planning:"All schools received the necessary resources in time? When?",
-              comments:""
-            },
-            {
-              planning:"Learner attendance is closely monitored?",
-              comments:""
-            },
-            {
-              planning:"District database of learner attendance statistics is available.",
-              comments:""
-            },
-            {
-              planning:"Learner attendance is analysed, intervention strategies take place and support is given where necessary",
-              comments:""
-            },
-            {
-              planning:"Learner attendance is analysed, intervention strategies take place and support is given where necessary",
-              comments:""
+              documents: "Management plan for the school to provide progress report on learner performance to parents",
+
+              description: "Management plan in place for reporting to parents. Reporting conducted. Remedial plans put in place.",
+              three:"",
+
+               description1: "Management plan in place for reporting to parents. Reporting conducted. No remedial plans put in place.",
+              two:"",
+               description2: "Learner performance reports sent to parents and no engagement with parents took place",
+              one:"",
+               description3: "No evidence",
+              zero:""
+              
             }],
 
-            phase61: [
-            {
-              planning:"District is supporting Grade 12 learners through distribution of study guides and examples of examination papers.",
-              comments:""
-            },
-            {
-              planning:"Guidance to Grade 12 learners given through radio and television.",
-              comments:""
-            },
-            {
-              planning:"Support given to Grade 10 and 11 learners to prepare for Grade 12",
-              comments:""
-            },
-            {
-              planning:"Has a district-wide Grade 12 examination report.",
-              comments:""
-            },
-            {
-              planning:"Every learner has access to a minimum set of textbooks and workbooks required according to the national policy.",
-              comments:""
-            },
-            {
-              planning:"Access to computers for learners increased.",
-              comments:""
-            },
-            {
-              planning:"Access to libraries for all learners.",
-              comments:""
-            },
-            {
-              planning:"Functional Learner Representative Councils in all secondary schools.",
-              comments:""
-            },
-            {
-              planning:"Overall well-being of learners are considered through programmes such as Nutrition, Scholar Transport, School Health Programmes and Sport.",
-              comments:""
-            },
-            {
-              planning:"Education White Paper 6 is implemented in all schools (Full-service schools).",
-              comments:""
-            },
-            {
-              planning:"Longitudinal studies of learners achievement takes place.",
-              comments:""
-            },
-            {
-              planning:"Sub Total",
-              comments:""
-            }],
-
-
-            phase62: [
-            {
-              planning:"Database on schools is managed.",
-              comments:""
-            },
-            {
-              planning:"Records of district units are kept.",
-              comments:""
-            },
-            {
-              planning:"Critical information for EMIS is collected and verified.",
-              comments:""
-            },
-            {
-              planning:"Professional development needs of staff members are assessed through questionnaires, informal methods and development appraisals.",
-              comments:""
-            },
-            {
-              planning:"Staff development activities are supported.",
-              comments:""
-            },
-            {
-              planning:"Staff development success/challenges/problems are evaluated in terms of the goals of the institutions and Department.",
-              comments:""
-            },
-            {
-              planning:"Capacity building programmes for SGBs and SMTs are assessed.",
-              comments:""
-            },
-            {
-              planning:"Support is provided for professional growth of educators within an appraisal programme.",
-              comments:""
-            },
-            {
-              planning:"Projects are managed within the set budget.",
-              comments:""
-            },
-            {
-              planning:"Principals/SGBs/SMTs are advised on budget planning and procurement processes.",
-              comments:""
-            },
-            {
-              planning:"Records are maintained to disseminate information got financial accountability.",
-              comments:""
-            },
-            {
-              planning:"All circulars and other relevant information are made available to staff members and schools.",
-              comments:""
-            },
-            {
-              planning:"Liaises with other education offices for the purpose of coordination.",
-              comments:""
-            },
-            {
-              planning:"Procurement of goods and services take place.",
-              comments:""
-            },
-            {
-              planning:"Strategic plans are prepared with the intention of achieving the goals of the Department.",
-              comments:""
-            },
-            {
-              planning:"Management plans are prepared to achieve targets as well as the needs of the learners and school staff.",
-              comments:""
-            },
-            {
-              planning:"Guidance on strategic planning is provided to institutions.",
-              comments:""
-            },
-            {
-              planning:"Policies are formulated for operational reasons.",
-              comments:""
-            },
-            {
-              planning:"Policies are disseminated to staff members and schools.",
-              comments:""
-            },
-            {
-              planning:"Policies are analysed.",
-              comments:""
-            },
-            {
-              planning:"Policies are implemented.",
-              comments:""
-            },
-            {
-              planning:"Policy compliance is monitored.",
-              comments:""
-            },
-            {
-              planning:"Circuit Managers are trained to provide effective support and supervision to Cluster Leaders and institutions.",
-              comments:""
-            },
-            {
-              planning:"General office administration in circuits.",
-              comments:""
-            },
-            {
-              planning:"Sub Total",
-              comments:""
-            }],
-
-            phase63: [
-            {
-              planning:"Administering Annual National Assessment (ANA).",
-              comments:""
-            },
-            {
-              planning:"Administering National Senior Certificate (NSC).",
-              comments:""
-            },
-            {
-              planning:"Administering Continuous Assessment (CASS).",
-              comments:""
-            },
-            {
-              planning:"Sub Total",
-              comments:""
-            }],
-
-            phase64: [
-            {
-              planning:"Consults with stakeholders and clients.",
-              comments:""
-            },
-            {
-              planning:"Sets and keeps to service standards.",
-              comments:""
-            },
-            {
-              planning:"Increases access to services.",
-              comments:""
-            },
-            {
-              planning:"Ensures courteous behaviour.",
-              comments:""
-            },
-            {
-              planning:"Provides the required information to the public.",
-              comments:""
-            },
-            {
-              planning:"Acts openly and honestly.",
-              comments:""
-            },
-            {
-              planning:"Redress sub-standard performance.",
-              comments:""
-            },
-            {
-              planning:"Ensures value for money.",
-              comments:""
-            },
-            {
-              planning:"Sub Total",
-              comments:""
-            }],
-   
-     
-    
 
 
           
