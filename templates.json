@@ -1365,16 +1365,29 @@
 
 ],
 
-"13-3-5": [
+"13-3-4": [
     {
 
-        "ref": "13-3-5 ",
+        "ref": "13-3-4",
 
-        "name": "implementationPlanForTheAmended",
+        "name": "BuildingBlocksforEffectiveSchool",
 
         "type": "docx"
 
     }],
+
+    "13-3-5": [
+        {
+    
+            "ref": "13-3-5 ",
+    
+            "name": "implementationPlanForTheAmended",
+    
+            "type": "docx"
+    
+        }],    
+
+    
 
 "13-5-1": [
     {
@@ -1384,7 +1397,19 @@
         "name":"SGBFunctionalityTool",
 
         "type":""
+
+    },
+
+    {
+
+        "ref":"13-5-1",
+
+        "name":"schoolGoverningBodyFunctionlity",
+
+        "type":""
+
         
+
     }
     
 ],

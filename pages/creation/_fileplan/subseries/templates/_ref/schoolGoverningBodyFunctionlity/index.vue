@@ -34,84 +34,13 @@
               <v-flex xs12>
                 <h3
                   class="text-xs-center">
-                SGB FUNCTIONALITY TOOL
+                School Governing Body Functionality Tool: 2018/2019
                 </h3>
                
               </v-flex>
               <br />
-              <v-card-text class="pt-0 mt-0">
-                <v-layout xs12 wrap border class="card-border">
-                  <v-flex>
-
-                    <ol>
-                    <li>
-                     The South African School’s Act No 84 of 1996 (SASA) as amended 
-                     stipulates that the governance of a school is vested in its School 
-                     Governing Body (SGB). Some of the key statutory obligations of the 
-                     SGB are summarized as follows:
-                    
-
-                    <ol type="a">
-                      <li>
-                        Determining the following policies-
-                        <ul>
-                          <li>Admission policy of the school</li>
-                          <li>Language policy of the school</li>
-                          <li>Religious policy of the school</li>
-                        </ul>
-
-                      </li>
-                      <li>Adopt a learner code of conduct as well as dealing with cases of learner misconduct.</li>
-                      <li>Maintain school buildings</li>
-                      <li>Deal with all money issues at the school</li>
-                      <li>Approve purchase of resources at the school</li>
-                      <li>Support the principal and other employees in their work</li>
-                      <li>Ensure that all children of school going age have access to schooling</li>
-                      <li>Develop and implement a school development plan</li>
-                    </ol>
-                    </li>
-                    <li>
-                      The above policies and responsibilities provide a comprehensive framework for intervention. The key challenge is to ensure the coherence, alignment and implementation of the various provisions embodied within these policies and responsibilities.
-                    </li>
-
-                     <li>
-                      The SGB support tool has been designed to provide guidance to School Governing Bodies in fulfilling their roles and responsibilities in terms of SASA with regard to supporting teaching and learning in schools. The tool focuses on the following key areas:
-
-                      <ol type="a">
-                        <li>Policies legislated by the South African Schools Act 84 of 1996</li>
-                        <li>Policies implied by the South African Schools Act 84 of 1996</li>
-                        <li>Meetings of the SGB and its committees</li>
-                        <li>Maintenance and procurement of school assets</li>
-                        <li>Financial planning and management</li>
-                        <li>Training and information sharing</li>
-                        <li>Planning</li>
-                      </ol>
-                    </li>
-                    <li>
-                      You can use this tool for rating the following:
-                      <ul>
-                        <li>Availability and implementation of policies regarding school governance;</li>
-                        <li>The frequency of legislated meetings held by the school governing body;</li>
-                        <li>How the SGB has planned to manage the school assets;</li>
-                        <li>How the SGB manages the school’s finances; and</li> 
-                        <li>How the SGB is involved in some curriculum matters of the school.</li>
-                      </ul>  
-
-
-                    </li>
-                    <li>For each statement the rating of the SGB functionality is between the scores 0 to 3. The rating should be done as per attached descriptor table.  The School Principal should administer the first rating and then followed by the rating of the Circuit Manager based on the evidence provided by the school. The Department of Basic Education/the province will select a sample of schools from those rated for verification purposes</li>
-                    <li>The official completing the tool is required to populate all sections from 1 to 3 in order to get a comprehensive view of the SGB functionality.</li>
-
-                    </ol>
-
-                  </v-flex>
-                </v-layout>
-                <br />
-                <v-flex justify-end>
-                  <hr style="color:grey" />
-                </v-flex>
-              </v-card-text>
-
+             
+               
               
 
               
@@ -120,7 +49,7 @@
 
 
                 <v-flex xs12>
-            <h4 class="text-xs-center">SGB Functionality Tool: 2019/2020</h4>
+            
 
             <v-layout wrap>
               <v-flex xs3>
@@ -1983,7 +1912,7 @@ import { createDoc } from "~/services/DocsService";
 Vue.use(VueSignaturePad);
 Vue.use(Editor);
 export default {
-  name: "SGBFunctionalityTool",
+  name: "schoolGoverningBodyFunctionlity",
   components: {
     editor: Editor,
     Toolbar,
@@ -2431,7 +2360,7 @@ export default {
       iSign: false,
       doc: {
         ref: this.$route.params.ref,
-        template: "SGBFunctionalityTool",
+        template: "schoolGoverningBodyFunctionlity",
         author: store.state.user,
         formValid: true,
         docRef: Math.round(+new Date() / 1000),
@@ -2498,12 +2427,12 @@ export default {
               comments1:""
             },
             {
-              planning:"Finance Policy(income and expenditure)",
+              planning:"Finance Policy",
               comments:"",
               comments1:""
             },
             {
-              planning:"School Development Plan",
+              planning:"Procurement Policy including   Supply Chain  Management",
               comments:"",
               comments1:""
             },
@@ -2518,12 +2447,18 @@ export default {
               comments1:""
             },
             {
-              planning:"School Safety Policy",
+              planning:"Health and Safety Policy",
               comments:"",
               comments1:""
             },
             {
-              planning:"Subtotal (30)",
+              planning:"Recruitment and selection policy for posts",
+              comments:"",
+              comments1:""
+            },
+
+            {
+              planning:"Subtotal (33)",
               comments:"",
               comments1:""
             }],

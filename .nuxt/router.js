@@ -65,6 +65,7 @@ const _94ea2ed8 = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _6f26578c = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/AssetsMovement/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/AssetsMovement/index" */))
 const _78f9907a = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/attendance/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/attendance/index" */))
 const _d61fc4a8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/AuditReportOnMobileClassrooms/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/AuditReportOnMobileClassrooms/index" */))
+const _2b753a74 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/BuildingBlocksforEffectiveSchool/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/BuildingBlocksforEffectiveSchool/index" */))
 const _3d91ef3c = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/checklist/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/checklist/index" */))
 const _0be6c794 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/CheckListForAudit/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/CheckListForAudit/index" */))
 const _4cf8fbbd = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/checklistForSiteVisit/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/checklistForSiteVisit/index" */))
@@ -121,6 +122,7 @@ const _38ad14dc = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _779858d3 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/riskManagementProfile/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/riskManagementProfile/index" */))
 const _4ea3e7ea = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/schemeBClaimForm1/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/schemeBClaimForm1/index" */))
 const _38eecaaa = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/schemeBClaimForm2/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/schemeBClaimForm2/index" */))
+const _05c7bc13 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/schoolGoverningBodyFunctionlity/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/schoolGoverningBodyFunctionlity/index" */))
 const _b4ea02a8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/SchoolLevelMonitoringTool/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/SchoolLevelMonitoringTool/index" */))
 const _5709bf0e = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/SchoolMonitoringTool/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/SchoolMonitoringTool/index" */))
 const _95c559e2 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Score_Sheet_For_Interviews/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Score_Sheet_For_Interviews/index" */))
@@ -550,6 +552,10 @@ export function createRouter() {
       component: _d61fc4a8,
       name: "creation-fileplan-subseries-templates-ref-AuditReportOnMobileClassrooms"
     }, {
+      path: "/creation/:fileplan?/subseries/templates/:ref?/BuildingBlocksforEffectiveSchool",
+      component: _2b753a74,
+      name: "creation-fileplan-subseries-templates-ref-BuildingBlocksforEffectiveSchool"
+    }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/checklist",
       component: _3d91ef3c,
       name: "creation-fileplan-subseries-templates-ref-checklist"
@@ -773,6 +779,10 @@ export function createRouter() {
       path: "/creation/:fileplan?/subseries/templates/:ref?/schemeBClaimForm2",
       component: _38eecaaa,
       name: "creation-fileplan-subseries-templates-ref-schemeBClaimForm2"
+    }, {
+      path: "/creation/:fileplan?/subseries/templates/:ref?/schoolGoverningBodyFunctionlity",
+      component: _05c7bc13,
+      name: "creation-fileplan-subseries-templates-ref-schoolGoverningBodyFunctionlity"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/SchoolLevelMonitoringTool",
       component: _b4ea02a8,
