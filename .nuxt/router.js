@@ -53,6 +53,7 @@ const _144e0084 = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _46851e8e = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/accessControlForm/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/accessControlForm/index" */))
 const _feb19540 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/acknowledgementOfDebt/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/acknowledgementOfDebt/index" */))
 const _4e09f8a6 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/agenda/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/agenda/index" */))
+const _76fc2178 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/annualAcademicReporting/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/annualAcademicReporting/index" */))
 const _13459f50 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/AnnualAssessmentHOD/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/AnnualAssessmentHOD/index" */))
 const _073da2bd = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/annualDistrictPlanningManagement&Monitoring/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/annualDistrictPlanningManagement&Monitoring/index" */))
 const _7ccd6246 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/annualDistrictPlanningManagement&MonitoringTerm2-4/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/annualDistrictPlanningManagement&MonitoringTerm2-4/index" */))
@@ -503,6 +504,10 @@ export function createRouter() {
       path: "/creation/:fileplan?/subseries/templates/:ref?/agenda",
       component: _4e09f8a6,
       name: "creation-fileplan-subseries-templates-ref-agenda"
+    }, {
+      path: "/creation/:fileplan?/subseries/templates/:ref?/annualAcademicReporting",
+      component: _76fc2178,
+      name: "creation-fileplan-subseries-templates-ref-annualAcademicReporting"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/AnnualAssessmentHOD",
       component: _13459f50,
