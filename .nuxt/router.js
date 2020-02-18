@@ -105,6 +105,7 @@ const _098a2840 = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _424c37d8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/memo/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/memo/index" */))
 const _0e8e744e = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/memo_cover_transactions_below30000/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/memo_cover_transactions_below30000/index" */))
 const _1cfd0d68 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/memoCessionAgreementEndorsement/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/memoCessionAgreementEndorsement/index" */))
+const _d350bcaa = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/memoCoverForEndorsements/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/memoCoverForEndorsements/index" */))
 const _c2ac1112 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/MidYearAssessmentForHOD/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/MidYearAssessmentForHOD/index" */))
 const _673eb49b = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/minutes/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/minutes/index" */))
 const _607b5da3 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Monthly_Training_Report_and_Plan/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Monthly_Training_Report_and_Plan/index" */))
@@ -713,6 +714,10 @@ export function createRouter() {
       path: "/creation/:fileplan?/subseries/templates/:ref?/memoCessionAgreementEndorsement",
       component: _1cfd0d68,
       name: "creation-fileplan-subseries-templates-ref-memoCessionAgreementEndorsement"
+    }, {
+      path: "/creation/:fileplan?/subseries/templates/:ref?/memoCoverForEndorsements",
+      component: _d350bcaa,
+      name: "creation-fileplan-subseries-templates-ref-memoCoverForEndorsements"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/MidYearAssessmentForHOD",
       component: _c2ac1112,

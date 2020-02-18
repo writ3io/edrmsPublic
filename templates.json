@@ -1376,6 +1376,8 @@
 
     }],
 
+    
+
     "13-3-5": [
         {
     
@@ -1385,7 +1387,17 @@
     
             "type": "docx"
     
-        }],    
+        },
+        {
+    
+            "ref": "13-3-5 ",
+    
+            "name": "memoCoverForEndorsements",
+    
+            "type": "docx"
+    
+        }
+    ],    
 
     
 
