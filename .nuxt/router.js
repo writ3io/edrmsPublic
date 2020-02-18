@@ -126,6 +126,7 @@ const _38eecaaa = () => interopDefault(import('../pages/creation/_fileplan/subse
 const _05c7bc13 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/schoolGoverningBodyFunctionlity/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/schoolGoverningBodyFunctionlity/index" */))
 const _b4ea02a8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/SchoolLevelMonitoringTool/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/SchoolLevelMonitoringTool/index" */))
 const _5709bf0e = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/SchoolMonitoringTool/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/SchoolMonitoringTool/index" */))
+const _cf35e60c = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/schoolReadinessMonitoring/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/schoolReadinessMonitoring/index" */))
 const _95c559e2 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Score_Sheet_For_Interviews/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Score_Sheet_For_Interviews/index" */))
 const _1763f5f0 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/Score_Sheet_For_Interviews_Level_1_12/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/Score_Sheet_For_Interviews_Level_1_12/index" */))
 const _2df823d8 = () => interopDefault(import('../pages/creation/_fileplan/subseries/templates/_ref/SecurityClearance/index.vue' /* webpackChunkName: "pages/creation/_fileplan/subseries/templates/_ref/SecurityClearance/index" */))
@@ -796,6 +797,10 @@ export function createRouter() {
       path: "/creation/:fileplan?/subseries/templates/:ref?/SchoolMonitoringTool",
       component: _5709bf0e,
       name: "creation-fileplan-subseries-templates-ref-SchoolMonitoringTool"
+    }, {
+      path: "/creation/:fileplan?/subseries/templates/:ref?/schoolReadinessMonitoring",
+      component: _cf35e60c,
+      name: "creation-fileplan-subseries-templates-ref-schoolReadinessMonitoring"
     }, {
       path: "/creation/:fileplan?/subseries/templates/:ref?/Score_Sheet_For_Interviews",
       component: _95c559e2,
