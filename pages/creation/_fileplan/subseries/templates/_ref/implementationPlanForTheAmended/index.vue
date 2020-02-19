@@ -76,20 +76,23 @@
               <v-card-text class="pt-0 mt-0">
                 <v-layout xs12 wrap border class="card-border">
                   <v-flex xs12>
-                    <v-text-field v-model="doc.body.initials" label="Name of Province: "></v-text-field>
+                    <v-text-field v-model="doc.body.nameProvince" label="Name of Province: "></v-text-field>
                   </v-flex>
 
                   <v-flex xs12>
-                    <v-text-field v-model="doc.body.initials" label="Name of contact person: "></v-text-field>
+                    <v-text-field v-model="doc.body.nameOfContact" label="Name of contact person: "></v-text-field>
                   </v-flex>
 
                   <v-flex xs12>
-                    <v-text-field v-model="doc.body.initials" label="Email address: "></v-text-field>
+                    <v-text-field v-model="doc.body.emailAddress" label="Email address: "></v-text-field>
                   </v-flex>
 
                   <v-flex xs12>
-                    <v-text-field v-model="doc.body.initials" label="Telephone numbers: "></v-text-field>
+                    <v-text-field v-model="doc.body.telephoneNumber" label="Telephone numbers: "></v-text-field>
                   </v-flex>
+
+
+                  
 
                   <v-flex>
                     <h4>Introduction and background</h4>
@@ -188,7 +191,7 @@
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">{{props.item.item}}</td>
+                        <td>{{props.item.item}}</td>
                         <td class="px-0 py-0">
                           <v-text-field
                             v-model="props.item.aligned"
@@ -266,7 +269,15 @@
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">{{props.item.district}}</td>
+                        <td >
+                          <v-text-field
+                            v-model="props.item.district"
+                            single-line
+                            solo
+                            flat
+                            placeholder
+                          ></v-text-field>
+                        </td>
                         <td class="px-0 py-0">
                           <v-text-field
                             v-model="props.item.aligned"
@@ -344,7 +355,16 @@
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">{{props.item.circuit}}</td>
+                        
+                        <td>
+                          <v-text-field
+                            v-model="props.item.circuit"
+                            single-line
+                            solo
+                            flat
+                            placeholder
+                          ></v-text-field>
+                        </td>
                         <td class="px-0 py-0">
                           <v-text-field
                             v-model="props.item.aligned"
@@ -422,7 +442,7 @@
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">{{props.item.authority}}</td>
+                        <td>{{props.item.authority}}</td>
                         <td class="px-0 py-0">
                           <v-text-field
                             v-model="props.item.aligned"
@@ -518,7 +538,7 @@
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">{{props.item.authority}}</td>
+                        <td>{{props.item.authority}}</td>
                         <td class="px-0 py-0">
                           <v-text-field
                             v-model="props.item.activities"
@@ -665,7 +685,7 @@
                     <br />
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.cardIssued" label="COMMENT/S: "></v-text-field>
+                      <v-text-field v-model="doc.body.comments" label="COMMENT/S: "></v-text-field>
                     </v-flex>
 
                     <!--
@@ -726,7 +746,7 @@
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
+                        <td>
                           <div v-if="props.index == 5">
                             <v-layout wrap>
                               <v-flex>
@@ -890,7 +910,7 @@
                     <br />
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.cardIssued" label="COMMENT/S: "></v-text-field>
+                      <v-text-field v-model="doc.body.comments1" label="COMMENT/S: "></v-text-field>
                     </v-flex>
 
                     <br />
@@ -935,7 +955,7 @@
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">{{props.item.staffingPerCirciut}}</td>
+                        <td>{{props.item.staffingPerCirciut}}</td>
 
                         <td class="px-0 py-0">
                           <div v-if="props.index == 2">
@@ -1200,7 +1220,7 @@
                     <br />
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.cardIssued" label="COMMENT/S: "></v-text-field>
+                      <v-text-field v-model="doc.body.comments2" label="COMMENT/S: "></v-text-field>
                     </v-flex>
 
                     <br />
@@ -1248,7 +1268,7 @@
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
+                        <td>
                          
                                 {{props.item.officeDistrictDirectorPosts}}
                         </td>
@@ -1390,7 +1410,7 @@
                     <br />
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.cardIssued" label="COMMENT/S: "></v-text-field>
+                      <v-text-field v-model="doc.body.comments3" label="COMMENT/S: "></v-text-field>
                     </v-flex>
 
                     <br />
@@ -1437,7 +1457,7 @@
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
+                        <td>
                          
                                 {{props.item.professionalSupportServices}}
                         </td>
@@ -1579,7 +1599,7 @@
                     <br />
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.cardIssued" label="COMMENT/S: "></v-text-field>
+                      <v-text-field v-model="doc.body.comments4" label="COMMENT/S: "></v-text-field>
                     </v-flex>
 
                     <br />
@@ -1626,7 +1646,7 @@
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
+                        <td>
                          
                                 {{props.item.professionalSupportServices}}
                         </td>
@@ -1768,7 +1788,7 @@
                     <br />
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.cardIssued" label="COMMENT/S: "></v-text-field>
+                      <v-text-field v-model="doc.body.comments5" label="COMMENT/S: "></v-text-field>
                     </v-flex>
 
                     <br />
@@ -1816,7 +1836,7 @@
 
                       <template v-slot:items="props" v-slot:no-data>
                         
-                        <td class="px-0 py-0">
+                        <td>
 
                           <div v-if="props.index == 2 
                           || props.index == 6 
@@ -2162,7 +2182,7 @@
                     <br />
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.cardIssued" label="COMMENT/S: "></v-text-field>
+                      <v-text-field v-model="doc.body.comments6" label="COMMENT/S: "></v-text-field>
                     </v-flex>
 
                     <br />
@@ -2210,7 +2230,7 @@
 
                       <template v-slot:items="props" v-slot:no-data>
                         
-                        <td class="px-0 py-0">
+                        <td>
 
                           <div v-if="props.index == 6 ">
                             <v-layout wrap>
@@ -2526,7 +2546,7 @@
                     <br />
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.cardIssued" label="COMMENT/S: "></v-text-field>
+                      <v-text-field v-model="doc.body.comments7" label="COMMENT/S: "></v-text-field>
                     </v-flex>
 
                     <br />
@@ -2574,7 +2594,7 @@
 
                       <template v-slot:items="props" v-slot:no-data>
                         
-                        <td class="px-0 py-0">
+                        <td>
 
                           <div v-if="props.index == 6 
                           || props.index == 8 
@@ -3040,7 +3060,7 @@
                     <br />
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.cardIssued" label="COMMENT/S: "></v-text-field>
+                      <v-text-field v-model="doc.body.comments8" label="COMMENT/S: "></v-text-field>
                     </v-flex>
 
                     <br />
@@ -3088,7 +3108,7 @@
 
                       <template v-slot:items="props" v-slot:no-data>
                         
-                        <td class="px-0 py-0">
+                        <td>
 
                           <div v-if="props.index == 2 
                           || props.index == 6 
@@ -3450,7 +3470,7 @@
                     <br />
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.cardIssued" label="COMMENT/S: "></v-text-field>
+                      <v-text-field v-model="doc.body.comments9" label="COMMENT/S: "></v-text-field>
                     </v-flex>
 
                     <br />
@@ -3498,7 +3518,7 @@
 
                       <template v-slot:items="props" v-slot:no-data>
                         
-                        <td class="px-0 py-0">
+                        <td>
 
                           <div v-if="props.index == 2 
                           || props.index == 4 
@@ -3920,7 +3940,7 @@
                     <br />
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.cardIssued" label="COMMENT/S: "></v-text-field>
+                      <v-text-field v-model="doc.body.comments10" label="COMMENT/S: "></v-text-field>
                     </v-flex>
 
                     <br />
@@ -3985,7 +4005,7 @@
                       </template>
 
                       <template v-slot:items="props" v-slot:no-data>
-                        <td class="px-0 py-0">
+                        <td>
                          
                                 {{props.item.resourcePerOffice}}
                         </td>
@@ -4127,7 +4147,7 @@
                     <br />
 
                     <v-flex xs12>
-                      <v-text-field v-model="doc.body.cardIssued" label="COMMENT/S: "></v-text-field>
+                      <v-text-field v-model="doc.body.comments11" label="COMMENT/S: "></v-text-field>
                     </v-flex>
 
                     <br />
@@ -5270,22 +5290,22 @@ export default {
           date2: new Date().toISOString().substr(0, 10),
           date3: new Date().toISOString().substr(0, 10),
           date4: new Date().toISOString().substr(0, 10),
-          initials: "",
-          surname: "",
-          idNumber: "",
-          persalNumber: "",
-          directorate: "",
-          position: "",
-          employmentType: "",
-          printName2: "",
-          enderUser: {},
-          initialsSurname: "",
-          printName: "",
-          printName1: "",
-          cardNumber: "",
-          cardIssued: "",
-          e1: null,
-          boolean: "",
+          nameProvince:"",
+          nameOfContact:"",
+          emailAddress:"",
+          telephoneNumber:"",
+          comments:"",
+          comments1:"",
+          comments2:"",
+          comments3:"",
+          comments4:"",
+          comments5:"",
+          comments6:"",
+          comments7:"",
+          comments8:"",
+          comments9:"",
+          comments10:"",
+          comments11:"",
 
           phase1: [
             {

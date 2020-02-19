@@ -164,6 +164,7 @@ const _dd8fd1d8 = () => interopDefault(import('../pages/previews/_id/AssetMoveme
 const _7976f289 = () => interopDefault(import('../pages/previews/_id/AssetRegisterTable3/_location.vue' /* webpackChunkName: "pages/previews/_id/AssetRegisterTable3/_location" */))
 const _76671d72 = () => interopDefault(import('../pages/previews/_id/attendance/_location.vue' /* webpackChunkName: "pages/previews/_id/attendance/_location" */))
 const _5e7bd8b6 = () => interopDefault(import('../pages/previews/_id/AuditReportOnMobileClassrooms/_loaction.vue' /* webpackChunkName: "pages/previews/_id/AuditReportOnMobileClassrooms/_loaction" */))
+const _b7f92196 = () => interopDefault(import('../pages/previews/_id/BuildingBlocksforEffectiveSchool/_location.vue' /* webpackChunkName: "pages/previews/_id/BuildingBlocksforEffectiveSchool/_location" */))
 const _550021d2 = () => interopDefault(import('../pages/previews/_id/checklist/_location.vue' /* webpackChunkName: "pages/previews/_id/checklist/_location" */))
 const _a833af1c = () => interopDefault(import('../pages/previews/_id/checklistForSiteVisit/_location.vue' /* webpackChunkName: "pages/previews/_id/checklistForSiteVisit/_location" */))
 const _b86094b0 = () => interopDefault(import('../pages/previews/_id/circular/_location.vue' /* webpackChunkName: "pages/previews/_id/circular/_location" */))
@@ -185,6 +186,7 @@ const _27669315 = () => interopDefault(import('../pages/previews/_id/HandingTaki
 const _68bd8db0 = () => interopDefault(import('../pages/previews/_id/HandOverCertification/_location.vue' /* webpackChunkName: "pages/previews/_id/HandOverCertification/_location" */))
 const _182f257c = () => interopDefault(import('../pages/previews/_id/HODPMDSCalculator/_location.vue' /* webpackChunkName: "pages/previews/_id/HODPMDSCalculator/_location" */))
 const _34005b82 = () => interopDefault(import('../pages/previews/_id/HRD_Implementation_Plan/_location.vue' /* webpackChunkName: "pages/previews/_id/HRD_Implementation_Plan/_location" */))
+const _29e4517c = () => interopDefault(import('../pages/previews/_id/implementationPlanForTheAmended/_location.vue' /* webpackChunkName: "pages/previews/_id/implementationPlanForTheAmended/_location" */))
 const _5233fd62 = () => interopDefault(import('../pages/previews/_id/Individual_Panel_Evaluation_Form/_location.vue' /* webpackChunkName: "pages/previews/_id/Individual_Panel_Evaluation_Form/_location" */))
 const _4de8ff7c = () => interopDefault(import('../pages/previews/_id/iternaryForMiddleManagementOfficials/_location.vue' /* webpackChunkName: "pages/previews/_id/iternaryForMiddleManagementOfficials/_location" */))
 const _b3d923a0 = () => interopDefault(import('../pages/previews/_id/iternaryLogSheetOfOfficialTrips/_location.vue' /* webpackChunkName: "pages/previews/_id/iternaryLogSheetOfOfficialTrips/_location" */))
@@ -951,6 +953,10 @@ export function createRouter() {
       component: _5e7bd8b6,
       name: "previews-id-AuditReportOnMobileClassrooms-loaction"
     }, {
+      path: "/previews/:id?/BuildingBlocksforEffectiveSchool/:location?",
+      component: _b7f92196,
+      name: "previews-id-BuildingBlocksforEffectiveSchool-location"
+    }, {
       path: "/previews/:id?/checklist/:location?",
       component: _550021d2,
       name: "previews-id-checklist-location"
@@ -1034,6 +1040,10 @@ export function createRouter() {
       path: "/previews/:id?/HRD_Implementation_Plan/:location?",
       component: _34005b82,
       name: "previews-id-HRD_Implementation_Plan-location"
+    }, {
+      path: "/previews/:id?/implementationPlanForTheAmended/:location?",
+      component: _29e4517c,
+      name: "previews-id-implementationPlanForTheAmended-location"
     }, {
       path: "/previews/:id?/Individual_Panel_Evaluation_Form/:location?",
       component: _5233fd62,

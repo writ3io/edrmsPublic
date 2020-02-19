@@ -55,18 +55,20 @@
 
             <v-layout wrap>
               <v-flex xs6>
-                <v-text-field v-model="doc.rfq" label="Name of School:"></v-text-field>
+                <v-text-field v-model="doc.nameOfSchool" label="Name of School:"></v-text-field>
               </v-flex>
               <v-flex xs6>
-                <v-text-field v-model="doc.body.rfq" label="EMIS:"></v-text-field>
+                <v-text-field v-model="doc.body.emis" label="EMIS:"></v-text-field>
               </v-flex>
               <v-flex xs6>
-                <v-text-field v-model="doc.body.rfq" label="District:"></v-text-field>
+                <v-text-field v-model="doc.body.district" label="District:"></v-text-field>
               </v-flex>
               <v-flex xs6>
-                <v-text-field v-model="doc.body.rfq" label="Province:"></v-text-field>
+                <v-text-field v-model="doc.body.province" label="Province:"></v-text-field>
               </v-flex>
             </v-layout>
+
+            
 
               <br/>
        <i>This form should be administered by each province to collect information on the 
@@ -125,11 +127,13 @@
                      
                      <td class="px-0 py-0">
 
+                       <div v-if="props.index == 0">
+
                        <v-data-table
                        class="mytable2"
                        
                           :headers="subheaders"
-                          :items="doc.body.phase49"
+                          :items="doc.body.subphase"
                           hide-actions                    
                         >
                         <template slot="headerCell" slot-scope="props">
@@ -145,7 +149,7 @@
                             
                             <td class="green-bg">
                               <v-text-field
-                                v-model="props.item.green"
+                                v-model="props.item.zero"
                                 single-line
                                 solo
                                 flat
@@ -154,7 +158,7 @@
                             </td>
                             <td class="yellow-bg">
                               <v-text-field
-                                v-model="props.item.yellow"
+                                v-model="props.item.one"
                                 single-line
                                 solo
                                 flat
@@ -163,7 +167,25 @@
                             </td>
                             <td class="red-bg">
                               <v-text-field
-                                v-model="props.item.red"
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
                                 single-line
                                 solo
                                 flat
@@ -173,6 +195,1075 @@
                             
                           </template>
                         </v-data-table>
+
+                        </div>
+
+
+                        <div v-if="props.index == 1">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase1"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+
+                        <div v-if="props.index == 2">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase2"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+                         <div v-if="props.index == 3">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase3"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+                        <div v-if="props.index == 4">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase4"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+                        <div v-if="props.index == 5">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase5"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+                        <div v-if="props.index == 6">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase6"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+                        <div v-if="props.index == 7">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase7"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+                        <div v-if="props.index == 8">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase8"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+                        <div v-if="props.index == 9">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase9"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+                        <div v-if="props.index == 10">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase10"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+                        <div v-if="props.index == 11">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase11"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+                        <div v-if="props.index == 12">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase12"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+                        <div v-if="props.index == 13">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase13"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+                        <div v-if="props.index == 14">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase14"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
+
+                        <div v-if="props.index == 15">
+
+                       <v-data-table
+                       class="mytable2"
+                       
+                          :headers="subheaders"
+                          :items="doc.body.subphase15"
+                          hide-actions                    
+                        >
+                        <template slot="headerCell" slot-scope="props">
+                    
+                        <template>
+                            <span v-html="props.header.text" v-on="on"></span>
+                        </template>
+                        
+                    
+                    </template>
+                          <template slot="items" scope="props">
+                             
+                            
+                            <td class="green-bg">
+                              <v-text-field
+                                v-model="props.item.zero"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="yellow-bg">
+                              <v-text-field
+                                v-model="props.item.one"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.two"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.three"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            <td class="red-bg">
+                              <v-text-field
+                                v-model="props.item.four"
+                                single-line
+                                solo
+                                flat
+                                placeholder
+                              ></v-text-field> 
+                            </td>
+                            
+                          </template>
+                        </v-data-table>
+
+                        </div>
 
                          
                               
@@ -193,7 +1284,7 @@
 
                        
                       <v-text-field
-                                v-model="props.item.comments"
+                                v-model="props.item.comments1"
                                 single-line
                                 solo
                                 flat
@@ -208,7 +1299,7 @@
 
                       <td>
                          <v-text-field
-                                v-model="props.item.comments"
+                                v-model="props.item.comments2"
                                 single-line
                                 solo
                                 flat
@@ -266,7 +1357,7 @@
                     <h4><u>Section 2</u></h4>
                     <v-layout wrap>
               <v-flex xs3>
-                <v-text-field v-model="doc.body.rfq" label="TOTAL SCORE (64):"></v-text-field>
+                <v-text-field v-model="doc.body.totalScore" type="number" label="TOTAL SCORE (64):"></v-text-field>
               </v-flex>
               <v-flex xs6>
  /64 (add the total scores in the columns above)
@@ -953,104 +2044,246 @@ export default {
           date2: new Date().toISOString().substr(0, 10),
           date3: new Date().toISOString().substr(0, 10),
           date4: new Date().toISOString().substr(0, 10),
-          initials:"",
-          surname:"",
-          idNumber:"",
-          persalNumber:"",
-          directorate:"",
-          position:"",
-          employmentType:"",
-          printName2:"",
-          enderUser: {},
-          initialsSurname: "",
-          printName:"",
-          printName1:"",
-          cardNumber:"",
-          cardIssued:"",
-          e1:null,
-          boolean:"",
+          nameOfSchool:"",
+          emis:"",
+          district:"",
+          province:"",
+          totalScore:"",
 
+
+            subphase: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase1: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase2: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase3: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase4: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase5: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase6: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase7: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase8: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase9: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase10: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase11: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase12: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase13: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase14: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase15: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+
+            subphase16: [
+            {
+              one:"",
+              two:"",
+              three:"",
+              four:""
+            }],
+            
           
             phase48: [
             {
               planning:"Annual Academic Performance Report (2018)",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"School Improvement Plan (2019)",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"School Development Plan(3 years)",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"School Timetable",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"Classroom Timetables",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"Teacher’s Personal Timetable",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"Quarterly Learner Achievement Data",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"Admission Register",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"Learner Attendance Register",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"Period Registers",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"Educator Daily Attendance Register",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"Educator Leave Register",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"School Assets Register",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"LTSM Assets Register",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"School Budget(2019)",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             },
             {
               planning:"Audited Financial Statements(2018)",
               comments:"",
-              comments1:""
+              comments1:"",
+              comments2:""
             }],
 
 
